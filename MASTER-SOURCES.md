@@ -53,3 +53,22 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 
 ## 🖥️ Server-Centric Community Configs
 - [VelHRH-nixos-config](https://github.com/VelHRH/nixos-config) - Modular NixOS configuration with server focus.
+
+## 🏢 Determinate Systems (Enterprise Nix Standards)
+- [install-riff-action](https://github.com/DeterminateSystems/install-riff-action) - A GitHub Action for installing Riff
+- [nix-installer](https://github.com/DeterminateSystems/nix-installer) - Install Nix and flakes with the fast and reliable Determinate Nix Installer, with over 7 million installs.
+- [nix-github-actions](https://github.com/DeterminateSystems/nix-github-actions) - An example project showing how to use Nix to replace third-party GitHub Actions
+- [zero-to-nix](https://github.com/DeterminateSystems/zero-to-nix) - Zero to Nix is your guide to learning Nix and flakes. Created by Determinate Systems.
+- [nix-installer-example](https://github.com/DeterminateSystems/nix-installer-example) - None
+- [nix-installer-action](https://github.com/DeterminateSystems/nix-installer-action) - The Github Action for the Determinate Nix Installer
+- [magic-nix-cache](https://github.com/DeterminateSystems/magic-nix-cache) - Save 30-50%+ of CI time without any effort or cost. Use Magic Nix Cache, a totally free and zero-configuration binary cache for Nix on GitHub Actions.
+- [flake-checker](https://github.com/DeterminateSystems/flake-checker) - Health checks for your Nix flakes
+- [flakehub-push](https://github.com/DeterminateSystems/flakehub-push) - Release your Nix flake to FlakeHub.com.
+- [flakehub-mirror](https://github.com/DeterminateSystems/flakehub-mirror) - None
+- [flake-checker-action](https://github.com/DeterminateSystems/flake-checker-action) - A GitHub Action that performs health checks for your Nix flake.lock files
+- [magic-nix-cache-action](https://github.com/DeterminateSystems/magic-nix-cache-action) -  Save 30-50%+ of CI time without any effort or cost. Use Magic Nix Cache, a totally free and zero-configuration binary cache for Nix on GitHub Actions. 
+- [github-actions-oidc-claims](https://github.com/DeterminateSystems/github-actions-oidc-claims) - None
+- [fh](https://github.com/DeterminateSystems/fh) - The official CLI for FlakeHub: search for flakes, and add new inputs to your Nix flake.
+- [fh-init-example-project](https://github.com/DeterminateSystems/fh-init-example-project) - None
+- [flakehub-docs](https://github.com/DeterminateSystems/flakehub-docs) - FlakeHub documentation
+- [flakehub-cache-action](https://github.com/DeterminateSystems/flakehub-cache-action) - None
