@@ -46,3 +46,7 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [pocket-id](https://github.com/pocket-id/pocket-id) - OIDC provider with Passkey authentication (Identity Core).
 - [pocket-id-docs](https://github.com/pocket-id/website) - Documentation and technical specs for PocketID.
 - [passkey-aaguids](https://github.com/pocket-id/passkey-aaguids) - Community list of Passkey authenticators (Security Context).
+
+## 📂 Community Configs & Templates (Discovery)
+- [nicolkrit999-nixos](https://github.com/nicolkrit999/nixOS) - Personal NixOS server/desktop configurations.
+- [portainer-templates](https://github.com/nicolkrit999/portainer-templates) - Docker templates for Portainer (Server deployment context).
