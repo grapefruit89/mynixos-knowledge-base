@@ -50,3 +50,6 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 ## 📂 Community Configs & Templates (Discovery)
 - [nicolkrit999-nixos](https://github.com/nicolkrit999/nixOS) - Personal NixOS server/desktop configurations.
 - [portainer-templates](https://github.com/nicolkrit999/portainer-templates) - Docker templates for Portainer (Server deployment context).
+
+## 🖥️ Server-Centric Community Configs
+- [VelHRH-nixos-config](https://github.com/VelHRH/nixos-config) - Modular NixOS configuration with server focus.
