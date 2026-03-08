@@ -1,0 +1,1082 @@
+{
+  "USER_CONFIG.nix": {
+    "path": "/home/mynixos/USER_CONFIG.nix",
+    "size": 669,
+    "source_type": "code"
+  },
+  "flake.nix": {
+    "path": "/home/mynixos/_legacy/flake.nix",
+    "size": 1309,
+    "source_type": "code"
+  },
+  "configuration.nix": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/configuration.nix",
+    "size": 5930,
+    "source_type": "docs"
+  },
+  "README.md": {
+    "path": "/home/mynixos/README.md",
+    "size": 2203,
+    "source_type": "code"
+  },
+  "_lib.nix": {
+    "path": "/home/mynixos/modules/services/_lib.nix",
+    "size": 1836,
+    "source_type": "code"
+  },
+  "service-app-readeck.nix": {
+    "path": "/home/mynixos/50-knowledge/service-app-readeck.nix",
+    "size": 1125,
+    "source_type": "code"
+  },
+  "service-app-miniflux.nix": {
+    "path": "/home/mynixos/50-knowledge/service-app-miniflux.nix",
+    "size": 1316,
+    "source_type": "code"
+  },
+  "_imports.nix": {
+    "path": "/home/mynixos/60-apps/_imports.nix",
+    "size": 272,
+    "source_type": "code"
+  },
+  "service-app-linkwarden.nix": {
+    "path": "/home/mynixos/50-knowledge/service-app-linkwarden.nix",
+    "size": 1673,
+    "source_type": "code"
+  },
+  "service-app-linkding.nix": {
+    "path": "/home/mynixos/50-knowledge/service-app-linkding.nix",
+    "size": 452,
+    "source_type": "code"
+  },
+  "service-app-paperless.nix": {
+    "path": "/home/mynixos/50-knowledge/service-app-paperless.nix",
+    "size": 1155,
+    "source_type": "code"
+  },
+  "service-media-jellyfin.nix": {
+    "path": "/home/mynixos/40-media/service-media-jellyfin.nix",
+    "size": 710,
+    "source_type": "code"
+  },
+  "service-media-radarr.nix": {
+    "path": "/home/mynixos/40-media/service-media-radarr.nix",
+    "size": 1721,
+    "source_type": "code"
+  },
+  "service-media-default.nix": {
+    "path": "/home/mynixos/40-media/service-media-default.nix",
+    "size": 484,
+    "source_type": "code"
+  },
+  "service-media-services-common.nix": {
+    "path": "/home/mynixos/40-media/service-media-services-common.nix",
+    "size": 829,
+    "source_type": "code"
+  },
+  "service-media-lidarr.nix": {
+    "path": "/home/mynixos/40-media/service-media-lidarr.nix",
+    "size": 1720,
+    "source_type": "code"
+  },
+  "service-media-recyclarr.nix": {
+    "path": "/home/mynixos/40-media/service-media-recyclarr.nix",
+    "size": 1481,
+    "source_type": "code"
+  },
+  "service-media-readarr.nix": {
+    "path": "/home/mynixos/40-media/service-media-readarr.nix",
+    "size": 1719,
+    "source_type": "code"
+  },
+  "media-stack.nix": {
+    "path": "/home/mynixos/40-media/media-stack.nix",
+    "size": 1474,
+    "source_type": "code"
+  },
+  "service-media-_lib.nix": {
+    "path": "/home/mynixos/40-media/service-media-_lib.nix",
+    "size": 3138,
+    "source_type": "code"
+  },
+  "service-media-media-stack.nix": {
+    "path": "/home/mynixos/40-media/service-media-media-stack.nix",
+    "size": 762,
+    "source_type": "code"
+  },
+  "service-media-jellyseerr.nix": {
+    "path": "/home/mynixos/40-media/service-media-jellyseerr.nix",
+    "size": 1439,
+    "source_type": "code"
+  },
+  "service-media-sabnzbd.nix": {
+    "path": "/home/mynixos/40-media/service-media-sabnzbd.nix",
+    "size": 1462,
+    "source_type": "code"
+  },
+  "service-media-arr-wire.nix": {
+    "path": "/home/mynixos/40-media/service-media-arr-wire.nix",
+    "size": 1389,
+    "source_type": "code"
+  },
+  "service-media-_servarr-factory.nix": {
+    "path": "/home/mynixos/40-media/service-media-_servarr-factory.nix",
+    "size": 2243,
+    "source_type": "code"
+  },
+  "service-app-audiobookshelf.nix": {
+    "path": "/home/mynixos/40-media/service-app-audiobookshelf.nix",
+    "size": 1158,
+    "source_type": "code"
+  },
+  "service-media-prowlarr.nix": {
+    "path": "/home/mynixos/40-media/service-media-prowlarr.nix",
+    "size": 1553,
+    "source_type": "code"
+  },
+  "service-media-sonarr.nix": {
+    "path": "/home/mynixos/40-media/service-media-sonarr.nix",
+    "size": 1808,
+    "source_type": "code"
+  },
+  "valkey.nix": {
+    "path": "/home/mynixos/20-infrastructure/valkey.nix",
+    "size": 1182,
+    "source_type": "code"
+  },
+  "clamav.nix": {
+    "path": "/home/mynixos/20-infrastructure/clamav.nix",
+    "size": 780,
+    "source_type": "code"
+  },
+  "service-app-zigbee-stack.nix": {
+    "path": "/home/mynixos/20-infrastructure/service-app-zigbee-stack.nix",
+    "size": 1529,
+    "source_type": "code"
+  },
+  "secret-ingest.nix": {
+    "path": "/home/mynixos/20-infrastructure/secret-ingest.nix",
+    "size": 1039,
+    "source_type": "code"
+  },
+  "vpn-live-config.nix": {
+    "path": "/home/mynixos/20-infrastructure/vpn-live-config.nix",
+    "size": 669,
+    "source_type": "code"
+  },
+  "postgresql.nix": {
+    "path": "/home/mynixos/20-infrastructure/postgresql.nix",
+    "size": 2040,
+    "source_type": "code"
+  },
+  "vpn-confinement.nix": {
+    "path": "/home/mynixos/20-infrastructure/vpn-confinement.nix",
+    "size": 1768,
+    "source_type": "code"
+  },
+  "service-app-n8n.nix": {
+    "path": "/home/mynixos/30-automation/service-app-n8n.nix",
+    "size": 1557,
+    "source_type": "code"
+  },
+  "automation.nix": {
+    "path": "/home/mynixos/30-automation/automation.nix",
+    "size": 893,
+    "source_type": "code"
+  },
+  "service-app-olivetin.nix": {
+    "path": "/home/mynixos/30-automation/service-app-olivetin.nix",
+    "size": 3019,
+    "source_type": "code"
+  },
+  "service-app-ai-agents.nix": {
+    "path": "/home/mynixos/30-automation/service-app-ai-agents.nix",
+    "size": 1225,
+    "source_type": "code"
+  },
+  "service-app-semaphore.nix": {
+    "path": "/home/mynixos/30-automation/service-app-semaphore.nix",
+    "size": 463,
+    "source_type": "code"
+  },
+  "service-app-home-assistant.nix": {
+    "path": "/home/mynixos/30-automation/service-app-home-assistant.nix",
+    "size": 1953,
+    "source_type": "code"
+  },
+  "service-app-ai-tools.nix": {
+    "path": "/home/mynixos/30-automation/service-app-ai-tools.nix",
+    "size": 1619,
+    "source_type": "code"
+  },
+  "SPEC_REGISTRY.md": {
+    "path": "/home/mynixos/docs/SPEC_REGISTRY.md",
+    "size": 27426,
+    "source_type": "code"
+  },
+  "no-legacy.nix": {
+    "path": "/home/mynixos/90-policy/no-legacy.nix",
+    "size": 1080,
+    "source_type": "code"
+  },
+  "flat-layout.nix": {
+    "path": "/home/mynixos/90-policy/flat-layout.nix",
+    "size": 1024,
+    "source_type": "code"
+  },
+  "security-assertions.nix": {
+    "path": "/home/mynixos/90-policy/security-assertions.nix",
+    "size": 908,
+    "source_type": "code"
+  },
+  "binary-only.nix": {
+    "path": "/home/mynixos/90-policy/binary-only.nix",
+    "size": 653,
+    "source_type": "code"
+  },
+  "ddns-updater.nix": {
+    "path": "/home/mynixos/10-gateway/ddns-updater.nix",
+    "size": 847,
+    "source_type": "code"
+  },
+  "adguardhome.nix": {
+    "path": "/home/mynixos/10-gateway/adguardhome.nix",
+    "size": 2823,
+    "source_type": "code"
+  },
+  "landing-zone-ui.nix": {
+    "path": "/home/mynixos/10-gateway/landing-zone-ui.nix",
+    "size": 684,
+    "source_type": "code"
+  },
+  "dns-automation.nix": {
+    "path": "/home/mynixos/10-gateway/dns-automation.nix",
+    "size": 2237,
+    "source_type": "code"
+  },
+  "dns-map.nix": {
+    "path": "/home/mynixos/10-gateway/dns-map.nix",
+    "size": 929,
+    "source_type": "code"
+  },
+  "sso.nix": {
+    "path": "/home/mynixos/10-gateway/sso.nix",
+    "size": 1132,
+    "source_type": "code"
+  },
+  "cloudflared-tunnel.nix": {
+    "path": "/home/mynixos/10-gateway/cloudflared-tunnel.nix",
+    "size": 2219,
+    "source_type": "code"
+  },
+  "pocket-id.nix": {
+    "path": "/home/mynixos/10-gateway/pocket-id.nix",
+    "size": 1859,
+    "source_type": "code"
+  },
+  "homepage.nix": {
+    "path": "/home/mynixos/10-gateway/homepage.nix",
+    "size": 2889,
+    "source_type": "code"
+  },
+  "tailscale.nix": {
+    "path": "/home/mynixos/10-gateway/tailscale.nix",
+    "size": 1507,
+    "source_type": "code"
+  },
+  "caddy.nix": {
+    "path": "/home/mynixos/10-gateway/caddy.nix",
+    "size": 3447,
+    "source_type": "code"
+  },
+  "nix-tuning.nix": {
+    "path": "/home/mynixos/00-core/nix-tuning.nix",
+    "size": 1813,
+    "source_type": "code"
+  },
+  "boot-safeguard.nix": {
+    "path": "/home/mynixos/00-core/boot-safeguard.nix",
+    "size": 2639,
+    "source_type": "code"
+  },
+  "backup.nix": {
+    "path": "/home/mynixos/00-core/backup.nix",
+    "size": 2621,
+    "source_type": "code"
+  },
+  "fail2ban.nix": {
+    "path": "/home/mynixos/00-core/fail2ban.nix",
+    "size": 2789,
+    "source_type": "code"
+  },
+  "hardware-configuration.nix": {
+    "path": "/home/mynixos/00-core/hardware-configuration.nix",
+    "size": 769,
+    "source_type": "code"
+  },
+  "secrets.nix": {
+    "path": "/home/mynixos/00-core/secrets.nix",
+    "size": 3098,
+    "source_type": "code"
+  },
+  "logging.nix": {
+    "path": "/home/mynixos/00-core/logging.nix",
+    "size": 968,
+    "source_type": "code"
+  },
+  "config-merger.nix": {
+    "path": "/home/mynixos/00-core/config-merger.nix",
+    "size": 2452,
+    "source_type": "code"
+  },
+  "configs.nix": {
+    "path": "/home/mynixos/00-core/configs.nix",
+    "size": 5648,
+    "source_type": "code"
+  },
+  "host-q958-hardware-profile.nix": {
+    "path": "/home/mynixos/00-core/host-q958-hardware-profile.nix",
+    "size": 1621,
+    "source_type": "code"
+  },
+  "host.nix": {
+    "path": "/home/mynixos/00-core/host.nix",
+    "size": 463,
+    "source_type": "code"
+  },
+  "host-q958-hardware-configuration.nix": {
+    "path": "/home/mynixos/00-core/host-q958-hardware-configuration.nix",
+    "size": 806,
+    "source_type": "code"
+  },
+  "tty-info.nix": {
+    "path": "/home/mynixos/00-core/tty-info.nix",
+    "size": 2172,
+    "source_type": "code"
+  },
+  "symbiosis.nix": {
+    "path": "/home/mynixos/00-core/symbiosis.nix",
+    "size": 1386,
+    "source_type": "code"
+  },
+  "firewall.nix": {
+    "path": "/home/mynixos/00-core/firewall.nix",
+    "size": 1547,
+    "source_type": "code"
+  },
+  "system-stability.nix": {
+    "path": "/home/mynixos/00-core/system-stability.nix",
+    "size": 2014,
+    "source_type": "code"
+  },
+  "principles.nix": {
+    "path": "/home/mynixos/00-core/principles.nix",
+    "size": 470,
+    "source_type": "code"
+  },
+  "zram-swap.nix": {
+    "path": "/home/mynixos/00-core/zram-swap.nix",
+    "size": 1087,
+    "source_type": "code"
+  },
+  "home-manager.nix": {
+    "path": "/home/mynixos/00-core/home-manager.nix",
+    "size": 1029,
+    "source_type": "code"
+  },
+  "auto-locale.nix": {
+    "path": "/home/mynixos/00-core/auto-locale.nix",
+    "size": 3804,
+    "source_type": "code"
+  },
+  "user-moritz-home.nix": {
+    "path": "/home/mynixos/00-core/user-moritz-home.nix",
+    "size": 1250,
+    "source_type": "code"
+  },
+  "shell-premium.nix": {
+    "path": "/home/mynixos/00-core/shell-premium.nix",
+    "size": 4389,
+    "source_type": "code"
+  },
+  "central-configs-plan.nix": {
+    "path": "/home/mynixos/00-core/central-configs-plan.nix",
+    "size": 480,
+    "source_type": "code"
+  },
+  "ports.nix": {
+    "path": "/home/mynixos/00-core/ports.nix",
+    "size": 2697,
+    "source_type": "code"
+  },
+  "locale.nix": {
+    "path": "/home/mynixos/00-core/locale.nix",
+    "size": 1079,
+    "source_type": "code"
+  },
+  "shell.nix": {
+    "path": "/home/mynixos/00-core/shell.nix",
+    "size": 1824,
+    "source_type": "code"
+  },
+  "ssh.nix": {
+    "path": "/home/mynixos/00-core/ssh.nix",
+    "size": 3028,
+    "source_type": "code"
+  },
+  "user-preferences.nix": {
+    "path": "/home/mynixos/00-core/user-preferences.nix",
+    "size": 459,
+    "source_type": "code"
+  },
+  "system.nix": {
+    "path": "/home/mynixos/00-core/system.nix",
+    "size": 1951,
+    "source_type": "code"
+  },
+  "defaults.nix": {
+    "path": "/home/mynixos/00-core/defaults.nix",
+    "size": 3280,
+    "source_type": "code"
+  },
+  "ssh-rescue.nix": {
+    "path": "/home/mynixos/00-core/ssh-rescue.nix",
+    "size": 1803,
+    "source_type": "code"
+  },
+  "motd.nix": {
+    "path": "/home/mynixos/00-core/motd.nix",
+    "size": 1266,
+    "source_type": "code"
+  },
+  "registry.nix": {
+    "path": "/home/mynixos/00-core/registry.nix",
+    "size": 6903,
+    "source_type": "code"
+  },
+  "storage.nix": {
+    "path": "/home/mynixos/00-core/storage.nix",
+    "size": 1461,
+    "source_type": "code"
+  },
+  "network.nix": {
+    "path": "/home/mynixos/00-core/network.nix",
+    "size": 2216,
+    "source_type": "code"
+  },
+  "kernel-slim.nix": {
+    "path": "/home/mynixos/00-core/kernel-slim.nix",
+    "size": 3772,
+    "source_type": "code"
+  },
+  "lib-helpers.nix": {
+    "path": "/home/mynixos/00-core/lib-helpers.nix",
+    "size": 1610,
+    "source_type": "code"
+  },
+  "users.nix": {
+    "path": "/home/mynixos/00-core/users.nix",
+    "size": 813,
+    "source_type": "code"
+  },
+  "service-scrutiny.nix": {
+    "path": "/home/mynixos/80-monitoring/service-scrutiny.nix",
+    "size": 1145,
+    "source_type": "code"
+  },
+  "uptime-kuma.nix": {
+    "path": "/home/mynixos/80-monitoring/uptime-kuma.nix",
+    "size": 1125,
+    "source_type": "code"
+  },
+  "cockpit.nix": {
+    "path": "/home/mynixos/80-monitoring/cockpit.nix",
+    "size": 770,
+    "source_type": "code"
+  },
+  "service-netdata.nix": {
+    "path": "/home/mynixos/80-monitoring/service-netdata.nix",
+    "size": 1599,
+    "source_type": "code"
+  },
+  "service-app-vaultwarden.nix": {
+    "path": "/home/mynixos/60-apps/service-app-vaultwarden.nix",
+    "size": 1961,
+    "source_type": "code"
+  },
+  "service-app-karakeep.nix": {
+    "path": "/home/mynixos/60-apps/service-app-karakeep.nix",
+    "size": 792,
+    "source_type": "code"
+  },
+  "service-app-couchdb.nix": {
+    "path": "/home/mynixos/60-apps/service-app-couchdb.nix",
+    "size": 459,
+    "source_type": "code"
+  },
+  "SERVICE_TEMPLATE.nix": {
+    "path": "/home/mynixos/60-apps/SERVICE_TEMPLATE.nix",
+    "size": 1429,
+    "source_type": "code"
+  },
+  "service-app-monica.nix": {
+    "path": "/home/mynixos/60-apps/service-app-monica.nix",
+    "size": 1206,
+    "source_type": "code"
+  },
+  "service-app-matrix-conduit.nix": {
+    "path": "/home/mynixos/60-apps/service-app-matrix-conduit.nix",
+    "size": 1651,
+    "source_type": "code"
+  },
+  "service-app-filebrowser.nix": {
+    "path": "/home/mynixos/60-apps/service-app-filebrowser.nix",
+    "size": 1118,
+    "source_type": "code"
+  },
+  "default.nix": {
+    "path": "/home/mynixos/_legacy/systems/default.nix",
+    "size": 0,
+    "source_type": "code"
+  },
+  "user.nix": {
+    "path": "/home/mynixos/_legacy/modules/profiles/user/user.nix",
+    "size": 652,
+    "source_type": "code"
+  },
+  "cloudflare.nix": {
+    "path": "/home/mynixos/_legacy/modules/services/security/cloudflare.nix",
+    "size": 862,
+    "source_type": "code"
+  },
+  "media.nix": {
+    "path": "/home/mynixos/_legacy/modules/services/media/media.nix",
+    "size": 655,
+    "source_type": "code"
+  },
+  "Claude-Homeserver mit Cloudflare sicher einrichten (1).md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Claude-Homeserver mit Cloudflare sicher einrichten (1).md",
+    "size": 230388,
+    "source_type": "docs"
+  },
+  "NIXHOME_META_AND_FLAKES.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/NIXHOME_META_AND_FLAKES.md",
+    "size": 19389,
+    "source_type": "docs"
+  },
+  "Gemini-Stadtbibliothek Troisdorf_ Bürgergeld-Mitgliedschaft.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-Stadtbibliothek Troisdorf_ Bürgergeld-Mitgliedschaft.md",
+    "size": 28092,
+    "source_type": "docs"
+  },
+  "NIXOS_BRIEFING.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/NIXOS_BRIEFING.md",
+    "size": 8073,
+    "source_type": "docs"
+  },
+  "Gemini-Chatlog-Extraktion für Server-Wissen.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-Chatlog-Extraktion für Server-Wissen.md",
+    "size": 563927,
+    "source_type": "docs"
+  },
+  "Claude-NMS v4.2 sovereign identity implementation strategy.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Claude-NMS v4.2 sovereign identity implementation strategy.md",
+    "size": 82703,
+    "source_type": "docs"
+  },
+  "Gemini-Union GitHub Repository erklärt.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-Union GitHub Repository erklärt.md",
+    "size": 22418,
+    "source_type": "docs"
+  },
+  "NIXHOME_ARCHITECTURE.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/NIXHOME_ARCHITECTURE.md",
+    "size": 16020,
+    "source_type": "docs"
+  },
+  "Gemini-Pocket ID_ Nur Passkey-Login einrichten.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-Pocket ID_ Nur Passkey-Login einrichten.md",
+    "size": 15184,
+    "source_type": "docs"
+  },
+  "Claude-Infrastructure as Code .md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Claude-Infrastructure as Code .md",
+    "size": 307656,
+    "source_type": "docs"
+  },
+  "Gemini-NixOS Homelab Architecture Review (1).md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-NixOS Homelab Architecture Review (1).md",
+    "size": 133760,
+    "source_type": "docs"
+  },
+  "Claude-Prompt-Übernahme anfragen.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Claude-Prompt-Übernahme anfragen.md",
+    "size": 8737,
+    "source_type": "docs"
+  },
+  "Gemini-NixOS Projektprüfung_ Bugs und Verbesserungen.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-NixOS Projektprüfung_ Bugs und Verbesserungen.md",
+    "size": 51714,
+    "source_type": "docs"
+  },
+  "ki_assisted_workflow.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/ki_assisted_workflow.md",
+    "size": 3078,
+    "source_type": "docs"
+  },
+  "geminiverbesserung.txt": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/geminiverbesserung.txt",
+    "size": 4147,
+    "source_type": "docs"
+  },
+  "Gemini-Python-Prozess verursacht hohe Systemlast.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-Python-Prozess verursacht hohe Systemlast.md",
+    "size": 183419,
+    "source_type": "docs"
+  },
+  "Claude-01 NixOS Server mit Infrastructure as Code aufsetzen.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Claude-01 NixOS Server mit Infrastructure as Code aufsetzen.md",
+    "size": 145595,
+    "source_type": "docs"
+  },
+  "Gemini-Mehrere Betriebssysteme auf USB-Stick.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-Mehrere Betriebssysteme auf USB-Stick.md",
+    "size": 366108,
+    "source_type": "docs"
+  },
+  "Gemini-NixOS Media Server Projekt.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-NixOS Media Server Projekt.md",
+    "size": 4600,
+    "source_type": "docs"
+  },
+  "NMS_v4.2_SOVEREIGN_IDENTITY_AUDIT.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/NMS_v4.2_SOVEREIGN_IDENTITY_AUDIT.md",
+    "size": 16835,
+    "source_type": "docs"
+  },
+  "NIXOS_MASTER_BRIEFING.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/NIXOS_MASTER_BRIEFING.md",
+    "size": 11129,
+    "source_type": "docs"
+  },
+  "Claude-Dokumentenverwaltung mit automatischer Metadaten-Tagging.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Claude-Dokumentenverwaltung mit automatischer Metadaten-Tagging.md",
+    "size": 40885,
+    "source_type": "docs"
+  },
+  "neu2.txt": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/neu2.txt",
+    "size": 5109,
+    "source_type": "docs"
+  },
+  "Gemini-NixOS Flake Parts Visualizer Tool.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-NixOS Flake Parts Visualizer Tool.md",
+    "size": 46019,
+    "source_type": "docs"
+  },
+  "Gemini-Nix Flakes_ Pure und Reproduzierbar.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-Nix Flakes_ Pure und Reproduzierbar.md",
+    "size": 3580,
+    "source_type": "docs"
+  },
+  "Gemini-Software Konzepte für NixHome MetaBibliothek.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-Software Konzepte für NixHome MetaBibliothek.md",
+    "size": 3726,
+    "source_type": "docs"
+  },
+  "Gemini-Repository Refactoring mit KI-Unterstützung.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-Repository Refactoring mit KI-Unterstützung.md",
+    "size": 49434,
+    "source_type": "docs"
+  },
+  "Claude-02 Homeserver mit Cloudflare sicher einrichten.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Claude-02 Homeserver mit Cloudflare sicher einrichten.md",
+    "size": 251626,
+    "source_type": "docs"
+  },
+  "reposammlung.txt": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/reposammlung.txt",
+    "size": 991,
+    "source_type": "docs"
+  },
+  "Gemini-Community-Projekt für NixOS-Server.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-Community-Projekt für NixOS-Server.md",
+    "size": 10952,
+    "source_type": "docs"
+  },
+  "neu 1.txt": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/neu 1.txt",
+    "size": 3932,
+    "source_type": "docs"
+  },
+  "Gemini-NixOS Homelab Architecture Review.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Gemini-NixOS Homelab Architecture Review.md",
+    "size": 339758,
+    "source_type": "docs"
+  },
+  "SRE_AUDIT_NMS_v2.3.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/SRE_AUDIT_NMS_v2.3.md",
+    "size": 12187,
+    "source_type": "docs"
+  },
+  "Claude-03 Prompt-Übernahme anfragen.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/Claude-03 Prompt-Übernahme anfragen.md",
+    "size": 86733,
+    "source_type": "docs"
+  },
+  "NIXHOME_ISOMORPHIE_STRATEGIE.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/NIXHOME_ISOMORPHIE_STRATEGIE.md",
+    "size": 20389,
+    "source_type": "docs"
+  },
+  "brother_printer_mgt.md": {
+    "path": "/home/Knowledge-Pipeline/raw/_duplikate/brother_printer_mgt.md",
+    "size": 2025,
+    "source_type": "docs"
+  },
+  "Claude-Software-Konzepte für NixHome MetaBibliothek.md": {
+    "path": "/home/Knowledge-Pipeline/raw/docs/Claude-Software-Konzepte für NixHome MetaBibliothek.md",
+    "size": 158824,
+    "source_type": "docs"
+  },
+  "Strategy-SRE-Quality-Standard-and-Roadmap.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Strategy-SRE-Quality-Standard-and-Roadmap.md",
+    "size": 3007,
+    "source_type": "docs"
+  },
+  "Architecture-Sovereign-Identity-Boot-Sequence.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Architecture-Sovereign-Identity-Boot-Sequence.md",
+    "size": 3509,
+    "source_type": "docs"
+  },
+  "Architecture-NIXHOME-Layer-and-Meta-Standard.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Architecture-NIXHOME-Layer-and-Meta-Standard.md",
+    "size": 3201,
+    "source_type": "docs"
+  },
+  "CLEANUP_LOG.md": {
+    "path": "/home/Knowledge-Pipeline/docs/CLEANUP_LOG.md",
+    "size": 1139,
+    "source_type": "docs"
+  },
+  "NixOS-Architecture-Master-Blueprint.md": {
+    "path": "/home/Knowledge-Pipeline/docs/NixOS-Architecture-Master-Blueprint.md",
+    "size": 3863,
+    "source_type": "docs"
+  },
+  "Architecture-3-Stage-Boot-Pipeline.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Architecture-3-Stage-Boot-Pipeline.md",
+    "size": 2838,
+    "source_type": "docs"
+  },
+  "Architecture-Cloudflare-Zero-Trust-Ingress.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Architecture-Cloudflare-Zero-Trust-Ingress.md",
+    "size": 2725,
+    "source_type": "docs"
+  },
+  "Architecture-Disaster-Recovery-QR-Unlock.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Architecture-Disaster-Recovery-QR-Unlock.md",
+    "size": 2902,
+    "source_type": "docs"
+  },
+  "server_knowledge_detailed.md": {
+    "path": "/home/Knowledge-Pipeline/docs/server_knowledge_detailed.md",
+    "size": 19914716,
+    "source_type": "docs"
+  },
+  "Architecture-Sovereign-Identity-Hardware-Auth.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Architecture-Sovereign-Identity-Hardware-Auth.md",
+    "size": 3506,
+    "source_type": "docs"
+  },
+  "Architecture-NIXHOME-Dendritic-Structure.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Architecture-NIXHOME-Dendritic-Structure.md",
+    "size": 3380,
+    "source_type": "docs"
+  },
+  "Architecture-Deep-Dive-Knowledge-Gems.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Architecture-Deep-Dive-Knowledge-Gems.md",
+    "size": 3609,
+    "source_type": "docs"
+  },
+  "Services-MCP-Integrations-HA-Unraid.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Services-MCP-Integrations-HA-Unraid.md",
+    "size": 2610,
+    "source_type": "docs"
+  },
+  "NixOS-Base-Configuration-Q958.md": {
+    "path": "/home/Knowledge-Pipeline/docs/NixOS-Base-Configuration-Q958.md",
+    "size": 3067,
+    "source_type": "docs"
+  },
+  "Strategy-Impermanence-Tiered-Storage.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Strategy-Impermanence-Tiered-Storage.md",
+    "size": 2611,
+    "source_type": "docs"
+  },
+  "Claude-01-NixOS-Server-IaC-Setup.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Claude-01-NixOS-Server-IaC-Setup.md",
+    "size": 3925,
+    "source_type": "docs"
+  },
+  "knowledge_base_extraction.md": {
+    "path": "/home/Knowledge-Pipeline/docs/knowledge_base_extraction.md",
+    "size": 5278995,
+    "source_type": "docs"
+  },
+  "NixHome-Architecture-Principles-and-ID-System.md": {
+    "path": "/home/Knowledge-Pipeline/docs/NixHome-Architecture-Principles-and-ID-System.md",
+    "size": 2992,
+    "source_type": "docs"
+  },
+  "Strategy-Future-of-Nix-Determinate-Systems.md": {
+    "path": "/home/Knowledge-Pipeline/docs/Strategy-Future-of-Nix-Determinate-Systems.md",
+    "size": 2679,
+    "source_type": "docs"
+  },
+  "00_MASTER_INDEX.md": {
+    "path": "/home/Knowledge-Pipeline/docs/00_MASTER_INDEX.md",
+    "size": 3153,
+    "source_type": "docs"
+  },
+  "n8n-security-hardening.md": {
+    "path": "/home/Knowledge-Pipeline/docs/learnings/n8n-security-hardening.md",
+    "size": 1560,
+    "source_type": "docs"
+  },
+  "homelab-architecture-review.md": {
+    "path": "/home/Knowledge-Pipeline/docs/learnings/homelab-architecture-review.md",
+    "size": 1531,
+    "source_type": "docs"
+  },
+  "repo-audit-nixarr-nixflix.md": {
+    "path": "/home/Knowledge-Pipeline/docs/learnings/repo-audit-nixarr-nixflix.md",
+    "size": 2761,
+    "source_type": "docs"
+  },
+  "professional-workflow-audit.md": {
+    "path": "/home/Knowledge-Pipeline/docs/learnings/professional-workflow-audit.md",
+    "size": 1694,
+    "source_type": "docs"
+  },
+  "sre-audit-v4.2.md": {
+    "path": "/home/Knowledge-Pipeline/docs/learnings/sre-audit-v4.2.md",
+    "size": 2992,
+    "source_type": "docs"
+  },
+  "sre-audit-v2.3.md": {
+    "path": "/home/Knowledge-Pipeline/docs/learnings/sre-audit-v2.3.md",
+    "size": 1206,
+    "source_type": "docs"
+  },
+  "python-system-load-fix.md": {
+    "path": "/home/Knowledge-Pipeline/docs/learnings/python-system-load-fix.md",
+    "size": 761,
+    "source_type": "docs"
+  },
+  "knowledge-management-pipeline-v4.2.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/knowledge-management-pipeline-v4.2.md",
+    "size": 2444,
+    "source_type": "docs"
+  },
+  "identity-pocketid-v4.2.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/identity-pocketid-v4.2.md",
+    "size": 2255,
+    "source_type": "docs"
+  },
+  "cloudflare-homeserver-setup.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/cloudflare-homeserver-setup.md",
+    "size": 2976,
+    "source_type": "docs"
+  },
+  "knowledge_pipeline_scripts.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/knowledge_pipeline_scripts.md",
+    "size": 1062,
+    "source_type": "docs"
+  },
+  "service-master-stick-automation.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/service-master-stick-automation.md",
+    "size": 1947,
+    "source_type": "docs"
+  },
+  "sops-template-spec.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/sops-template-spec.md",
+    "size": 2006,
+    "source_type": "docs"
+  },
+  "state-streaming-backup.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/state-streaming-backup.md",
+    "size": 1406,
+    "source_type": "docs"
+  },
+  "mkMyService-helper.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/mkMyService-helper.md",
+    "size": 2245,
+    "source_type": "docs"
+  },
+  "service-brother-printer.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/service-brother-printer.md",
+    "size": 1443,
+    "source_type": "docs"
+  },
+  "user-config-spec.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/user-config-spec.md",
+    "size": 1312,
+    "source_type": "docs"
+  },
+  "security-hardening-baseline.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/security-hardening-baseline.md",
+    "size": 2166,
+    "source_type": "docs"
+  },
+  "disk-discovery-hal.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/disk-discovery-hal.md",
+    "size": 1950,
+    "source_type": "docs"
+  },
+  "media-stack-automation-v4.2.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/media-stack-automation-v4.2.md",
+    "size": 2258,
+    "source_type": "docs"
+  },
+  "abc-storage-mover.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/abc-storage-mover.md",
+    "size": 1634,
+    "source_type": "docs"
+  },
+  "media-stack-hardening.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/media-stack-hardening.md",
+    "size": 1844,
+    "source_type": "docs"
+  },
+  "memory-tuning-hal.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/memory-tuning-hal.md",
+    "size": 2096,
+    "source_type": "docs"
+  },
+  "dashboard-comparison-v4.2.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/dashboard-comparison-v4.2.md",
+    "size": 2111,
+    "source_type": "docs"
+  },
+  "caddy-migration-plan.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/caddy-migration-plan.md",
+    "size": 3075,
+    "source_type": "docs"
+  },
+  "brother-printer.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/brother-printer.md",
+    "size": 1058,
+    "source_type": "docs"
+  },
+  "troubleshooting-system-load.md": {
+    "path": "/home/Knowledge-Pipeline/docs/services/troubleshooting-system-load.md",
+    "size": 1696,
+    "source_type": "docs"
+  },
+  "jailed-agents-sandboxing.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/jailed-agents-sandboxing.md",
+    "size": 2368,
+    "source_type": "docs"
+  },
+  "storage-tiering-strategy.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/storage-tiering-strategy.md",
+    "size": 3780,
+    "source_type": "docs"
+  },
+  "identity-security-audit.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/identity-security-audit.md",
+    "size": 2399,
+    "source_type": "docs"
+  },
+  "hal-architecture-v4.2.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/hal-architecture-v4.2.md",
+    "size": 2340,
+    "source_type": "docs"
+  },
+  "backup-strategy-v4.2.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/backup-strategy-v4.2.md",
+    "size": 2269,
+    "source_type": "docs"
+  },
+  "media-stack-philosophy.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/media-stack-philosophy.md",
+    "size": 2244,
+    "source_type": "docs"
+  },
+  "den-framework-foundation.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/den-framework-foundation.md",
+    "size": 2608,
+    "source_type": "docs"
+  },
+  "impermanence-strategy-v4.2.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/impermanence-strategy-v4.2.md",
+    "size": 2189,
+    "source_type": "docs"
+  },
+  "software-purism-strategy.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/software-purism-strategy.md",
+    "size": 3021,
+    "source_type": "docs"
+  },
+  "passkey-identity-standard.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/passkey-identity-standard.md",
+    "size": 1078,
+    "source_type": "docs"
+  },
+  "storage-broker-hal-v4.2.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/storage-broker-hal-v4.2.md",
+    "size": 2277,
+    "source_type": "docs"
+  },
+  "distribution-strategy-v5.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/distribution-strategy-v5.md",
+    "size": 1532,
+    "source_type": "docs"
+  },
+  "hardware-spec-q958.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/hardware-spec-q958.md",
+    "size": 2046,
+    "source_type": "docs"
+  },
+  "security-layer-model.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/security-layer-model.md",
+    "size": 2351,
+    "source_type": "docs"
+  },
+  "sovereign-identity-v4.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/sovereign-identity-v4.md",
+    "size": 4390,
+    "source_type": "docs"
+  },
+  "isomorphie-strategie.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/isomorphie-strategie.md",
+    "size": 2509,
+    "source_type": "docs"
+  },
+  "disaster-recovery-strategy.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/disaster-recovery-strategy.md",
+    "size": 1748,
+    "source_type": "docs"
+  },
+  "cloudflare-zero-trust-v4.2.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/cloudflare-zero-trust-v4.2.md",
+    "size": 2311,
+    "source_type": "docs"
+  },
+  "nixhome-architecture.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/nixhome-architecture.md",
+    "size": 8336,
+    "source_type": "docs"
+  },
+  "dendritic-denix-architecture-v4.2.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/dendritic-denix-architecture-v4.2.md",
+    "size": 2218,
+    "source_type": "docs"
+  },
+  "dashboard-hierarchy.md": {
+    "path": "/home/Knowledge-Pipeline/docs/adr/dashboard-hierarchy.md",
+    "size": 1752,
+    "source_type": "docs"
+  }
+}
