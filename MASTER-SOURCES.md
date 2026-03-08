@@ -41,3 +41,8 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [checkmate](https://github.com/vic/checkmate) - Flake checker using nix-unit and treefmt.
 - [flake-aspects](https://github.com/vic/flake-aspects) - Cross-aspect dependency resolution for Dendritic Nix.
 - [clap-nix](https://github.com/vic/clap-nix) - Pure Nix command line argument parser.
+
+## 🔐 Identity & Authentication (Sovereign Identity)
+- [pocket-id](https://github.com/pocket-id/pocket-id) - OIDC provider with Passkey authentication (Identity Core).
+- [pocket-id-docs](https://github.com/pocket-id/website) - Documentation and technical specs for PocketID.
+- [passkey-aaguids](https://github.com/pocket-id/passkey-aaguids) - Community list of Passkey authenticators (Security Context).
