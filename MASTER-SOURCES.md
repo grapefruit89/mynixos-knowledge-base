@@ -33,3 +33,11 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 
 ## 🚀 Individual & Specialized
 - [zero-to-nix](https://github.com/DeterminateSystems/zero-to-nix) - Modern learning guide by Determinate Systems.
+
+## 🏛️ Victor Borja (Advanced Dendritic & Aspects)
+- [import-tree](https://github.com/vic/import-tree) - Automatic nix file discovery and import (Critical Engine).
+- [den](https://github.com/vic/den) - Aspect-oriented, context-driven configurations.
+- [denful](https://github.com/vic/denful) - Reusable, cherry-pickable Dendritic modules (Distribution framework).
+- [checkmate](https://github.com/vic/checkmate) - Flake checker using nix-unit and treefmt.
+- [flake-aspects](https://github.com/vic/flake-aspects) - Cross-aspect dependency resolution for Dendritic Nix.
+- [clap-nix](https://github.com/vic/clap-nix) - Pure Nix command line argument parser.
