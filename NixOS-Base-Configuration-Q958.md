@@ -1,3 +1,10 @@
+---
+title: NixOS-Base-Configuration-Q958 (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # NixOS Basis-Konfiguration (Host: q958)
 
 ## 1. User Layer (KISS)

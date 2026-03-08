@@ -1,3 +1,10 @@
+---
+title: Claude-01-NixOS-Server-IaC-Setup (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # NixOS Server Infrastructure as Code Setup (Fujitsu Q958)
 
 ## 1. User Layer (KISS)

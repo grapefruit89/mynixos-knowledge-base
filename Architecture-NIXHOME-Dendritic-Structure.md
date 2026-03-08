@@ -1,3 +1,10 @@
+---
+title: Architecture-NIXHOME-Dendritic-Structure (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # Architecture: NIXHOME Dendritic Structure
 
 ## 1. User Layer (KISS)

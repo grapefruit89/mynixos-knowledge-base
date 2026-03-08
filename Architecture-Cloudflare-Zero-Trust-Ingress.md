@@ -1,3 +1,10 @@
+---
+title: Architecture-Cloudflare-Zero-Trust-Ingress (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # Architecture: Cloudflare Zero Trust Ingress
 
 ## 1. User Layer (KISS)

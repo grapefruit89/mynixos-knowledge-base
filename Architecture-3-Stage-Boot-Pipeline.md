@@ -1,3 +1,10 @@
+---
+title: Architecture-3-Stage-Boot-Pipeline (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # Architecture: 3-Stage-Boot-Pipeline (NMS v4.2)
 
 ## 1. User Layer (KISS)

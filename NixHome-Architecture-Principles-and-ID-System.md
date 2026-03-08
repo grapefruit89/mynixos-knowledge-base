@@ -1,3 +1,10 @@
+---
+title: NixHome-Architecture-Principles-and-ID-System (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # NixHome Architecture: Principles and NIXH-ID System
 
 ## 1. User Layer (KISS)

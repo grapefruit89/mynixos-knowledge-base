@@ -1,3 +1,10 @@
+---
+title: NixOS-Architecture-Master-Blueprint (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # NixOS Architecture Master Blueprint (Host: q958)
 
 ## 1. User Layer (KISS)

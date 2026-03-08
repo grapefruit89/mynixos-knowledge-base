@@ -1,3 +1,10 @@
+---
+title: Architecture-Deep-Dive-Knowledge-Gems (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # Architecture: Deep-Dive Knowledge Gems (The "Hidden Pearls")
 
 ## 1. User Layer (KISS)

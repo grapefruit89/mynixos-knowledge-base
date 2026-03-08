@@ -1,3 +1,10 @@
+---
+title: Strategy-SRE-Quality-Standard-and-Roadmap (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # Strategy: SRE Quality Standard & Roadmap (V6.x)
 
 ## 1. User Layer (KISS)

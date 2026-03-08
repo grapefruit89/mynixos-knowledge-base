@@ -1,3 +1,10 @@
+---
+title: Strategy-Future-of-Nix-Determinate-Systems (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # Strategy: Future of Nix & Hermetic Computing (Determinate Systems)
 
 ## 1. User Layer (KISS)

@@ -1,3 +1,10 @@
+---
+title: CLEANUP_LOG (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # 🧹 System-Cleanup Log
 
 **Datum:** 2026-03-08

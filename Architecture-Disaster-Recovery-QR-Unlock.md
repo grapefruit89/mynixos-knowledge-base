@@ -1,3 +1,10 @@
+---
+title: Architecture-Disaster-Recovery-QR-Unlock (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # Architecture: Disaster Recovery & QR-Unlock (NMS v4.2)
 
 ## 1. User Layer (KISS)

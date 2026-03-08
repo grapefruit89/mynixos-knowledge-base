@@ -1,3 +1,10 @@
+---
+title: Services-MCP-Integrations-HA-Unraid (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # MCP Integrations: Home Assistant & Unraid
 
 ## 1. User Layer (KISS)

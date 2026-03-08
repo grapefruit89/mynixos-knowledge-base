@@ -1,3 +1,10 @@
+---
+title: 00_MASTER_INDEX (Aviation-Grade Nugget)
+category: architecture/legacy-import
+capabilities: [archived-knowledge, traceability-fix]
+sources: [https://github.com/mightyiam/best-of-nix]
+---
+
 # 🧠 META-RAG: MASTER-INDEX DER KNOWLEDGE-PIPELINE (v6.7)
 
 Willkommen im physisch verifizierten digitalen Gehirn deiner Self-Hosting Distribution. Diese Bibliothek ist isomorphisch mit dem Repository [`mynixos-knowledge-base`](https://github.com/grapefruit89/mynixos-knowledge-base) synchronisiert.
