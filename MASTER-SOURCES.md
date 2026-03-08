@@ -75,3 +75,6 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 
 ## 🔍 SRE Audit & Visualization (System Integrity)
 - [NixoScope](https://github.com/giomf/NixoScope) - Module dependency graph visualizer for Dendritic Nix (Critical for Auditing).
+
+## 🛡️ Security & Sandboxing (Aviation-Grade Isolation)
+- [jailed-agents](https://github.com/andersonjoseph/jailed-agents) - Secure Nix sandboxing using bubblewrap and jail.nix (Critical for Service Isolation).
