@@ -72,3 +72,6 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [fh-init-example-project](https://github.com/DeterminateSystems/fh-init-example-project) - None
 - [flakehub-docs](https://github.com/DeterminateSystems/flakehub-docs) - FlakeHub documentation
 - [flakehub-cache-action](https://github.com/DeterminateSystems/flakehub-cache-action) - None
+
+## 🔍 SRE Audit & Visualization (System Integrity)
+- [NixoScope](https://github.com/giomf/NixoScope) - Module dependency graph visualizer for Dendritic Nix (Critical for Auditing).
