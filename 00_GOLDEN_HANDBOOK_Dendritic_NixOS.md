@@ -60,7 +60,7 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 
 23. [**Under-the-Radar Services**](./guides/GUIDE-Radar-Services-Master-Config.md) - nftables, MQTT und Zigbee.
 
-24. [**Uptime Kuma Monitoring**](./guides/GUIDE-Uptime-Kuma-Monitoring.md) - Service-Watchtower.
+24. [**Monitoring Hub (Gatus)**](./guides/GUIDE-Monitoring-Hub-Gatus.md) - Service-Watchtower.
 
 25. [**Caddy Operations Master**](./guides/GUIDE-Caddy-Operations-Master.md) - CLI, API und Caddyfile Konzepte.
 
