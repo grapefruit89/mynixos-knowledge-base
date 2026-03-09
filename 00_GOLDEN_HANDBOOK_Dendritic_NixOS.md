@@ -133,3 +133,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 44. [**Automated Documentation Mastery**](./guides/GUIDE-Automated-Documentation-Mastery.md) - Diagramme und Visualisierung.
 
 45. [**Networking Ops & Performance**](./guides/GUIDE-Networking-Performance-SRE.md) - Werkzeuge für den God-Mode.
+
+46. [**Security Stealth SPA**](./guides/GUIDE-Security-Stealth-SPA.md) - Unsichtbare Firewall via fwknop.
