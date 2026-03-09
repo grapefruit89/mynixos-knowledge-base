@@ -79,3 +79,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 26. [**Cloud Storage with OCIS**](./guides/GUIDE-Cloud-Storage-OCIS.md) - ownCloud Infinite Scale in Go.
 
 27. [**ownCloud OCIS Master-Reference**](./guides/MASTER-CONFIG-OCIS.md) - Variablen und API-Endpunkte.
+
+27. [**Knowledge Mastery with Readeck**](./guides/GUIDE-Knowledge-Mastery-Readeck.md) - Bookmarks und Archivierung.
