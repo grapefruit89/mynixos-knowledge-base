@@ -1,38 +1,48 @@
 ---
-title: 🏗️ ABC-Storage-Tiering (The MergerFS Standard)
+title: 🏗️ ABC-Storage-Tiering (The Hybrid ZFS + MergerFS Standard)
 category: architecture/storage
 status: [ACTIVE-SSoT]
-capabilities: [mergerfs-pooling, zfs-integrity, snapraid-parity, storage-efficiency]
+capabilities: [zfs-integrity, mergerfs-flexibility, hybrid-pooling, snapraid-parity]
 sources: [https://perfectmediaserver.com/02-tech-stack/nixos/]
 ---
 
-# 🏗️ ABC-Storage-Tiering: Die intelligente Daten-Hierarchie
+# 🏗️ ABC-Storage-Tiering: Das Hybride Storage-Manifest
 
-Wir trennen Performance von Kapazität. In mynixos nutzen wir drei Ebenen (Tiering), um Kosten und Geschwindigkeit zu optimieren.
+Dieses System kombiniert das Beste aus zwei Welten: Die absolute Datensicherheit von ZFS und die einfache Skalierbarkeit von MergerFS.
 
-## 🔴 Tier A: Performance (ZFS Native)
-- **Medium:** NVMe SSDs (Mirror).
-- **Inhalt:** OS, Flakes, PostgreSQL, Datenbanken.
-- **Vorteil:** Maximale IOPS, atomare Snapshots via ZFS.
+## 🔴 Tier A: Critical Data (ZFS Native)
+- **Inhalt:** Unersetzbare Daten (Fotos, Dokumente, Sops-Secrets, DBs).
+- **Technik:** ZFS Mirror oder RaidZ.
+- **Vorteil:** Schutz vor Bit-Rot, atomare Snapshots, einfache Remote-Replikation via Syncoid.
 
-## 🟡 Tier B: Productivity (SSD)
-- **Medium:** SATA SSDs.
-- **Inhalt:** n8n Workflows, App-Configs, Caches.
+## 🔵 Tier C: Bulk Media (MergerFS + SnapRAID)
+- **Inhalt:** Ersetzbare Medien (Linux ISOs, Filme, Serien).
+- **Technik:** MergerFS pooling von Mismatch-Drives + SnapRAID Parität.
+- **Vorteil:** Kosteneffizient, jede Platte einzeln lesbar, kein Rebuild-Stress.
 
-## 🔵 Tier C: Capacity (MergerFS + SnapRAID)
-- **Medium:** Mismatch-HDDs (beliebige Größen).
-- **Inhalt:** Medien (Filme, Serien, Hörbücher).
-- **Vorteil (The MergerFS Logic):** 
-    - Einfache Erweiterbarkeit (Platte rein, fstab-Zeile anpassen, fertig).
-    - Jede Platte bleibt einzeln lesbar (Kein Datenverlust des gesamten Pools bei Ausfall).
-    - SnapRAID sorgt für die Parität (Schutz vor Festplattentod ohne RAID-Komplexität).
+## 🧩 Die Hybride Synthese (The Master Mount)
+Wir mergen die ZFS-Datasets und die JBOD-Platten zu einem einzigen logischen Pfad (\`/mnt/storage\`).
 
-## ⚙️ Implementierung in NixOS
-Wir nutzen das \`virtualisation.mergerfs\` Modul (oder direkt \`fileSystems\`), um die Platten zu poolen:
+### NixOS Implementierung:
 \`\`\`nix
 fileSystems."/mnt/storage" = {
-  device = "/mnt/disk*";
+  # Wir kombinieren die JBOD-Disks und das ZFS-Dataset "fuse"
+  device = "/mnt/disk*:/mnt/tank/fuse";
   fsType = "fuse.mergerfs";
-  options = [ "defaults", "allow_other", "moveonenospc=true", "category.create=mfs" ];
+  options = [
+    "defaults"
+    "allow_other"
+    "use_ino"
+    "cache.files=off"
+    "moveonenospc=true"
+    "category.create=mfs" # Füllt alle Platten gleichmäßig
+    "dropcacheonclose=true"
+    "minfreespace=250G"
+  ];
 };
 \`\`\`
+
+## 🛡️ SRE-Regeln für das Tiering
+1.  **Naming-Isolation:** Halte Ordnernamen auf ZFS und JBOD eindeutig, damit MergerFS weiß, wo neue Dateien landen sollen (Create-Policy-Logic).
+2.  **SnapRAID-Sync:** Ein täglicher systemd-Timer triggert den SnapRAID-Sync für den JBOD-Teil (Tier C).
+3.  **Sanoid-Snapshots:** ZFS-Datasets (Tier A) werden stündlich via Sanoid gesichert.
