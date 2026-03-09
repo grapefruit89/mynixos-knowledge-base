@@ -87,3 +87,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 29. [**AdGuardHome DNS Shield**](./guides/GUIDE-DNS-Shield-AdGuardHome.md) - Netzwerkweiter Werbeblocker.
 
 30. [**Fujitsu Hardware Mastery**](./guides/GUIDE-Fujitsu-Hardware-Mastery.md) - Optimierung für den Q958 Tower.
+
+31. [**Storage Cluster Strategy (ADR-006)**](./adr/ADR-006-Storage-Cluster-Strategy.md) - Der Weg zum unendlichen Speicher.
