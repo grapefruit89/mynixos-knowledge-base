@@ -53,3 +53,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 20. [**Conduit Master-Config**](./guides/GUIDE-Conduit-Master-Config.md) - Hocheffizienter Matrix-Server.
 
 22. [**Pattern Mining from Nixpkgs**](./guides/GUIDE-Pattern-Mining-Nixpkgs.md) - Lernen von den Core-Maintainern.
+
+22. [**Advanced Hidden Gems**](./guides/GUIDE-Advanced-Hidden-Gems.md) - SearXNG, Attic und Aria2.
