@@ -1,27 +1,23 @@
 ---
-title: ADR-006: Secret Management Standard (sops-nix vs. git-crypt)
+title: ADR-006: Secret Management Standard (Refined)
 status: [ACCEPTED]
 category: architecture/decision
-capabilities: [secret-encryption, git-safety, nix-integration]
-sources: [https://blog.ktz.me/keeping-secrets-secret-with-git-crypt/, Internal Security Audit]
+capabilities: [automated-decryption, zero-touch-deployment, nix-native]
+sources: [Internal SRE Audit, User Feedback]
 ---
 
-# 🏛️ ADR-006: sops-nix als Aviation-Grade Standard
+# 🏛️ ADR-006: sops-nix für Zero-Touch Deployment
 
 ## Kontext
-Wir haben \`git-crypt\` als alternative Methode zur Secret-Verschlüsselung analysiert (basiert auf ironicbadger's Historie).
+Vergleich zwischen \`git-crypt\` und \`sops-nix\`. Physischer Zugriffsschutz ist durch den User garantiert.
 
 ## Entscheidung
-Wir bleiben strikt bei **sops-nix** mit **age**. \`git-crypt\` wird als Legacy-Option verworfen.
+Wir bleiben bei **sops-nix**.
 
-## Begründung (The Hard Facts)
-1.  **Disk-Security:** \`git-crypt\` hinterlässt Klartext-Dateien im Arbeitsverzeichnis. \`sops-nix\` hält Secrets bis zur Aktivierung verschlüsselt.
-2.  **Menschliches Versagen:** Alex Kretzschmar berichtet von mehrfachen Leaks durch Fehlkonfiguration der \`.gitattributes\`. Das \`sops\`-Workflow-Modell (explizites Editieren) ist inhärent sicherer.
-3.  **Granularität:** Mit \`sops-nix\` können wir pro Dienst entscheiden, wer welche Datei lesen darf, ohne das gesamte Repo zu entschlüsseln.
-
-## Was wir von git-crypt lernen
-- Das Prinzip der **transparenten Verschlüsselung** ist bequem, aber gefährlich für SRE-Prozesse.
-- Die Nutzung von **GPG** ist mächtig, aber **age** (unser Standard) ist moderner, schneller und einfacher zu verwalten.
+## Neue Begründung (Aviation-Grade Automation)
+1.  **Boot-Automation:** \`sops-nix\` erlaubt die Entschlüsselung via Host-Key (SSH/Age) ohne menschliche Interaktion. \`git-crypt\` erfordert ein manuelles "Unlock", was dem **Stick-Ready Mandat** widerspricht.
+2.  **Systemd-Mapping:** \`sops-nix\` spiegelt Secrets direkt in das flüchtige RAM-Filesystem (\`/run/secrets\`) und setzt dabei automatisch die korrekten Linux-Berechtigungen (Owner/Group) für den jeweiligen Dienst (z.B. Caddy).
+3.  **No-Decryption-on-Storage:** Auch wenn der Host sicher ist, ist es sauberer, wenn Secrets niemals permanent auf der SSD liegen, sondern nur im flüchtigen Speicher existieren.
 
 ## Konsequenz
-Alle Geheimnisse (API-Keys, Passwörter) werden ausschließlich in \`secrets.yaml\` via sops verwaltet.
+\`sops-nix\` ist das einzige Tool, das einen vollautomatisierten Reboot des Towers ohne manuelles Eingreifen ermöglicht.
