@@ -82,3 +82,8 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [attic](https://github.com/Mic92/attic) - Self-hosted Nix binary cache (Infrastructure Speed).
 - [cntr](https://github.com/Mic92/cntr) - Container debugging tool (SRE Operations).
 - [alejandra](https://github.com/Mic92/alejandra) - Uncompromising Nix code formatter (Purity Tool).
+- [nixos-shell](https://github.com/Mic92/nixos-shell) - Lightweight NixOS VM spawner (SRE Testing).
+- [dotfiles-mic92](https://github.com/Mic92/dotfiles) - High-level server configurations and patterns.
+- [retiolum](https://github.com/Mic92/retiolum) - Tinc-based mesh VPN patterns.
+- [dream2nix-ha](https://github.com/Mic92/dream2nix-home-assistant) - Home Assistant packaging patterns.
+- [userborn-impermanence](https://github.com/Mic92/userborn-with-impermanence) - User management with ephemeral root.
