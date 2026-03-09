@@ -135,3 +135,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 45. [**Networking Ops & Performance**](./guides/GUIDE-Networking-Performance-SRE.md) - Werkzeuge für den God-Mode.
 
 46. [**Security Stealth SPA**](./guides/GUIDE-Security-Stealth-SPA.md) - Unsichtbare Firewall via fwknop.
+
+47. [**Service Hardening & Sandboxing**](./guides/GUIDE-Service-Hardening-Sandboxing.md) - Prozess-Isolation und CVE-Checks.
