@@ -15,3 +15,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 14. [**Secret Management Audit (ADR-006)**](./adr/ADR-006-Secret-Management-Audit.md) - Warum sops-nix git-crypt überlegen ist.
 
 15. [**DNS & Naming Standard (ADR-007)**](./adr/ADR-007-DNS-Naming-Standard.md) - Tailscale SplitDNS Logik.
+
+16. [**SSH & ProxyJump Standard (ADR-008)**](./adr/ADR-008-SSH-ProxyJump-Standard.md) - Gehärteter Admin-Zugang.
