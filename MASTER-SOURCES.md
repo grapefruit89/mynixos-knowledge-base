@@ -103,3 +103,8 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [pms-wiki](https://github.com/ironicbadger/pms-wiki) - The Perfect Media Server Wiki (Architecture Bible).
 - [nix-config-ironic](https://github.com/ironicbadger/nix-config) - Advanced NixOS configurations for media and homelab.
 - [infra-ironic](https://github.com/ironicbadger/infra) - Infrastructure as code patterns for self-hosters.
+
+## 🤖 Home Automation & IoT (SRE Services)
+- [quicksync_calc](https://github.com/ironicbadger/quicksync_calc) - Resource calculation for Intel QuickSync (Transcoding Optimization).
+- [awesome-home-assistant](https://github.com/ironicbadger/awesome-home-assistant) - Curated list of high-quality HA resources.
+- [ansible-role-caddy](https://github.com/ironicbadger/ansible-role-caddy) - Professional Caddy patterns (Referenz für Ingress-Logik).
