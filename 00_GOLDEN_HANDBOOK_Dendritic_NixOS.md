@@ -75,3 +75,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 - [**Performance & Caching**](./guides/determinate/03-CI-Caching-Performance.md) - Speed-Optimierung.
 - [**Advanced Security Audit**](./guides/determinate/04-Advanced-Security-Audit.md) - Flake-Checker & Supply Chain.
 - [**Enterprise Governance & SBOM**](./guides/determinate/05-Enterprise-Governance-SBOM.md) - CVE-Fixes und Nachweisbarkeit.
+
+26. [**Cloud Storage with OCIS**](./guides/GUIDE-Cloud-Storage-OCIS.md) - ownCloud Infinite Scale in Go.
