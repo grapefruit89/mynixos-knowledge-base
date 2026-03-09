@@ -49,7 +49,15 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [nixos-anywhere](https://github.com/nix-community/nixos-anywhere) - Install NixOS everywhere via SSH (Critical for Remote Ops).
 - [lanzaboote](https://github.com/nix-community/lanzaboote) - Secure Boot for NixOS (Aviation-Grade Security).
 - [srvos](https://github.com/nix-community/srvos) - Optimized NixOS profiles for servers (High-Level Hardening).
-- [authentik-nix](https://github.com/nix-community/authentik-nix) - NixOS module for Authentik (Identity Management).
+- [authentik-nix (RESOURCES-HEAVY)](https://github.com/nix-community/authentik-nix) - NixOS module for Authentik (Identity Management).
 - [harmonia](https://github.com/nix-community/harmonia) - High-performance Nix binary cache (Infrastructure Speed).
 - [nixos-facter](https://github.com/nix-community/nixos-facter) - Declarative hardware configuration discovery.
 - [vulnix](https://github.com/nix-community/vulnix) - Vulnerability scanner for NixOS (SRE Tor 4).
+
+## 🔩 Native NixOS Modules (The "Stick-Ready" Core)
+- [srvos](https://github.com/nix-community/srvos) - High-level server profiles (Aviation-Grade Hardening).
+- [nixos-anywhere](https://github.com/nix-community/nixos-anywhere) - Seamless SSH-based installation.
+- [haumea](https://github.com/nix-community/haumea) - Filesystem-based Nix module management.
+- [dns.nix](https://github.com/nix-community/dns.nix) - Declarative DNS management in pure Nix.
+- [nixos-cli](https://github.com/nix-community/nixos-cli) - Unified CLI for NixOS operations.
+- [nixos-facter](https://github.com/nix-community/nixos-facter) - Automatic hardware detection for NixOS.
