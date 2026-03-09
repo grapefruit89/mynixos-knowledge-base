@@ -167,3 +167,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 54. [**HomeDash CLI Dashboard**](./guides/GUIDE-Terminal-Dashboard-HomeDash.md) - Die Kommandozentrale im Terminal.
 
 55. [**njq: Nix-Powered JSON Processing**](./guides/GUIDE-Advanced-CLI-Tooling-njq.md) - Daten-Analyse mit Nix-Syntax.
+
+56. [**Gatus Master-Config-Reference**](./guides/MASTER-CONFIG-GATUS.md) - Variablen und Alerting-Schnittstellen.
