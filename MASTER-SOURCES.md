@@ -76,3 +76,9 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 ## 🎬 Media Infrastructure Masterpieces (Pattern Mining)
 - [nixarr](https://github.com/nix-media-server/nixarr) - The gold standard for NixOS media servers (VPN & Hardening patterns).
 - [nixflix](https://github.com/kiriwalawren/nixflix) - Modern Flake-based media stack implementation.
+
+## 🧙 Mic92 (The Nix Virtuoso)
+- [adios-flake](https://github.com/Mic92/adios-flake) - High-performance flake module system.
+- [attic](https://github.com/Mic92/attic) - Self-hosted Nix binary cache (Infrastructure Speed).
+- [cntr](https://github.com/Mic92/cntr) - Container debugging tool (SRE Operations).
+- [alejandra](https://github.com/Mic92/alejandra) - Uncompromising Nix code formatter (Purity Tool).
