@@ -55,3 +55,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 22. [**Pattern Mining from Nixpkgs**](./guides/GUIDE-Pattern-Mining-Nixpkgs.md) - Lernen von den Core-Maintainern.
 
 22. [**Advanced Hidden Gems**](./guides/GUIDE-Advanced-Hidden-Gems.md) - SearXNG, Attic und Aria2.
+
+23. [**Home Assistant Master-Interface-List**](./guides/MASTER-HA-INTERFACES.md) - API und Orchestrierung.
