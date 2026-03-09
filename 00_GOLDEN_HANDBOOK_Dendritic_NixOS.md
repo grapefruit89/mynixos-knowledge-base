@@ -51,3 +51,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 29. [**Vaultwarden Master-Config**](./guides/MASTER-CONFIG-VAULTWARDEN.md) - Password Vault Security.
 
 20. [**Conduit Master-Config**](./guides/GUIDE-Conduit-Master-Config.md) - Hocheffizienter Matrix-Server.
+
+22. [**Pattern Mining from Nixpkgs**](./guides/GUIDE-Pattern-Mining-Nixpkgs.md) - Lernen von den Core-Maintainern.
