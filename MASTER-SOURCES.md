@@ -93,3 +93,8 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [not-os](https://github.com/Mic92/not-os) - Minimal read-only SquashFS system patterns.
 - [matrix-hook](https://github.com/Mic92/matrix-hook) - Lightweight webhook for Matrix notifications (SRE Alerting).
 - [dotnix](https://github.com/kiriwalawren/dotnix) - NixOS, HomeManager and Nixvim configurations (Developer Experience).
+- [hydra](https://github.com/NixOS/hydra) - The official continuous build system (CI/CD Masterpiece).
+- [nixos-metrics](https://github.com/NixOS/nixos-metrics) - Performance and system health tracking.
+- [ofborg-infrastructure](https://github.com/NixOS/ofborg-infrastructure) - Reference for production-grade NixOS infrastructure.
+- [images](https://github.com/NixOS/images) - Image building patterns for various platforms.
+- [rfcs](https://github.com/NixOS/rfcs) - The architectural reasoning behind the Nix ecosystem.
