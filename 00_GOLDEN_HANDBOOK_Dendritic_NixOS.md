@@ -123,3 +123,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 39. [**S3 Object Vault (Garage)**](./guides/GUIDE-S3-Object-Vault-Garage.md) - Privater S3-Speicher in Rust.
 
 40. [**SSH Infrastructure Mastery**](./guides/GUIDE-SSH-Infrastructure-Mastery.md) - Remote-Unlock und Binary-Serving.
+
+41. [**Nftables Firewall Mastery**](./guides/GUIDE-Nftables-Firewall-Mastery.md) - Moderne Netzwerk-Sicherheit.
