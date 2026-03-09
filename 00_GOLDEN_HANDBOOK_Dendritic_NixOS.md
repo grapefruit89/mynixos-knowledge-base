@@ -131,3 +131,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 43. [**Caddy Gateway Mastery**](./guides/GUIDE-Caddy-Gateway-Mastery.md) - Intelligentes Routing und SSL.
 
 44. [**Automated Documentation Mastery**](./guides/GUIDE-Automated-Documentation-Mastery.md) - Diagramme und Visualisierung.
+
+45. [**Networking Ops & Performance**](./guides/GUIDE-Networking-Performance-SRE.md) - Werkzeuge für den God-Mode.
