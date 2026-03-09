@@ -35,3 +35,9 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 24. [**ARR-Stack Master-Reference**](./guides/MASTER-CONFIG-ARR-STACK.md) - Media Management.
 
 17. [**Media Stack Consolidation (ADR-009)**](./adr/ADR-009-Media-Stack-Consolidation.md) - Gemeinsame Datenbank und Bündelung.
+
+25. [**Audiobookshelf Master-Variable-List**](./guides/MASTER-CONFIG-AUDIOBOOKSHELF.md) - Audiobook Management.
+
+26. [**SABnzbd Master-Variable-List**](./guides/MASTER-CONFIG-SABNZBD.md) - Usenet Downloader.
+
+27. [**Homepage Master-Variable-List**](./guides/MASTER-CONFIG-HOMEPAGE.md) - Dashboard Config.
