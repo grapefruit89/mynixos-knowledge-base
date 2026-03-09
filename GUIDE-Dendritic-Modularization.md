@@ -1,33 +1,29 @@
 ---
-title: 🌳 Dendritische Modularisierung (Definitive Edition v7.0)
+title: 🌳 Dendritische Modularisierung (Flat Edition v8.0)
 category: architecture/framework
 status: [ACTIVE-SSoT]
-supersedes: [Architecture-NIXHOME-Dendritic-Structure.md, dendritic-blueprint.md, flake-parts.md]
-sources: [https://github.com/mightyiam/dendritic, https://github.com/hercules-ci/flake-parts]
+capabilities: [flat-structure, one-level-depth, dendritic-purity]
+sources: [User Design Mandate 09.03.2026]
 ---
 
-# 🌳 Dendritische Modularisierung: Das mynixos Manifest
+# 🌳 Dendritische Modularisierung: Die Flache Bibel
 
-Dies ist das ultimative Architektur-Dokument für die Struktur deines Systems. Wir folgen dem "Aviation-Grade" Dendritic Pattern.
+Wir folgen dem Prinzip der maximalen Übersichtlichkeit: **Strikte flache Hierarchie.**
 
-## 🏛️ Kern-Philosophie
-"Every file is a module." Wir trennen Logik strikt von Zuweisung.
+## 📁 Die Goldene Ordnerstruktur (v8.0)
+Jede Datei in mynixos ist ein Top-Level Modul innerhalb eines fest definierten Layers. Maximale Tiefe: 1 Ebene unter modules/.
 
-## 📁 Repository-Layout (Final Standard)
-```text
-mynixos/
-├── flake.nix                # Top-Level Entry (Flake-Parts)
-├── systems/                 # Host-spezifische Konfigurationen
-│   └── tower/               # Dein Unraid Tower
-├── modules/                 # Wiederverwendbare Dendriten (Logik)
-│   ├── services/            # Caddy, Arion, etc.
-│   ├── security/            # Sops, Jails
-│   └── core/                # System-Basics
-└── secrets/                 # Sops-Tresor & Keys
-```
+### /home/mynixos/
+- `flake.nix` (Einstieg)
+- `hosts/q958.nix` (Hardware & Enable-Flags)
+- `modules/00-core/` (OS-Fundament)
+- `modules/10-gateway/` (Erreichbarkeit)
+- `modules/20-data/` (Datenbanken)
+- `modules/30-services/` (Apps)
+- `modules/40-media/` (Entertainment)
+- `modules/50-knowledge/` (Wissen)
+- `modules/80-monitoring/` (SRE)
+- `modules/90-policy/` (Regeln)
 
-## 🧩 Flake-Parts Integration
-Werte werden über Top-Level `options` definiert, niemals über `specialArgs` durchgereicht.
-
-## 🛠️ Auto-Discovery
-Wir nutzen `import-tree`, um neue Module im `modules/` Ordner automatisch zu laden.
+## 🧩 Keine Unterordner
+Innerhalb der Layer-Ordner liegen nur direkt .nix Dateien. Keine weiteren Verzeichnisse, keine komplexen Verschachtelungen.
