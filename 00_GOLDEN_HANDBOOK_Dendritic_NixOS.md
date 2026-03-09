@@ -45,3 +45,7 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 28. [**Blank Snapshot Persistence**](./guides/GUIDE-Blank-Snapshot-Persistence.md) - Radikale System-Hygiene nach Misterio77.
 
 20. [**Fail2ban Master-Endpoint-List**](./guides/MASTER-CONFIG-FAIL2BAN-ENDPOINTS.md) - Alle Filter und Aktionen.
+
+28. [**n8n Master-Variable-List**](./guides/MASTER-CONFIG-N8N.md) - Workflow Automation.
+
+29. [**Vaultwarden Master-Config**](./guides/MASTER-CONFIG-VAULTWARDEN.md) - Password Vault Security.
