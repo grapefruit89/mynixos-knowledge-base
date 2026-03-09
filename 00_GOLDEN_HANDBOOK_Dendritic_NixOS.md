@@ -77,3 +77,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 - [**Enterprise Governance & SBOM**](./guides/determinate/05-Enterprise-Governance-SBOM.md) - CVE-Fixes und Nachweisbarkeit.
 
 26. [**Cloud Storage with OCIS**](./guides/GUIDE-Cloud-Storage-OCIS.md) - ownCloud Infinite Scale in Go.
+
+27. [**ownCloud OCIS Master-Reference**](./guides/MASTER-CONFIG-OCIS.md) - Variablen und API-Endpunkte.
