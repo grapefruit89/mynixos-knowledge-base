@@ -13,3 +13,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 
 13. [**Intel QuickSync & iGPU**](./guides/GUIDE-Intel-QuickSync-NixOS.md) - Natives Hardware-Transcoding.
 14. [**Secret Management Audit (ADR-006)**](./adr/ADR-006-Secret-Management-Audit.md) - Warum sops-nix git-crypt überlegen ist.
+
+15. [**DNS & Naming Standard (ADR-007)**](./adr/ADR-007-DNS-Naming-Standard.md) - Tailscale SplitDNS Logik.
