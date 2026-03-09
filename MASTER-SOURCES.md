@@ -72,3 +72,7 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 ## ⚙️ giomf (Modular Configs & Templates)
 - [nixos-config](https://github.com/giomf/nixos-config) - Base NixOS configuration for multiple hosts (Efficiency Patterns).
 - [nix-templates](https://github.com/giomf/nix-templates) - Ready-to-use Nix project templates.
+
+## 🎬 Media Infrastructure Masterpieces (Pattern Mining)
+- [nixarr](https://github.com/nix-media-server/nixarr) - The gold standard for NixOS media servers (VPN & Hardening patterns).
+- [nixflix](https://github.com/kiriwalawren/nixflix) - Modern Flake-based media stack implementation.
