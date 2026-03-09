@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "nix_flake"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      security-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "security"
