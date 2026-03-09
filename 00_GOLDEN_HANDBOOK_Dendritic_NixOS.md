@@ -105,3 +105,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 24. [**Nixpkgs Engine Mastery**](./guides/GUIDE-Nixpkgs-Engine-Mastery.md) - Kernel und Paket-Strukturen.
 
 31. [**Jellyfin Media Mastery**](./guides/GUIDE-Media-Mastery-Jellyfin.md) - High-Performance Streaming.
+
+32. [**Audiobookshelf Mastery**](./guides/GUIDE-Audiobookshelf-Mastery.md) - Hörbücher und Podcasts.
