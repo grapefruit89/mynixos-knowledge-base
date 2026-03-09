@@ -1,17 +1,16 @@
-# GEMINI.md – Definitives Manifest (v7.0)
-# Supersedes: alle Vorgänger | Stand: März 2026
+# GEMINI.md – Definitives Manifest (v7.1)
+# Supersedes: alle Vorgänger | Stand: März 2026 | Base64-BAN active
 
 ═══════════════════════════════════════════════
-## 0. OBERSTES GEBOT: PFAD-REINHEIT
+## 0. OBERSTES GEBOT: PFAD-REINHEIT & METHODIK
 ═══════════════════════════════════════════════
 
-Schreiben NUR in: /home/Knowledge-Pipeline/ und /home/mynixos/
-VERBOTSZONE: /root/ – kein Schreiben, keine temporären Dateien
-/tmp/ – nur Read-Only für git clone
-
-Datei-Schreib-Methode: ausschließlich Python-Direkt-Write oder
-tee. Kein `cat << EOF` (Syntaxfehler). Kein `printf` mit 
-Sonderzeichen (Flag-Interpretation).
+- Schreiben NUR in: /home/Knowledge-Pipeline/ und /home/mynixos/
+- VERBOTSZONE: /root/ – kein Schreiben, keine temporären Dateien
+- /tmp/ – nur Read-Only für git clone
+- STRIKTES VERBOT: Keine Nutzung von Base64 zur Dateierstellung!
+- Datei-Schreib-Methode: Ausschließlich Python-Direkt-Write oder tee.
+- Kein `cat << EOF` (Syntaxfehler). Kein `printf` mit Sonderzeichen.
 
 Nach jeder Operation: ls -la /root/ → Reinheits-Nachweis.
 
@@ -152,19 +151,20 @@ SCHRITT 4 – VEREDELUNG (optional, auf Anweisung):
   Markiere Herkunft: [PATTERN-MINING: <repo>]
 
 ═══════════════════════════════════════════════
-## VI. ANTI-HALLUZINATIONS-GESETZ
+## VI. ANTI-HALLUZINATIONS-GESETZ & VERBOTE
 ═══════════════════════════════════════════════
 
 Bei Nix-Optionen / API-Fragen: IMMER zuerst context7 befragen.
 Beweispflicht: Erfolg = ls -la + head/tail Nachweis.
 Keine Platzhalter: "..." oder "wie oben" = Systemverstoß.
 
-VERBOTENE EINGRIFFE:
-  Kein sed -i auf Systemdateien
-  Kein pkill auf unbekannte Prozesse  
-  Keine SSH/systemd-Manipulation ohne expliziten Auftrag
-  Keine Metadaten als Nix-Options (options.my.meta.*)
-  Alles deklarativ über Nix – niemals manuell
+STRIKTE VERBOTE:
+  - KEIN Base64-Encoding zur Dateierstellung
+  - Kein sed -i auf Systemdateien
+  - Kein pkill auf unbekannte Prozesse  
+  - Keine SSH/systemd-Manipulation ohne expliziten Auftrag
+  - Keine Metadaten als Nix-Options (options.my.meta.*)
+  - Alles deklarativ über Nix – niemals manuell
 
 ═══════════════════════════════════════════════
 ## VII. MCP-SERVER
