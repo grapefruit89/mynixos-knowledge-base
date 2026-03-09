@@ -169,3 +169,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 55. [**njq: Nix-Powered JSON Processing**](./guides/GUIDE-Advanced-CLI-Tooling-njq.md) - Daten-Analyse mit Nix-Syntax.
 
 56. [**Gatus Master-Config-Reference**](./guides/MASTER-CONFIG-GATUS.md) - Variablen und Alerting-Schnittstellen.
+
+57. [**InfluxDB 3 Telemetry**](./guides/GUIDE-Modern-Monitoring-Influx3.md) - Zeitreihen-Datenbank für SRE.
