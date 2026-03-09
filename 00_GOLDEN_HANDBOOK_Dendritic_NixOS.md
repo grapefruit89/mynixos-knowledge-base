@@ -163,3 +163,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 52. [**GitHub Codespaces SRE**](./guides/GUIDE-GitHub-Codespaces-SRE.md) - Mobile Kommandozentrale in der Cloud.
 
 53. [**Gatus: Next-Gen Monitoring**](./guides/GUIDE-Next-Gen-Monitoring-Gatus.md) - Hocheffizienter Watchtower in Go.
+
+54. [**HomeDash CLI Dashboard**](./guides/GUIDE-Terminal-Dashboard-HomeDash.md) - Die Kommandozentrale im Terminal.
