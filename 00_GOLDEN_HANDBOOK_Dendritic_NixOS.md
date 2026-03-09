@@ -63,3 +63,8 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 24. [**Uptime Kuma Monitoring**](./guides/GUIDE-Uptime-Kuma-Monitoring.md) - Service-Watchtower.
 
 25. [**Caddy Operations Master**](./guides/GUIDE-Caddy-Operations-Master.md) - CLI, API und Caddyfile Konzepte.
+
+## 🛠️ Caddy Encyclopedia (Deep-Dive)
+- [**Caddyfile Mastery**](./guides/caddy/01-Caddyfile-Mastery.md) - Syntax & Directives.
+- [**Architecture & API**](./guides/caddy/02-Architecture-API.md) - Programmability.
+- [**Operations & Logging**](./guides/caddy/03-Operations-Logging.md) - Monitoring & Maintenance.
