@@ -81,3 +81,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 27. [**ownCloud OCIS Master-Reference**](./guides/MASTER-CONFIG-OCIS.md) - Variablen und API-Endpunkte.
 
 27. [**Knowledge Mastery with Readeck**](./guides/GUIDE-Knowledge-Mastery-Readeck.md) - Bookmarks und Archivierung.
+
+28. [**Audio Mastery with Navidrome**](./guides/GUIDE-Audio-Mastery-Navidrome.md) - Musik-Streaming der Extraklasse.
