@@ -117,3 +117,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 37. [**Hardware Acceleration Deep-Dive**](./guides/GUIDE-Hardware-Acceleration-DeepDive.md) - Ruckelfreies 4K-Streaming via QuickSync.
 
 38. [**Nixpkgs Packaging Standard**](./guides/GUIDE-Nixpkgs-Packaging-Standard.md) - Qualitäts-Tore für eigene Pakete.
+
+22. [**Systemic Governance (ADR-014)**](./adr/ADR-014-Systemic-Governance.md) - Regeln für langfristige Stabilität.
