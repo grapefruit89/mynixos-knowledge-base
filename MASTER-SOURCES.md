@@ -108,3 +108,8 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [quicksync_calc](https://github.com/ironicbadger/quicksync_calc) - Resource calculation for Intel QuickSync (Transcoding Optimization).
 - [awesome-home-assistant](https://github.com/ironicbadger/awesome-home-assistant) - Curated list of high-quality HA resources.
 - [ansible-role-caddy](https://github.com/ironicbadger/ansible-role-caddy) - Professional Caddy patterns (Referenz für Ingress-Logik).
+
+## 💎 Misterio77 (Architecture & Persistence Guru)
+- [nix-config-misterio](https://github.com/Misterio77/nix-config) - Reference for opt-in persistence and BTRFS snapshotting.
+- [nix-starter-configs](https://github.com/Misterio77/nix-starter-configs) - Best-practice templates for NixOS + Flakes.
+- [nix-colors](https://github.com/Misterio77/nix-colors) - Declarative color schemes (Logic abstraction masterpiece).
