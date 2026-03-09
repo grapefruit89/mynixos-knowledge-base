@@ -115,3 +115,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 21. [**Media Performance Priority (ADR-013)**](./adr/ADR-013-Media-Performance-Priority.md) - Schutz vor Rucklern beim Streaming.
 
 37. [**Hardware Acceleration Deep-Dive**](./guides/GUIDE-Hardware-Acceleration-DeepDive.md) - Ruckelfreies 4K-Streaming via QuickSync.
+
+38. [**Nixpkgs Packaging Standard**](./guides/GUIDE-Nixpkgs-Packaging-Standard.md) - Qualitäts-Tore für eigene Pakete.
