@@ -153,3 +153,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 47. [**Sovereign Git Mastery**](./guides/GUIDE-Sovereign-Git-Mastery.md) - Eigene Git-Server und Repo-Hygiene.
 
 48. [**Matrix Orchestration & Alerting**](./guides/GUIDE-Matrix-Orchestration-CLI.md) - System-Benachrichtigungen via CLI.
+
+49. [**GitHub Actions SRE Mastery**](./guides/GUIDE-GitHub-Actions-SRE-Mastery.md) - CI/CD und Automatisierung.
