@@ -1,30 +1,22 @@
 ---
-title: ADR-012: Selection Criteria for Socket Activation
+title: ADR-012: Selection Criteria for Socket Activation (Safety First)
 status: [ACCEPTED]
 category: architecture/decision
-capabilities: [pragmatic-efficiency, resource-management, systemd-hardening]
-sources: [Internal SRE Audit, User Feedback]
+capabilities: [pragmatic-efficiency, connectivity-guarantee, security-hardening]
+sources: [User Feedback, Connectivity Audit]
 ---
 
-# 🏛️ ADR-012: Pragmatische Socket-Activation
+# 🏛️ ADR-012: Pragmatische Socket-Activation (v2.0)
 
 ## Kontext
-Wir haben die Liste unserer Dienste auf das Potenzial zur Socket-Activation (Wake-on-Request) geprüft.
+Wir haben SSH fälschlicherweise für Socket-Activation vorgesehen. 
 
 ## Entscheidung
-Wir implementieren Socket-Activation **NUR** bei Diensten, die:
-1.  Einen signifikanten RAM-Footprint (>100MB) im Idle haben.
-2.  Nicht für Hintergrund-Scans oder Echtzeit-Föderation (z.B. Matrix) permanent wach sein müssen.
-3.  Keine kritischen Infrastruktur-Basisdienste (z.B. Caddy, DNS, Auth) sind.
+**SSH wird STRIKT von der Socket-Activation ausgeschlossen.** Es bleibt permanent aktiv (\`services.openssh.enable = true;\`).
 
-## Selektions-Ergebnis
-- **Aktiviert:** Jellyfin, Paperless, Audiobookshelf, SSH.
-- **Dauerhaft aktiv:** Caddy, AdGuardHome, PocketID, Valkey, Matrix-Conduit, Fail2ban.
-- **Prüffall (Background):** ARR-Stack (Sonarr etc.) wird im Normalbetrieb dauerhaft ausgeführt, um automatische Downloads nicht zu verpassen.
-
-## Begründung
-- **Stabilität:** Infrastruktur-Dienste müssen sofort antworten können (Latenz-Vermeidung).
-- **Nutzen:** Bei winzigen Go/Rust-Binaries (<50MB RAM) ist die Ersparnis vernachlässigbar im Vergleich zum Risiko von Timeouts.
+## Begründung (The Safety Mandate)
+- **Erreichbarkeit:** Das Risiko, sich bei einem Fehler in der Socket-Logik physisch vom Tower auszusperren, ist inakzeptabel.
+- **Minimaler Gewinn:** Die Ersparnis von ~5MB RAM steht in keinem Verhältnis zur Gefahr des Kontrollverlusts.
 
 ## Konsequenz
-In \`modules/00-core/systemd.nix\` wird nur für die "Aktiviert"-Liste das Socket-Interface konfiguriert.
+Nur interaktive Schwergewichte (Jellyfin, Paperless) werden bei Bedarf gestartet.
