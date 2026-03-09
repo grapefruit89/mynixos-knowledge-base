@@ -1,34 +1,29 @@
 ---
-title: 🌐 Caddy Gateway Mastery (Layer 10-gateway)
+title: 🌐 Caddy Gateway Mastery (The Pro-Layer)
 category: architecture/gateway
 status: [ACTIVE-SSoT]
-capabilities: [declarative-plugins, dns-01-challenges, reverse-proxy-mastery, unix-sockets]
-sources: [nixpkgs/nixos/modules/services/web-servers/caddy, rl-2505]
+capabilities: [json-api-control, graceful-reloads, on-demand-tls, metrics-exporter]
+sources: [Caddy Official Docs, Caddy GitHub, NixOS Module Audit]
 ---
 
-# 🌐 Caddy: Das intelligente Gateway
+# 🌐 Caddy: Das Gehirn deines Netzwerks
 
-In mynixos ist Caddy nicht nur ein Webserver, sondern der zentrale intelligente Proxy, der Identität (Pocket-ID), Sicherheit (Fail2ban) und Erreichbarkeit steuert.
+In mynixos verschmelzen wir die deklarative Power von Nix mit der dynamischen Agilität der Caddy-API.
 
-## 🏛️ 1. Die Plugin-Fabrik (Aviation-Grade Build)
-Wir bauen Caddy direkt im Flake mit den nötigen Modulen für deine Infrastruktur.
-\`\`\`nix
-services.caddy.package = pkgs.caddy.withPlugins {
-  plugins = [
-    "github.com/caddy-dns/cloudflare@v0.0.0-20240703190432-89f16b99c18e" # DNS-01 SSL
-    "github.com/mholt/caddy-webdav@v0.0.0-20241008162340-42168ba04c9d"   # WebDAV für Cloud
-  ];
-};
-\`\`\`
+## ⚡ 1. Zero-Downtime Updates (Graceful Reload)
+Wir nutzen die nativen Caddy-Reload-Signale, um deine aktiven Streams (Jellyfin/Navidrome) bei Konfigurations-Updates zu schützen.
+- **SRE-Vorteil:** Die Konfiguration wird atomar im Speicher getauscht. Kein Abbruch von HTTP-Sessions. ✅
 
-## 🛡️ 2. Das "Master-Gateway" Prinzip
-Apps mit internen Proxies (wie Pocket-ID oder Lemmy) werden "kastriert", damit unser Master-Caddy die volle Kontrolle behält.
-- **Regel:** \`CADDY_DISABLED = "true"\` in den App-Umgebungen setzen.
+## 💎 2. Die Admin-API (Monitoring & Control)
+Caddy bietet eine mächtige REST-API auf Port 2019. Wir nutzen dies für Echtzeit-Einsichten.
+- **Pattern:** Integration in Prometheus/Grafana für Layer 80 Monitoring.
+- **SRE-Kontrolle:** Wir können Routen im Notfall über die API deaktivieren, ohne einen kompletten System-Rebuild abzuwarten.
 
-## 🔑 3. DNS-01 Challenges (SSL-Perfektion)
-Dank des Cloudflare-Plugins brauchen wir keine offenen Ports (80/443) für SSL-Zertifikate.
-- **Vorteil:** Zertifikate für interne Domains (\`*.m7c5.de\`) werden sicher via DNS validiert.
+## 🛡️ 3. On-Demand TLS (Dynamic SSL)
+Caddy kann Zertifikate beim ersten Zugriff automatisch generieren.
+- **Dienst:** \`on_demand_tls { ... }\` in den Global Options.
+- **Vorteil:** Maximale Flexibilität für temporäre Test-Domains innerhalb deines m7c5.de Netzwerks. ✅
 
-## ⚡ 4. Unix-Socket Performance
-Wo immer möglich, kommuniziert Caddy via Unix-Sockets mit den Backends (z.B. PHP-FPM, Gunicorn).
-- **Vorteil:** Höhere Geschwindigkeit und keine Port-Kollisionen auf localhost.
+## 🏛️ 4. Native JSON-Injektion
+Wo das Caddyfile an seine Grenzen stößt, injizieren wir direkt das hochperformante Caddy-JSON.
+- **Anwendung:** Komplexe Filter für Layer 90-policy (z.B. Geo-Blocking oder mTLS-Verschachtelungen).
