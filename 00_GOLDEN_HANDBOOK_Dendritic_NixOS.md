@@ -127,3 +127,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 41. [**Nftables Firewall Mastery**](./guides/GUIDE-Nftables-Firewall-Mastery.md) - Moderne Netzwerk-Sicherheit.
 
 42. [**Kernel Mastery & Hardening**](./guides/GUIDE-Kernel-Mastery-Hardening.md) - System-Kern und Security.
+
+43. [**Caddy Gateway Mastery**](./guides/GUIDE-Caddy-Gateway-Mastery.md) - Intelligentes Routing und SSL.
