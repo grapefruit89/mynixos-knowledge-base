@@ -59,3 +59,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 23. [**Home Assistant Master-Interface-List**](./guides/MASTER-HA-INTERFACES.md) - API und Orchestrierung.
 
 23. [**Under-the-Radar Services**](./guides/GUIDE-Radar-Services-Master-Config.md) - nftables, MQTT und Zigbee.
+
+24. [**Uptime Kuma Monitoring**](./guides/GUIDE-Uptime-Kuma-Monitoring.md) - Service-Watchtower.
