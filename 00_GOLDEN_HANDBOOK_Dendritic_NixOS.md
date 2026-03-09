@@ -103,3 +103,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 18. [**Headless Server Law (ADR-010)**](./adr/ADR-010-Headless-Server-Law.md) - Das strikte Verbot von GUI-Komponenten.
 
 24. [**Nixpkgs Engine Mastery**](./guides/GUIDE-Nixpkgs-Engine-Mastery.md) - Kernel und Paket-Strukturen.
+
+31. [**Jellyfin Media Mastery**](./guides/GUIDE-Media-Mastery-Jellyfin.md) - High-Performance Streaming.
