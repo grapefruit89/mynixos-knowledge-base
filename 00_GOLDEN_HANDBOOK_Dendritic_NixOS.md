@@ -73,3 +73,4 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 - [**Enterprise Installer**](./guides/determinate/01-Enterprise-Installer.md) - Security & Stabilität.
 - [**FlakeHub & Vetting**](./guides/determinate/02-FlakeHub-Vetting.md) - Sichere Abhängigkeiten.
 - [**Performance & Caching**](./guides/determinate/03-CI-Caching-Performance.md) - Speed-Optimierung.
+- [**Advanced Security Audit**](./guides/determinate/04-Advanced-Security-Audit.md) - Flake-Checker & Supply Chain.
