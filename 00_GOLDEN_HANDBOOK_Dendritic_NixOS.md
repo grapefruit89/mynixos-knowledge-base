@@ -147,3 +147,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 44. [**Future Storage Scaling**](./guides/GUIDE-Future-Storage-Scaling.md) - Strategien für >5TB und Bcachefs.
 
 45. [**Kernel Surgical Diet**](./guides/GUIDE-Kernel-Surgical-Diet.md) - Entfernung von Legacy- und Enterprise-Bloat.
+
+46. [**Data Deduplication SRE**](./guides/GUIDE-Data-Deduplication-SRE.md) - Effiziente Hygiene via rclone.
