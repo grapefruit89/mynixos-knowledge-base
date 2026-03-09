@@ -85,3 +85,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 28. [**Audio Mastery with Navidrome**](./guides/GUIDE-Audio-Mastery-Navidrome.md) - Musik-Streaming der Extraklasse.
 
 29. [**AdGuardHome DNS Shield**](./guides/GUIDE-DNS-Shield-AdGuardHome.md) - Netzwerkweiter Werbeblocker.
+
+30. [**Fujitsu Hardware Mastery**](./guides/GUIDE-Fujitsu-Hardware-Mastery.md) - Optimierung für den Q958 Tower.
