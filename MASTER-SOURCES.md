@@ -98,3 +98,8 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [ofborg-infrastructure](https://github.com/NixOS/ofborg-infrastructure) - Reference for production-grade NixOS infrastructure.
 - [images](https://github.com/NixOS/images) - Image building patterns for various platforms.
 - [rfcs](https://github.com/NixOS/rfcs) - The architectural reasoning behind the Nix ecosystem.
+
+## 👑 ironicbadger (Media Infrastructure King)
+- [pms-wiki](https://github.com/ironicbadger/pms-wiki) - The Perfect Media Server Wiki (Architecture Bible).
+- [nix-config-ironic](https://github.com/ironicbadger/nix-config) - Advanced NixOS configurations for media and homelab.
+- [infra-ironic](https://github.com/ironicbadger/infra) - Infrastructure as code patterns for self-hosters.
