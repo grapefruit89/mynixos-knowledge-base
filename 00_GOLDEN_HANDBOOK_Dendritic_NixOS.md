@@ -33,3 +33,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 23. [**Tailscale Master-Variable-List**](./guides/MASTER-CONFIG-TAILSCALE.md) - Networking Mastery.
 
 24. [**ARR-Stack Master-Reference**](./guides/MASTER-CONFIG-ARR-STACK.md) - Media Management.
+
+17. [**Media Stack Consolidation (ADR-009)**](./adr/ADR-009-Media-Stack-Consolidation.md) - Gemeinsame Datenbank und Bündelung.
