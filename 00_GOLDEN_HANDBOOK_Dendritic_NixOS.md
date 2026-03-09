@@ -181,3 +181,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 60. [**Nix DRY Refactoring**](./guides/GUIDE-Nix-Dry-Refactoring.md) - Eliminierung von Boilerplate.
 
 61. [**Findings Registry**](./learnings/FINDINGS-REGISTRY.md) - Der physische Nachweis aller Quellen.
+
+62. [**Binary Cache Optimization**](./guides/GUIDE-Binary-Cache-Optimization.md) - Radikale Speicherersparnis.
