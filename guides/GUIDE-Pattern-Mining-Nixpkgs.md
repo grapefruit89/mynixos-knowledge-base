@@ -29,3 +29,9 @@ Hier sind die offiziellen Vorlagen für deinen Tower:
 - **Media-Stack:** sonarr, radarr, lidarr, prowlarr, jellyfin
 - **Storage & Backup:** mergerfs, snapraid, restic, postgresql
 - **Knowledge & Identity:** paperless, vaultwarden, conduit, home-assistant
+
+## 💎 Hidden Gems (Erweiterte Suche)
+Wir haben weitere hochkarätige Blaupausen identifiziert:
+- **Search:** searx (SearXNG Standard)
+- **Media:** readarr (Books), servarr-logic (Core Architecture)
+- **Ops:** atticd (Binary Cache), aria2 (Pro-Downloader)
