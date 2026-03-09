@@ -113,3 +113,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 20. [**Socket-Activation Selection (ADR-012)**](./adr/ADR-012-Socket-Activation-Selection.md) - Pragmatische Ressourcen-Ersparnis.
 
 21. [**Media Performance Priority (ADR-013)**](./adr/ADR-013-Media-Performance-Priority.md) - Schutz vor Rucklern beim Streaming.
+
+37. [**Hardware Acceleration Deep-Dive**](./guides/GUIDE-Hardware-Acceleration-DeepDive.md) - Ruckelfreies 4K-Streaming via QuickSync.
