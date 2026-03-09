@@ -78,3 +78,9 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 
 ## 🛡️ Security & Sandboxing (Aviation-Grade Isolation)
 - [jailed-agents](https://github.com/andersonjoseph/jailed-agents) - Secure Nix sandboxing using bubblewrap and jail.nix (Critical for Service Isolation).
+
+## 🛡️ Caddy & Ingress Security (Web-Infrastructure)
+- [caddy](https://github.com/caddyserver/caddy) - Fast, extensible web server with automatic HTTPS (Core).
+- [certmagic](https://github.com/caddyserver/certmagic) - The powerhouse behind Caddy's TLS automation.
+- [forwardproxy](https://github.com/caddyserver/forwardproxy) - Secure forward proxy for privacy and access control.
+- [xcaddy](https://github.com/caddyserver/xcaddy) - Tool to build Caddy with custom security plugins (like OIDC).
