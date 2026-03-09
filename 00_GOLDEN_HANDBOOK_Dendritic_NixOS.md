@@ -155,3 +155,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 48. [**Matrix Orchestration & Alerting**](./guides/GUIDE-Matrix-Orchestration-CLI.md) - System-Benachrichtigungen via CLI.
 
 49. [**GitHub Actions SRE Mastery**](./guides/GUIDE-GitHub-Actions-SRE-Mastery.md) - CI/CD und Automatisierung.
+
+50. [**GitHub Security Hardening**](./guides/GUIDE-GitHub-Security-Hardening.md) - Schutz vor Leaks und Schwachstellen.
