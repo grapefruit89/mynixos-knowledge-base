@@ -113,3 +113,9 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [nix-config-misterio](https://github.com/Misterio77/nix-config) - Reference for opt-in persistence and BTRFS snapshotting.
 - [nix-starter-configs](https://github.com/Misterio77/nix-starter-configs) - Best-practice templates for NixOS + Flakes.
 - [nix-colors](https://github.com/Misterio77/nix-colors) - Declarative color schemes (Logic abstraction masterpiece).
+
+## 🏭 numtide (Industrial Nix Standards)
+- [treefmt](https://github.com/numtide/treefmt) - Unified formatting for all source files (Purity Standard).
+- [nix-filter](https://github.com/numtide/nix-filter) - Efficient source filtering for fast builds.
+- [blueprint](https://github.com/numtide/blueprint) - Opinionated folder structure for Nix projects.
+- [system-manager](https://github.com/numtide/system-manager) - Manage any Linux distribution with Nix.
