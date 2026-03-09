@@ -61,3 +61,10 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [dns.nix](https://github.com/nix-community/dns.nix) - Declarative DNS management in pure Nix.
 - [nixos-cli](https://github.com/nix-community/nixos-cli) - Unified CLI for NixOS operations.
 - [nixos-facter](https://github.com/nix-community/nixos-facter) - Automatic hardware detection for NixOS.
+
+## 🎨 Nix Architectural Masterpieces (Pattern Mining Only)
+- [nix-community/infra](https://github.com/nix-community/infra) - Reference for production fleet management (SSoT Patterns).
+- [disko](https://github.com/nix-community/disko) - Data-driven hardware abstraction (Complex Data Structures).
+- [home-manager](https://github.com/nix-community/home-manager) - The blueprint for modular option definitions.
+- [poetry2nix](https://github.com/nix-community/poetry2nix) - Advanced dependency graph mapping in pure Nix.
+- [nixos-facter](https://github.com/nix-community/nixos-facter) - Dynamic-to-static hardware mapping patterns.
