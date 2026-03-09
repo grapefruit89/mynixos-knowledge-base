@@ -17,3 +17,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 15. [**DNS & Naming Standard (ADR-007)**](./adr/ADR-007-DNS-Naming-Standard.md) - Tailscale SplitDNS Logik.
 
 16. [**SSH & ProxyJump Standard (ADR-008)**](./adr/ADR-008-SSH-ProxyJump-Standard.md) - Gehärteter Admin-Zugang.
+
+17. [**Windows SSH Integration**](./guides/GUIDE-Windows-to-Nix-SSH.md) - Nahtloser Zugriff von Windows auf den Tower.
