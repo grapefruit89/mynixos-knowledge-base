@@ -91,3 +91,4 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [microvm.nix](https://github.com/Mic92/microvm.nix) - Lightweight Micro-VM framework for NixOS.
 - [nixcfg](https://github.com/Mic92/nixcfg) - Advanced server & laptop flake configuration (Reference).
 - [not-os](https://github.com/Mic92/not-os) - Minimal read-only SquashFS system patterns.
+- [matrix-hook](https://github.com/Mic92/matrix-hook) - Lightweight webhook for Matrix notifications (SRE Alerting).
