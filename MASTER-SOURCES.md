@@ -125,3 +125,8 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [devenv](https://github.com/cachix/devenv) - Fast, composable developer environments (Modern Standard).
 - [nix-serve](https://github.com/edolstra/nix-serve) - The reference binary cache server (Infrastructure).
 - [nix-index](https://github.com/nix-community/nix-index) - (Originally by bennofs, maintained by community) - SRE File Discovery.
+
+## 💬 Matrix Communications (Collaboration Core)
+- [dendrite](https://github.com/matrix-org/dendrite) - Second-generation Matrix homeserver in Go (Efficiency King).
+- [matrix-spec](https://github.com/matrix-org/matrix-spec) - The official technical specification of the Matrix protocol.
+- [conduit](https://github.com/girlbossceo/conduit) - Ultralight Matrix homeserver in Rust (Aviation-Grade Peak).
