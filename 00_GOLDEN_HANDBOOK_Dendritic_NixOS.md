@@ -141,3 +141,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 48. [**System Monitoring & Telemetry**](./guides/GUIDE-System-Monitoring-Telemetry.md) - Echtzeit-Metriken und Recovery.
 
 43. [**Aviation-Grade Hardening (srvos)**](./guides/GUIDE-Aviation-Grade-Hardening-srvos.md) - Deep-Sandboxing Standard.
+
+23. [**Distance Parity Mandate (ADR-015)**](./adr/ADR-015-Distance-Parity-Mandate.md) - Distanz statt lokaler Redundanz.
