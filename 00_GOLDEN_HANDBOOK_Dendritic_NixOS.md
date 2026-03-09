@@ -179,3 +179,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 59. [**Stable Network Interface MAC**](./guides/GUIDE-Stable-Network-Interface-MAC.md) - Predictable Networking.
 
 60. [**Nix DRY Refactoring**](./guides/GUIDE-Nix-Dry-Refactoring.md) - Eliminierung von Boilerplate.
+
+61. [**Findings Registry**](./learnings/FINDINGS-REGISTRY.md) - Der physische Nachweis aller Quellen.
