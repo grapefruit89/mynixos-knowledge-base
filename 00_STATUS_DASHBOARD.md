@@ -9,7 +9,7 @@ sources: [Interne Bestandsaufnahme 09.03.2026]
 
 Dieses Dashboard überwacht den Zustand der Knowledge-Pipeline. Es dient zur Identifikation von Redundanzen, veralteten Versionen und "Phantompfaden".
 
-## 🔴 Offene Schulden (Priority To-Do)
+## 🔵 Erledigte Aufgaben (Cleanup) (Priority To-Do)
 1. **Deduplizierung Cluster Dendritic:** Mergen von `Architecture-NIXHOME-Dendritic-Structure.md` in `GUIDE-Dendritic-Modularization.md`.
 2. **Archivierung Monster-Dateien:** Verschieben von `server_knowledge_detailed.md` (19MB) nach `/raw/archive/`.
 3. **Link-Fixing:** Korrektur aller Phantompfade im Master-Index.

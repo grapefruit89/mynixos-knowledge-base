@@ -1,29 +1,33 @@
 ---
-title: Dendritische Modularisierung (Modularization Bible)
+title: 🌳 Dendritische Modularisierung (Definitive Edition v7.0)
 category: architecture/framework
-capabilities: [modular-flakes, flake-parts-expert, dendritic-structure]
-sources: [https://github.com/mightyiam/dendritic]
+status: [ACTIVE-SSoT]
+supersedes: [Architecture-NIXHOME-Dendritic-Structure.md, dendritic-blueprint.md, flake-parts.md]
+sources: [https://github.com/mightyiam/dendritic, https://github.com/hercules-ci/flake-parts]
 ---
 
-# 🌳 Dendritische Modularisierung: Die mynixos Bibel
+# 🌳 Dendritische Modularisierung: Das mynixos Manifest
 
-Das Dendritische Pattern ist die Kunst, Nix-Konfigurationen so zu zerlegen, dass sie wartungsfrei und portabel sind.
+Dies ist das ultimative Architektur-Dokument für die Struktur deines Systems. Wir folgen dem "Aviation-Grade" Dendritic Pattern.
 
-## 📁 Die Goldene Ordnerstruktur
-Jede Datei in mynixos ist ein **Top-Level Modul**.
+## 🏛️ Kern-Philosophie
+"Every file is a module." Wir trennen Logik strikt von Zuweisung.
 
-### systems/
-*Hier liegen nur die Host-spezifischen Zuweisungen.*
-- `tower/default.nix`: Welche Module nutzt der Tower? Welche IP? Welche Hardware?
+## 📁 Repository-Layout (Final Standard)
+```text
+mynixos/
+├── flake.nix                # Top-Level Entry (Flake-Parts)
+├── systems/                 # Host-spezifische Konfigurationen
+│   └── tower/               # Dein Unraid Tower
+├── modules/                 # Wiederverwendbare Dendriten (Logik)
+│   ├── services/            # Caddy, Arion, etc.
+│   ├── security/            # Sops, Jails
+│   └── core/                # System-Basics
+└── secrets/                 # Sops-Tresor & Keys
+```
 
-### modules/
-*Hier liegt die Logik.*
-- `services/caddy.nix`: Die komplette Caddy-Logik in einer Datei.
-- `security/sops.nix`: Die Sicherheits-Infrastruktur.
+## 🧩 Flake-Parts Integration
+Werte werden über Top-Level `options` definiert, niemals über `specialArgs` durchgereicht.
 
-## 🧩 Das Flake-Parts Prinzip
-Wir nutzen `flake-parts`, um die Evaluation zu modularisieren. 
-- **Regel:** Kein Modul darf `specialArgs` erwarten. Alles kommt über die Top-Level `config`.
-
-## 🛡️ "One Feature, One File"
-Jede Datei implementiert genau ein Feature über alle Konfigurationen hinweg (NixOS, Home-Manager).
+## 🛠️ Auto-Discovery
+Wir nutzen `import-tree`, um neue Module im `modules/` Ordner automatisch zu laden.

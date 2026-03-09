@@ -1,29 +1,34 @@
 ---
-title: Das Goldene Handbuch (Dendritic NixOS Master-Edition)
+title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 category: architecture/master-guide
-capabilities: [dendritic-pattern, sre-standard, aviation-grade-purity]
-sources: [https://github.com/mightyiam/dendritic, https://github.com/hercules-ci/flake-parts, https://github.com/Mic92/sops-nix]
+status: [ACTIVE-MAINTENANCE]
+sources: [Konsolidierte Mining-Nuggets 09.03.2026]
 ---
 
-# 👑 Das Goldene Handbuch: Dendritic NixOS (State-of-the-Art)
+# 👑 Das Goldene Handbuch: mynixos Distribution
 
-Dieses Handbuch ist die Single Source of Truth (SSoT) für den Aufbau einer modernen, modularen und unzerstörbaren NixOS-Distribution.
+Willkommen in der Single Source of Truth (SSoT). Dieses Handbuch ist der Aviation-Grade Standard für dein NixOS-System.
 
-## 📖 Inhaltsverzeichnis
+## 📊 Status & Übersicht
+- [**Status Dashboard**](./00_STATUS_DASHBOARD.md) - Architecture Debt & Dokumenten-Monitor.
+- [**Master Sources**](./MASTER-SOURCES.md) - Alle 200+ gescannten Gold-Links.
 
-1.  [**Die Dendritische Philosophie**](./GUIDE-Dendritic-Modularization.md) - Warum Modularisierung gewinnt.
-2.  [**Die 7 Qualitäts-Tore**](./GUIDE-Seven-Quality-Gates.md) - Der Aviation-Grade Prüfstandard.
-3.  [**Hardening & Secrets**](./GUIDE-SRE-Hardening-Secrets.md) - sops-nix und age in der Praxis.
-4.  [**Hygiene & Persistence**](./Strategy-Impermanence-Tiered-Storage.md) - Impermanence für flüchtige Systeme.
-5.  [**Container-Symbiose**](./arion.md) - Arion: Die Brücke zu Docker.
+## 📖 Kern-Handbuch (Die 7 Tore)
+1.  [**Die 7 Qualitäts-Tore**](./GUIDE-Seven-Quality-Gates.md) - Dein SRE-Prüfstandard.
+2.  [**Dendritische Modularisierung**](./GUIDE-Dendritic-Modularization.md) - Die Struktur-Bibel.
+3.  [**Hardening & Secrets**](./GUIDE-SRE-Hardening-Secrets.md) - sops-nix & age Security.
+4.  [**Enterprise Standards**](./GUIDE-Enterprise-Nix-Standards.md) - Determinate Systems Best Practices.
+5.  [**Stick-Ready Deployment**](./GUIDE-Stick-Ready-NixOS-Deployment.md) - Zero-Touch mit Everywhere & Disko.
 
-## 🛡️ Das Fundament: Layer-Architektur
-Wir folgen der strikten Trennung von Belangen (Separation of Concerns):
-- **Layer 10 (User):** Home-Manager & Dotfiles.
-- **Layer 40 (Security):** Sops-nix & SSH-Keys.
-- **Layer 60 (Services):** Arion & NixOS-Module.
-- **Layer 80 (Hardware):** Disko & Hardware-Profile.
+## 🐳 Ingress & Services
+6.  [**Caddy M1 Abrams**](./GUIDE-Caddy-M1-Abrams.md) - Ingress-Security & mTLS.
+7.  [**Sovereign Identity**](./GUIDE-Sovereign-Identity-Passkeys.md) - Passkeys mit PocketID.
+8.  [**Container-Symbiose**](./GUIDE-Container-Symbiose-Arion.md) - Docker-Integration via Arion.
+
+## 🔍 Auditing & Tools
+9.  [**System Auditing**](./GUIDE-System-Auditing-NixoScope.md) - Visualisierung mit NixoScope.
+10. [**Knowledge Traceability**](./GUIDE-Knowledge-Traceability.md) - Das Sourcing-Gesetz.
+11. [**Pattern Mining**](./GUIDE-Pattern-Mining-Learning-from-Masters.md) - Von den Besten lernen.
 
 ---
-> [!IMPORTANT]
-> Jede Änderung am System MUSS zuerst die 7 Qualitäts-Tore passieren, bevor sie in das mynixos-Repository einfließt.
+*Status: Veredelt & Validiert (v1.0)*
