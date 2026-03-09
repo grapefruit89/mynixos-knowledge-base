@@ -149,3 +149,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 45. [**Kernel Surgical Diet**](./guides/GUIDE-Kernel-Surgical-Diet.md) - Entfernung von Legacy- und Enterprise-Bloat.
 
 46. [**Data Deduplication SRE**](./guides/GUIDE-Data-Deduplication-SRE.md) - Effiziente Hygiene via rclone.
+
+47. [**Sovereign Git Mastery**](./guides/GUIDE-Sovereign-Git-Mastery.md) - Eigene Git-Server und Repo-Hygiene.
