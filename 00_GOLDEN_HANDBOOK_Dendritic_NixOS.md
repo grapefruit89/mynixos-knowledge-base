@@ -27,3 +27,9 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 20. [**Jellyseerr Master-Variable-List**](./guides/MASTER-CONFIG-SEERR.md) - Media Request Manager.
 
 21. [**Radarr Master-Variable-List**](./guides/MASTER-CONFIG-RADARR.md) - Movie Manager.
+
+22. [**Fail2ban Master-Reference**](./guides/MASTER-CONFIG-FAIL2BAN.md) - Security Hardening.
+
+23. [**Tailscale Master-Variable-List**](./guides/MASTER-CONFIG-TAILSCALE.md) - Networking Mastery.
+
+24. [**ARR-Stack Master-Reference**](./guides/MASTER-CONFIG-ARR-STACK.md) - Media Management.
