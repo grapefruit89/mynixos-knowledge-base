@@ -125,3 +125,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 40. [**SSH Infrastructure Mastery**](./guides/GUIDE-SSH-Infrastructure-Mastery.md) - Remote-Unlock und Binary-Serving.
 
 41. [**Nftables Firewall Mastery**](./guides/GUIDE-Nftables-Firewall-Mastery.md) - Moderne Netzwerk-Sicherheit.
+
+42. [**Kernel Mastery & Hardening**](./guides/GUIDE-Kernel-Mastery-Hardening.md) - System-Kern und Security.
