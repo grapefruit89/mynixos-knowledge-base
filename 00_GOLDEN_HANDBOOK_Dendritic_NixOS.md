@@ -21,3 +21,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 17. [**Windows SSH Integration**](./guides/GUIDE-Windows-to-Nix-SSH.md) - Nahtloser Zugriff von Windows auf den Tower.
 
 18. [**Paperless-ngx Master-Config**](./guides/GUIDE-Paperless-Master-Config.md) - Totale deklarative Kontrolle.
+
+19. [**Paperless-ngx Master-Variable-List**](./guides/MASTER-CONFIG-PAPERLESS-NGX.md) - Die vollständige Referenz.
