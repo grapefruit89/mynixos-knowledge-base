@@ -87,3 +87,7 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [retiolum](https://github.com/Mic92/retiolum) - Tinc-based mesh VPN patterns.
 - [dream2nix-ha](https://github.com/Mic92/dream2nix-home-assistant) - Home Assistant packaging patterns.
 - [userborn-impermanence](https://github.com/Mic92/userborn-with-impermanence) - User management with ephemeral root.
+- [nixos-generators](https://github.com/Mic92/nixos-generators) - Multi-format image builder (ISO, VM, Cloud).
+- [microvm.nix](https://github.com/Mic92/microvm.nix) - Lightweight Micro-VM framework for NixOS.
+- [nixcfg](https://github.com/Mic92/nixcfg) - Advanced server & laptop flake configuration (Reference).
+- [not-os](https://github.com/Mic92/not-os) - Minimal read-only SquashFS system patterns.
