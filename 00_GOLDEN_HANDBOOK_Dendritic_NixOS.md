@@ -165,3 +165,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 53. [**Gatus: Next-Gen Monitoring**](./guides/GUIDE-Next-Gen-Monitoring-Gatus.md) - Hocheffizienter Watchtower in Go.
 
 54. [**HomeDash CLI Dashboard**](./guides/GUIDE-Terminal-Dashboard-HomeDash.md) - Die Kommandozentrale im Terminal.
+
+55. [**njq: Nix-Powered JSON Processing**](./guides/GUIDE-Advanced-CLI-Tooling-njq.md) - Daten-Analyse mit Nix-Syntax.
