@@ -68,3 +68,7 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [home-manager](https://github.com/nix-community/home-manager) - The blueprint for modular option definitions.
 - [poetry2nix](https://github.com/nix-community/poetry2nix) - Advanced dependency graph mapping in pure Nix.
 - [nixos-facter](https://github.com/nix-community/nixos-facter) - Dynamic-to-static hardware mapping patterns.
+
+## ⚙️ giomf (Modular Configs & Templates)
+- [nixos-config](https://github.com/giomf/nixos-config) - Base NixOS configuration for multiple hosts (Efficiency Patterns).
+- [nix-templates](https://github.com/giomf/nix-templates) - Ready-to-use Nix project templates.
