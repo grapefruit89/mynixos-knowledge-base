@@ -171,3 +171,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 56. [**Gatus Master-Config-Reference**](./guides/MASTER-CONFIG-GATUS.md) - Variablen und Alerting-Schnittstellen.
 
 57. [**InfluxDB 3 Telemetry**](./guides/GUIDE-Modern-Monitoring-Influx3.md) - Zeitreihen-Datenbank für SRE.
+
+58. [**NVMe over TCP (NVMe-oF)**](./guides/GUIDE-Network-Storage-NVMe-oF.md) - Ultra-High-Speed Network Storage.
