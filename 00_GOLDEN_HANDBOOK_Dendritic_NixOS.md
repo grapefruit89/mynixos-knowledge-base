@@ -119,3 +119,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 38. [**Nixpkgs Packaging Standard**](./guides/GUIDE-Nixpkgs-Packaging-Standard.md) - Qualitäts-Tore für eigene Pakete.
 
 22. [**Systemic Governance (ADR-014)**](./adr/ADR-014-Systemic-Governance.md) - Regeln für langfristige Stabilität.
+
+39. [**S3 Object Vault (Garage)**](./guides/GUIDE-S3-Object-Vault-Garage.md) - Privater S3-Speicher in Rust.
