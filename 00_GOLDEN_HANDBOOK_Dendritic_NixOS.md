@@ -109,3 +109,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 32. [**Audiobookshelf Mastery**](./guides/GUIDE-Audiobookshelf-Mastery.md) - Hörbücher und Podcasts.
 
 19. [**On-Demand Services (ADR-011)**](./adr/ADR-011-On-Demand-Services.md) - Socket-Activation für maximale Effizienz.
+
+20. [**Socket-Activation Selection (ADR-012)**](./adr/ADR-012-Socket-Activation-Selection.md) - Pragmatische Ressourcen-Ersparnis.
