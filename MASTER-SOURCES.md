@@ -119,3 +119,9 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [nix-filter](https://github.com/numtide/nix-filter) - Efficient source filtering for fast builds.
 - [blueprint](https://github.com/numtide/blueprint) - Opinionated folder structure for Nix projects.
 - [system-manager](https://github.com/numtide/system-manager) - Manage any Linux distribution with Nix.
+
+## 🏛️ The Nix Architects (Gründerväter & SRE-Köpfe)
+- [direnv](https://github.com/direnv/direnv) - Shell extension for auto-loading Nix environments (Automation).
+- [devenv](https://github.com/cachix/devenv) - Fast, composable developer environments (Modern Standard).
+- [nix-serve](https://github.com/edolstra/nix-serve) - The reference binary cache server (Infrastructure).
+- [nix-index](https://github.com/nix-community/nix-index) - (Originally by bennofs, maintained by community) - SRE File Discovery.
