@@ -93,3 +93,7 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 32. [**Blocky Performance DNS**](./guides/GUIDE-Blocky-Performance-DNS.md) - Hocheffizienter DNS-Proxy in Go.
 
 33. [**Sync & Backup Master-Config**](./guides/GUIDE-Sync-Backup-Master-Config.md) - Syncthing und Restic Strategien.
+
+34. [**Restic Master-Variable-List**](./guides/MASTER-CONFIG-RESTIC.md) - Backup-Steuerung.
+
+35. [**Rclone Master-Variable-List**](./guides/MASTER-CONFIG-RCLONE.md) - Cloud-Sync-Optionen.
