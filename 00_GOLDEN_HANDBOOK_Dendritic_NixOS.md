@@ -157,3 +157,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 49. [**GitHub Actions SRE Mastery**](./guides/GUIDE-GitHub-Actions-SRE-Mastery.md) - CI/CD und Automatisierung.
 
 50. [**GitHub Security Hardening**](./guides/GUIDE-GitHub-Security-Hardening.md) - Schutz vor Leaks und Schwachstellen.
+
+51. [**Webhook Orchestrierung**](./guides/GUIDE-Webhook-Automation-n8n.md) - n8n und GitHub Events.
