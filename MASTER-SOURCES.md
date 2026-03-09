@@ -44,3 +44,12 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 
 ## 🔍 SRE Audit & Visualization
 - [NixoScope](https://github.com/giomf/NixoScope) - Dependency visualizer for Dendritic Nix.
+
+## 🛡️ nix-community (Server-Infrastructure & Ops)
+- [nixos-anywhere](https://github.com/nix-community/nixos-anywhere) - Install NixOS everywhere via SSH (Critical for Remote Ops).
+- [lanzaboote](https://github.com/nix-community/lanzaboote) - Secure Boot for NixOS (Aviation-Grade Security).
+- [srvos](https://github.com/nix-community/srvos) - Optimized NixOS profiles for servers (High-Level Hardening).
+- [authentik-nix](https://github.com/nix-community/authentik-nix) - NixOS module for Authentik (Identity Management).
+- [harmonia](https://github.com/nix-community/harmonia) - High-performance Nix binary cache (Infrastructure Speed).
+- [nixos-facter](https://github.com/nix-community/nixos-facter) - Declarative hardware configuration discovery.
+- [vulnix](https://github.com/nix-community/vulnix) - Vulnerability scanner for NixOS (SRE Tor 4).
