@@ -68,3 +68,8 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 - [**Caddyfile Mastery**](./guides/caddy/01-Caddyfile-Mastery.md) - Syntax & Directives.
 - [**Architecture & API**](./guides/caddy/02-Architecture-API.md) - Programmability.
 - [**Operations & Logging**](./guides/caddy/03-Operations-Logging.md) - Monitoring & Maintenance.
+
+## 🏢 Determinate Encyclopedia (Enterprise)
+- [**Enterprise Installer**](./guides/determinate/01-Enterprise-Installer.md) - Security & Stabilität.
+- [**FlakeHub & Vetting**](./guides/determinate/02-FlakeHub-Vetting.md) - Sichere Abhängigkeiten.
+- [**Performance & Caching**](./guides/determinate/03-CI-Caching-Performance.md) - Speed-Optimierung.
