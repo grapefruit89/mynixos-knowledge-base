@@ -23,64 +23,24 @@ Diese Datei ist die ultimative Single Source of Truth für alle Architektur-Link
 - [sops-nix](https://github.com/Mic92/sops-nix) - Atomic secrets management (via Mic92).
 - [nix-index](https://github.com/nix-community/nix-index) - Global file search for nixpkgs.
 
-## 🧩 mightyiam (Dendritic Master)
+## 🧩 mightyiam & Victor Borja (Dendritic Masters)
 - [dendritic](https://github.com/mightyiam/dendritic) - The original pattern blueprint.
 - [infra](https://github.com/mightyiam/infra) - Reference for modular IT infrastructure.
-- [files](https://github.com/mightyiam/files) - Automated file generation within flakes.
-- [input-branches](https://github.com/mightyiam/input-branches) - Advanced flake input manipulation.
-- [best-of-nix](https://github.com/mightyiam/best-of-nix) - Curated list of high-quality Nix resources.
-- [nix-unit](https://github.com/mightyiam/nix-unit) - Unit testing for your Nix modules.
-
-## 🚀 Individual & Specialized
-- [zero-to-nix](https://github.com/DeterminateSystems/zero-to-nix) - Modern learning guide by Determinate Systems.
-
-## 🏛️ Victor Borja (Advanced Dendritic & Aspects)
-- [import-tree](https://github.com/vic/import-tree) - Automatic nix file discovery and import (Critical Engine).
+- [import-tree](https://github.com/vic/import-tree) - Automatic nix file discovery (Critical Engine).
 - [den](https://github.com/vic/den) - Aspect-oriented, context-driven configurations.
-- [denful](https://github.com/vic/denful) - Reusable, cherry-pickable Dendritic modules (Distribution framework).
+- [denful](https://github.com/vic/denful) - Reusable, cherry-pickable Dendritic modules.
 - [checkmate](https://github.com/vic/checkmate) - Flake checker using nix-unit and treefmt.
-- [flake-aspects](https://github.com/vic/flake-aspects) - Cross-aspect dependency resolution for Dendritic Nix.
-- [clap-nix](https://github.com/vic/clap-nix) - Pure Nix command line argument parser.
 
-## 🔐 Identity & Authentication (Sovereign Identity)
-- [pocket-id](https://github.com/pocket-id/pocket-id) - OIDC provider with Passkey authentication (Identity Core).
-- [pocket-id-docs](https://github.com/pocket-id/website) - Documentation and technical specs for PocketID.
-- [passkey-aaguids](https://github.com/pocket-id/passkey-aaguids) - Community list of Passkey authenticators (Security Context).
+## 🔐 Identity & Security (Ingress & Auth)
+- [pocket-id](https://github.com/pocket-id/pocket-id) - OIDC provider with Passkey authentication.
+- [jailed-agents](https://github.com/andersonjoseph/jailed-agents) - Secure Nix sandboxing using bubblewrap.
+- [caddy](https://github.com/caddyserver/caddy) - Fast web server with automatic HTTPS.
+- [certmagic](https://github.com/caddyserver/certmagic) - Powerhouse behind Caddy's TLS.
 
-## 📂 Community Configs & Templates (Discovery)
-- [nicolkrit999-nixos](https://github.com/nicolkrit999/nixOS) - Personal NixOS server/desktop configurations.
-- [portainer-templates](https://github.com/nicolkrit999/portainer-templates) - Docker templates for Portainer (Server deployment context).
+## 🏢 Determinate Systems (Enterprise Nix)
+- [nix-installer](https://github.com/DeterminateSystems/nix-installer) - The modern Nix installer.
+- [flake-checker](https://github.com/DeterminateSystems/flake-checker) - Automated health checks for flakes.
+- [magic-nix-cache](https://github.com/DeterminateSystems/magic-nix-cache) - Zero-config binary cache for CI.
 
-## 🖥️ Server-Centric Community Configs
-- [VelHRH-nixos-config](https://github.com/VelHRH/nixos-config) - Modular NixOS configuration with server focus.
-
-## 🏢 Determinate Systems (Enterprise Nix Standards)
-- [install-riff-action](https://github.com/DeterminateSystems/install-riff-action) - A GitHub Action for installing Riff
-- [nix-installer](https://github.com/DeterminateSystems/nix-installer) - Install Nix and flakes with the fast and reliable Determinate Nix Installer, with over 7 million installs.
-- [nix-github-actions](https://github.com/DeterminateSystems/nix-github-actions) - An example project showing how to use Nix to replace third-party GitHub Actions
-- [zero-to-nix](https://github.com/DeterminateSystems/zero-to-nix) - Zero to Nix is your guide to learning Nix and flakes. Created by Determinate Systems.
-- [nix-installer-example](https://github.com/DeterminateSystems/nix-installer-example) - None
-- [nix-installer-action](https://github.com/DeterminateSystems/nix-installer-action) - The Github Action for the Determinate Nix Installer
-- [magic-nix-cache](https://github.com/DeterminateSystems/magic-nix-cache) - Save 30-50%+ of CI time without any effort or cost. Use Magic Nix Cache, a totally free and zero-configuration binary cache for Nix on GitHub Actions.
-- [flake-checker](https://github.com/DeterminateSystems/flake-checker) - Health checks for your Nix flakes
-- [flakehub-push](https://github.com/DeterminateSystems/flakehub-push) - Release your Nix flake to FlakeHub.com.
-- [flakehub-mirror](https://github.com/DeterminateSystems/flakehub-mirror) - None
-- [flake-checker-action](https://github.com/DeterminateSystems/flake-checker-action) - A GitHub Action that performs health checks for your Nix flake.lock files
-- [magic-nix-cache-action](https://github.com/DeterminateSystems/magic-nix-cache-action) -  Save 30-50%+ of CI time without any effort or cost. Use Magic Nix Cache, a totally free and zero-configuration binary cache for Nix on GitHub Actions. 
-- [github-actions-oidc-claims](https://github.com/DeterminateSystems/github-actions-oidc-claims) - None
-- [fh](https://github.com/DeterminateSystems/fh) - The official CLI for FlakeHub: search for flakes, and add new inputs to your Nix flake.
-- [fh-init-example-project](https://github.com/DeterminateSystems/fh-init-example-project) - None
-- [flakehub-docs](https://github.com/DeterminateSystems/flakehub-docs) - FlakeHub documentation
-- [flakehub-cache-action](https://github.com/DeterminateSystems/flakehub-cache-action) - None
-
-## 🔍 SRE Audit & Visualization (System Integrity)
-- [NixoScope](https://github.com/giomf/NixoScope) - Module dependency graph visualizer for Dendritic Nix (Critical for Auditing).
-
-## 🛡️ Security & Sandboxing (Aviation-Grade Isolation)
-- [jailed-agents](https://github.com/andersonjoseph/jailed-agents) - Secure Nix sandboxing using bubblewrap and jail.nix (Critical for Service Isolation).
-
-## 🛡️ Caddy & Ingress Security (Web-Infrastructure)
-- [caddy](https://github.com/caddyserver/caddy) - Fast, extensible web server with automatic HTTPS (Core).
-- [certmagic](https://github.com/caddyserver/certmagic) - The powerhouse behind Caddy's TLS automation.
-- [forwardproxy](https://github.com/caddyserver/forwardproxy) - Secure forward proxy for privacy and access control.
-- [xcaddy](https://github.com/caddyserver/xcaddy) - Tool to build Caddy with custom security plugins (like OIDC).
+## 🔍 SRE Audit & Visualization
+- [NixoScope](https://github.com/giomf/NixoScope) - Dependency visualizer for Dendritic Nix.
