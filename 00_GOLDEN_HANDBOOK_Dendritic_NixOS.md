@@ -41,3 +41,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 26. [**SABnzbd Master-Variable-List**](./guides/MASTER-CONFIG-SABNZBD.md) - Usenet Downloader.
 
 27. [**Homepage Master-Variable-List**](./guides/MASTER-CONFIG-HOMEPAGE.md) - Dashboard Config.
+
+28. [**Blank Snapshot Persistence**](./guides/GUIDE-Blank-Snapshot-Persistence.md) - Radikale System-Hygiene nach Misterio77.
