@@ -137,3 +137,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 46. [**Security Stealth SPA**](./guides/GUIDE-Security-Stealth-SPA.md) - Unsichtbare Firewall via fwknop.
 
 47. [**Service Hardening & Sandboxing**](./guides/GUIDE-Service-Hardening-Sandboxing.md) - Prozess-Isolation und CVE-Checks.
+
+48. [**System Monitoring & Telemetry**](./guides/GUIDE-System-Monitoring-Telemetry.md) - Echtzeit-Metriken und Recovery.
