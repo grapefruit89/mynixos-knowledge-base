@@ -19,3 +19,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 16. [**SSH & ProxyJump Standard (ADR-008)**](./adr/ADR-008-SSH-ProxyJump-Standard.md) - Gehärteter Admin-Zugang.
 
 17. [**Windows SSH Integration**](./guides/GUIDE-Windows-to-Nix-SSH.md) - Nahtloser Zugriff von Windows auf den Tower.
+
+18. [**Paperless-ngx Master-Config**](./guides/GUIDE-Paperless-Master-Config.md) - Totale deklarative Kontrolle.
