@@ -1,25 +1,26 @@
 ---
-title: ADR-009: Media Stack Consolidation (PostgreSQL & Systemd Targets)
+title: ADR-009: Media Stack Consolidation (Simplicity over Complexity)
 status: [ACCEPTED]
 category: architecture/decision
-capabilities: [database-consolidation, service-bundling, systemd-targets]
-sources: [ARR-Stack Documentation, NixOS Systemd Manual]
+capabilities: [sqlite-reliability, service-bundling, zero-maintenance]
+sources: [nixarr, user-feedback, Internal SRE Audit]
 ---
 
-# 🏛️ ADR-009: Der konsolidierte Media Stack
+# 🏛️ ADR-009: Der konsolidierte Media Stack (Simplicity Edition)
 
 ## Kontext
-Wir wollen den ARR-Stack (Sonarr, Radarr, Lidarr, Prowlarr) effizienter verwalten und die Datenbank-Infrastruktur vereinheitlichen.
+Wir haben die Wahl zwischen PostgreSQL und SQLite für den ARR-Stack analysiert.
 
 ## Entscheidung
-1.  **Datenbank:** Alle ARR-Dienste werden konsequent an den zentralen **PostgreSQL-Dendriten** (Layer 20-server) angebunden. SQLite wird vermieden.
-2.  **Bündelung:** Wir implementieren ein Systemd-Target \`media-stack.target\`.
-3.  **Abhängigkeiten:** Alle Dienste bekommen eine \`partOf = [ "media-stack.target" ];\` und \`requires = [ "postgresql.service" ];\` Anweisung.
+Wir nutzen **SQLite** als Standard-Datenbank für alle ARR-Dienste (Sonarr, Radarr, Lidarr, Prowlarr).
 
-## Begründung
-- **Wartbarkeit:** Backups werden durch PostgreSQL-Zentralisierung drastisch vereinfacht.
-- **Orchestrierung:** Ein einziger Befehl steuert den gesamten Stack (\`systemctl start media-stack.target\`).
-- **Performance:** PostgreSQL skaliert besser als multiple SQLite-Instanzen auf dem Tower.
+## Begründung (The Simplicity Wins)
+1.  **Zero Maintenance:** Keine Datenbank-Administration nötig. NixOS-Module konfigurieren SQLite automatisch "out-of-the-box".
+2.  **Resource Efficiency:** Einsparung des PostgreSQL-Daemon Overheads (RAM/CPU).
+3.  **Backup Ease:** Einfache Datei-basierte Sicherung der Datenbank-Files (\`.db\`) im App-Verzeichnis.
+
+## Bündelung
+Wir behalten das Systemd-Target \`media-stack.target\` bei, um alle Dienste gleichzeitig steuern zu können.
 
 ## Konsequenz
-In \`modules/40-media/*.nix\` wird die Datenbank-Konfiguration auf PostgreSQL umgestellt. Wir definieren das globale Target in \`modules/40-media/default.nix\`.
+In \`modules/40-media/*.nix\` wird kein PostgreSQL-Bezug für ARR-Apps implementiert. Wir folgen dem Pfad von \`nixarr\`.
