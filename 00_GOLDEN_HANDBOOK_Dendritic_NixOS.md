@@ -175,3 +175,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 58. [**NVMe over TCP (NVMe-oF)**](./guides/GUIDE-Network-Storage-NVMe-oF.md) - Ultra-High-Speed Network Storage.
 
 59. [**Stable Network Interface MAC**](./guides/GUIDE-Stable-Network-Interface-MAC.md) - Predictable Networking.
+
+59. [**Stable Network Interface MAC**](./guides/GUIDE-Stable-Network-Interface-MAC.md) - Predictable Networking.
