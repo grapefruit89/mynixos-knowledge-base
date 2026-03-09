@@ -145,3 +145,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 23. [**Distance Parity Mandate (ADR-015)**](./adr/ADR-015-Distance-Parity-Mandate.md) - Distanz statt lokaler Redundanz.
 
 44. [**Future Storage Scaling**](./guides/GUIDE-Future-Storage-Scaling.md) - Strategien für >5TB und Bcachefs.
+
+45. [**Kernel Surgical Diet**](./guides/GUIDE-Kernel-Surgical-Diet.md) - Entfernung von Legacy- und Enterprise-Bloat.
