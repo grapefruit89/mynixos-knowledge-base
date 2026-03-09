@@ -1,26 +1,26 @@
 ---
-title: ADR-013: Media Performance Priority (High-Priority Standard)
+title: ADR-013: Universal Media Performance Priority (A/V-Law)
 status: [ACCEPTED]
 category: architecture/decision
-capabilities: [real-time-priority, smooth-streaming, systemd-resource-control]
-sources: [Systemd Resource Control, SRE Best Practices]
+capabilities: [real-time-audio-video, smooth-streaming, systemd-resource-control]
+sources: [SRE Best Practices, Audio/Video Buffer Management]
 ---
 
-# 🏛️ ADR-013: Aktive Priorisierung von Jellyfin
+# 🏛️ ADR-013: Das Universal-Gesetz für Audio/Video-Priorisierung
 
 ## Kontext
-Um Ruckler beim Streaming (insbesondere 4K) zu eliminieren, muss Jellyfin gegenüber anderen Systemdiensten priorisiert werden.
+Zeitkritische Dienste (Streaming, Audio, Podcasts) erfordern konstante Ressourcen, um Latenzen (Ruckler/Aussetzer) zu vermeiden.
 
 ## Entscheidung
-Wir implementieren eine aggressive Priorisierung für den Jellyfin-Dienst:
-1.  **CPU-Vorrang:** \`Nice=-7\` (Hohe Priorität) und \`CPUWeight=500\` (Garantierte Zyklen).
-2.  **I/O-Vorrang:** \`IOWeight=500\` (Bevorzugter Zugriff auf Festplatten).
-3.  **Survivor-Status:** \`OOMScoreAdjust=-500\` (Schutz vor dem OOM-Killer).
-4.  **Hardware-Lock:** Direkter Zugriff auf \`/dev/dri/renderD128\` mit höchster Priorität.
+Wir implementieren eine systemweite Priorisierung für den gesamten **Media-Layer (40)**:
+1.  **Betroffene Dienste:** Jellyfin, Navidrome, Audiobookshelf.
+2.  **CPU-Vorrang:** \`Nice=-10\` (Höchste App-Priorität) und \`CPUWeight=1000\` (Maximale Gewichtung).
+3.  **I/O-Vorrang:** \`IOWeight=1000\` (Priorisierter Festplattenzugriff für Buffering).
+4.  **Survival-Mandat:** \`OOMScoreAdjust=-800\` (Diese Dienste werden fast niemals vom OOM-Killer beendet).
 
 ## Begründung
-- **User Experience:** Ein verzögerungsfreier Stream ist das primäre Ziel des Servers.
-- **Ressourcen-Effizienz:** Da Jellyfin via QuickSync (GPU) arbeitet, belasten diese Priorisierungen die CPU im Normalfall kaum, verhindern aber Ruckler, falls Hintergrund-Tasks (z.B. Backups) CPU-Spitzen verursachen.
+- **Aviation-Grade Quality:** Musik und Video dürfen niemals ruckeln.
+- **Dynamic Throttling:** Hintergrund-Dienste (Layer 80/Backup) treten automatisch zurück, sobald ein Media-Stream Last erzeugt.
 
 ## Konsequenz
-Die \`serviceConfig\` in \`modules/40-media/jellyfin.nix\` wird mit diesen Werten gehärtet.
+In allen Media-Dendriten (\`modules/40-media/*.nix\`) werden diese Parameter als Standard in die \`serviceConfig\` aufgenommen.
