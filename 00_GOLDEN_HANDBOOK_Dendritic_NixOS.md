@@ -139,3 +139,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 47. [**Service Hardening & Sandboxing**](./guides/GUIDE-Service-Hardening-Sandboxing.md) - Prozess-Isolation und CVE-Checks.
 
 48. [**System Monitoring & Telemetry**](./guides/GUIDE-System-Monitoring-Telemetry.md) - Echtzeit-Metriken und Recovery.
+
+43. [**Aviation-Grade Hardening (srvos)**](./guides/GUIDE-Aviation-Grade-Hardening-srvos.md) - Deep-Sandboxing Standard.
