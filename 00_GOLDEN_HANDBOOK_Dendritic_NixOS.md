@@ -97,3 +97,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 34. [**Restic Master-Variable-List**](./guides/MASTER-CONFIG-RESTIC.md) - Backup-Steuerung.
 
 35. [**Rclone Master-Variable-List**](./guides/MASTER-CONFIG-RCLONE.md) - Cloud-Sync-Optionen.
+
+36. [**Pro-Backup Strategies**](./guides/GUIDE-Pro-Backup-Strategies.md) - Ransomware-Schutz und Cloud-Mounts.
