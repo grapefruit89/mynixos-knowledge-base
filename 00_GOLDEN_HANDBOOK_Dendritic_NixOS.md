@@ -101,3 +101,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 36. [**Pro-Backup Strategies**](./guides/GUIDE-Pro-Backup-Strategies.md) - Ransomware-Schutz und Cloud-Mounts.
 
 18. [**Headless Server Law (ADR-010)**](./adr/ADR-010-Headless-Server-Law.md) - Das strikte Verbot von GUI-Komponenten.
+
+24. [**Nixpkgs Engine Mastery**](./guides/GUIDE-Nixpkgs-Engine-Mastery.md) - Kernel und Paket-Strukturen.
