@@ -74,3 +74,4 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 - [**FlakeHub & Vetting**](./guides/determinate/02-FlakeHub-Vetting.md) - Sichere Abhängigkeiten.
 - [**Performance & Caching**](./guides/determinate/03-CI-Caching-Performance.md) - Speed-Optimierung.
 - [**Advanced Security Audit**](./guides/determinate/04-Advanced-Security-Audit.md) - Flake-Checker & Supply Chain.
+- [**Enterprise Governance & SBOM**](./guides/determinate/05-Enterprise-Governance-SBOM.md) - CVE-Fixes und Nachweisbarkeit.
