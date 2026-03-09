@@ -57,3 +57,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 22. [**Advanced Hidden Gems**](./guides/GUIDE-Advanced-Hidden-Gems.md) - SearXNG, Attic und Aria2.
 
 23. [**Home Assistant Master-Interface-List**](./guides/MASTER-HA-INTERFACES.md) - API und Orchestrierung.
+
+23. [**Under-the-Radar Services**](./guides/GUIDE-Radar-Services-Master-Config.md) - nftables, MQTT und Zigbee.
