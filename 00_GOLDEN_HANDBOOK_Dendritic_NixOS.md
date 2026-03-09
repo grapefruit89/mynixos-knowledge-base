@@ -151,3 +151,5 @@ title: 👑 Das Goldene Handbuch (Definitive Master Edition)
 46. [**Data Deduplication SRE**](./guides/GUIDE-Data-Deduplication-SRE.md) - Effiziente Hygiene via rclone.
 
 47. [**Sovereign Git Mastery**](./guides/GUIDE-Sovereign-Git-Mastery.md) - Eigene Git-Server und Repo-Hygiene.
+
+48. [**Matrix Orchestration & Alerting**](./guides/GUIDE-Matrix-Orchestration-CLI.md) - System-Benachrichtigungen via CLI.
