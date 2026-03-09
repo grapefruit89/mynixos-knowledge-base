@@ -21,3 +21,11 @@ Du findest die Rohdateien deiner Dienste unter:
 \`/home/Knowledge-Pipeline/raw/sources/nixpkgs-modules/\`
 
 Nutze diese Dateien als Vorlage, wenn du einen neuen Dendriten in \`mynixos\` erstellst.
+
+## 📂 Dein komplettes Anschauungsmaterial (Source-Modules)
+Hier sind die offiziellen Vorlagen für deinen Tower:
+- **Core:** sshd, nftables, fail2ban, sops
+- **Ingress:** caddy, adguardhome, tailscale
+- **Media-Stack:** sonarr, radarr, lidarr, prowlarr, jellyfin
+- **Storage & Backup:** mergerfs, snapraid, restic, postgresql
+- **Knowledge & Identity:** paperless, vaultwarden, conduit, home-assistant
