@@ -12,7 +12,7 @@
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
-      max-jobs = 4; # Fully utilize i3-9100
+      max-jobs = 4; # Fully utilize i3-9100 (4 Cores)
       cores = 4;
       trusted-users = [ "root" "@wheel" ];
       
@@ -26,6 +26,7 @@
       automatic = true;
       dates = "weekly";
       options = "--delete-older-than 14d";
+      persistent = true;
     };
   };
 
@@ -44,6 +45,8 @@
     git
     pciutils
     usbutils
+    htop
+    xmlstarlet
   ];
 
   system.stateVersion = "25.11";
