@@ -13,7 +13,7 @@
     
     # [ADR-032] Sovereign Key Location (survives Impermanence wipe)
     age = {
-      keyFile = "/persist/secrets/age.key";
+      keyFile = "/persist/var/lib/sops/key.txt";
       sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
       generateKey = true;
     };
@@ -33,7 +33,4 @@
       "pocketid_oidc_secret" = { owner = "pocket-id"; };
     };
   };
-
-  # Dependency: sops-nix is required for these secrets to be available
-  # environment.systemPackages = [ pkgs.sops pkgs.age ];
 }
