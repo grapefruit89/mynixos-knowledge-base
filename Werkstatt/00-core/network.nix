@@ -1,5 +1,5 @@
 # [META] ID: NIXH-CORE-005
-# [META] TITLE: Network & Firewall Foundation
+# [META] TITLE: Network & Firewall (nftables)
 # [META] STAGE: 2 (Nugget)
 # [META] VERSION: 1.1
 # [META] REQ_REFS: [ADR-005, ADR-040]
@@ -8,7 +8,7 @@
 
 {
   networking = {
-    hostName = "nixhome";
+    hostName = "nixos-minimal";
     useDHCP = lib.mkDefault true;
 
     # ── FIREWALL (nftables Standard) ──────────────────────────────────────
@@ -29,12 +29,11 @@
       ];
     };
 
-    # ── DOMAIN & DNS ───────────────────────────────────────────────────────
-    # Local resolution via AdGuardHome (if enabled)
-    nameservers = [ "1.1.1.1" "8.8.8.8" ];
+    # DNS configuration (Local-first logic)
+    nameservers = [ "1.1.1.1" "1.0.0.1" ];
   };
 
   # ── SATELLITE (ADR-040): VPN Kill-Switch Logic ──────────────────────────
-  # This module prepares the foundation for vpn-confinement.nix.
-  # Explicit drop policies are enforced via nftables.
+  # This base configuration ensures that only explicitly allowed ports are open.
+  # All other traffic is dropped by nftables default policy.
 }
