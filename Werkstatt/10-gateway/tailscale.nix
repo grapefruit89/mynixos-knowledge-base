@@ -1,37 +1,28 @@
-# [META] ID: NIXH-GATE-012 | ADR: TBD | Version: 1.0 | Stage: 1
+# [META] ID: NIXH-GATE-014
+# [META] TITLE: Tailscale (Zero-Trust Access)
+# [META] STAGE: 2 (Nugget)
+# [META] VERSION: 1.1
+# [META] REQ_REFS: [ADR-005, ADR-040]
+
 { config, lib, pkgs, ... }:
-let
-  # 🚀 NMS v4.0 Metadaten
-  nms = {
-    id = "NIXH-10-GTW-011";
-    title = "Tailscale (Zero-Touch)";
-    description = "Declarative VPN with autoconnect pattern and SOPS-nix secret integration.";
-    layer = 10;
-    nixpkgs.category = "services/networking";
-    capabilities = [ "network/vpn" "security/tailscale" ];
-    audit.last_reviewed = "2026-03-02";
-    audit.complexity = 2;
-  };
-in
+
 {
-  options.my.meta.tailscale = lib.mkOption {
-    type = lib.types.attrs;
-    default = nms;
-    readOnly = true;
-    description = "NMS metadata for tailscale module";
+  services.tailscale = {
+    enable = true;
+    
+    # ── AUTHENTICATION ────────────────────────────────────────────────────
+    # Auth key is managed by sops-nix (NIXH-CORE-004)
+    # [ADR-040] Associative Mining: verify key availability
+    authKeyFile = config.sops.secrets.tailscale_auth_key.path;
+    
+    # ── SETTINGS ──────────────────────────────────────────────────────────
+    useRoutingFeatures = "server"; # Allow exit node & subnet routing
+    extraUpFlags = [ 
+      "--advertise-exit-node"
+      "--ssh" # Native Tailscale SSH for recovery
+    ];
   };
 
-
-  config = lib.mkIf config.my.services.tailscale.enable {
-    services.tailscale = { enable = true; openFirewall = false; useRoutingFeatures = "client"; extraUpFlags = [ "--ssh" "--accept-dns=true" "--accept-routes=true" ]; permitCertUid = config.services.caddy.user; };
-    systemd.services.tailscale-autoconnect = {
-      description = "Automatic Tailscale Login";
-      after = [ "tailscaled.service" "network-online.target" ]; wants = [ "tailscaled.service" "network-online.target" ]; wantedBy = [ "multi-user.target" ];
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = pkgs.writeShellScript "tailscale-auth" "sleep 2; status=$(${pkgs.tailscale}/bin/tailscale status --json | ${pkgs.jq}/bin/jq -r .BackendState); if [ '$status' = 'NeedsLogin' ] || [ '$status' = 'Stopped' ]; then ${pkgs.tailscale}/bin/tailscale up --authkey='$(cat ${config.sops.secrets.tailscale_token.path})'; fi";
-      };
-    };
-    systemd.services.tailscaled = { stopIfChanged = false; serviceConfig = { Restart = "always"; RestartSec = "2s"; OOMScoreAdjust = -1000; }; };
-  };
+  # ── PERSISTENCE (Impermanence) ──────────────────────────────────────────
+  # Tailscale state lives in /var/lib/tailscale (handled by NIXH-CORE-003)
 }
