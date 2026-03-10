@@ -38,6 +38,11 @@
 
   # ── CONTEXTUAL SATELLITES (Associative Mining) ──────────────────────────
   # Verknüpfung mit DISK_SYSTEM Label via fileSystems (extern deklariert)
-  # Ensure microcode is active
   hardware.cpu.intel.updateMicrocode = true;
+  
+  # Console Font for High-Res Displays
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "de";
+  };
 }
