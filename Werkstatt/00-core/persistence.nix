@@ -7,6 +7,9 @@
 { config, lib, pkgs, ... }:
 
 {
+  # [MEILENSTEIN 3]: Impermanence & Sovereign Persistence
+  # This module assumes that / is mounted as tmpfs and DISK_SYSTEM provides /persist.
+
   environment.persistence."/persist" = {
     hideMounts = true;
     directories = [
@@ -15,7 +18,7 @@
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/etc/nixos" # [ADR-032] Local Mirroring / Workshop
-      "/etc/ssh" # Host Identity
+      "/etc/ssh" # Host Identity (SSH Keys)
 
       # ── IDENTITY & SECRETS ───────────────────────────────────────────────
       "/var/lib/pocket-id"
@@ -40,8 +43,4 @@
       "/etc/machine-id"
     ];
   };
-
-  # ── SATELLITE (ADR-033): Root-on-tmpfs Warning ──────────────────────────
-  # This module assumes that / is mounted as tmpfs.
-  # Ensure the mount point /persist exists on the DISK_SYSTEM.
 }
