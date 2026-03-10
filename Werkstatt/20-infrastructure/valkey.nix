@@ -1,40 +1,32 @@
-# [META] ID: NIXH-INFRA-006 | ADR: TBD | Version: 1.0 | Stage: 1
-{ pkgs, lib, config, ... }:
-let
-  # 🚀 NMS v4.0 Metadaten
-  nms = {
-    id = "NIXH-20-INF-006";
-    title = "Valkey (SRE Exhausted)";
-    description = "High-performance Valkey (Redis fork) with memory caps and aviation-grade sandboxing.";
-    layer = 10;
-    nixpkgs.category = "services/databases";
-    capabilities = [ "database/key-value" "caching/redis" ];
-    audit.last_reviewed = "2026-03-02";
-    audit.complexity = 2;
-  };
-in
+# [META] ID: NIXH-INFRA-002
+# [META] TITLE: Valkey (Redis Replacement)
+# [META] STAGE: 2 (Nugget)
+# [META] VERSION: 1.1
+# [META] REQ_REFS: [ADR-021, ADR-040]
+
+{ config, lib, pkgs, ... }:
+
 {
-  options.my.meta.valkey = lib.mkOption {
-    type = lib.types.attrs;
-    default = nms;
-    readOnly = true;
-    description = "NMS metadata for valkey module";
+  services.redis.servers."main" = {
+    enable = true;
+    # [ADR-021] Binary Efficiency: Valkey (C-Binary) instead of Redis
+    package = pkgs.valkey;
+    
+    # ── SETTINGS ──────────────────────────────────────────────────────────
+    port = 6379;
+    bind = "127.0.0.1";
+    
+    # ── PERSISTENCE (Impermanence) ──────────────────────────────────────────
+    # State is kept on /persist/var/lib/redis-valkey (via NIXH-CORE-003)
+    save = [ [ 900 1 ] [ 300 10 ] [ 60 10000 ] ];
   };
 
-
-  config = lib.mkIf config.my.services.valkey.enable {
-    services.redis.package = pkgs.valkey;
-    services.redis.servers.valkey = {
-      enable = true; bind = "127.0.0.1"; port = 6379; openFirewall = false;
-      settings = {
-        maxmemory = "512mb"; maxmemory-policy = "allkeys-lru";
-        save = [ "900 1" "300 10" "60 10000" ];
-        unixsocket = "/run/redis-valkey/redis.sock"; unixsocketperm = lib.mkForce "770";
-      };
-    };
-    systemd.services.redis-valkey.serviceConfig = {
-      ProtectSystem = "strict"; ProtectHome = true; PrivateTmp = true; PrivateDevices = true; NoNewPrivileges = true;
-      MemoryDenyWriteExecute = true; RestrictAddressFamilies = [ "AF_INET" "AF_UNIX" ]; OOMScoreAdjust = -500;
-    };
+  # ── HARDENING (Aviation-Grade) ──────────────────────────────────────────
+  systemd.services.redis-main.serviceConfig = {
+    ProtectSystem = "strict";
+    ProtectHome = true;
+    PrivateTmp = true;
+    PrivateDevices = true;
+    MemoryDenyWriteExecute = true;
   };
 }
