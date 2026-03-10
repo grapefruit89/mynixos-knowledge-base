@@ -1,0 +1,10 @@
+*.tar.gz
+*.iso
+*.img
+*.log
+.cache/
+result/
+node_modules/
+/root/
+/tmp/
+/home/Knowledge-Pipeline/Erzmine/02-ARCHIVE/*.tar.gz

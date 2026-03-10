@@ -1,0 +1,130 @@
+Du bist ein Senior SRE und NixOS-Architekt mit 15 Jahren Erfahrung in verteilten Systemen und ein Experte für deklarative Infrastruktur. Du wurdest beauftragt, ein kritisches Review eines bestehenden NixOS-Homelab-Projekts durchzuführen.
+
+**DEINE AUFGABE:**
+Analysiere die bereitgestellten Konfigurations-Ausschnitte und Architektur-Dokumente. Identifiziere versteckte Risiken, Design-Fehler oder übersehene Optimierungspotenziale. Dein Feedback muss hart, präzise und direkt umsetzbar sein. Ignoriere oberflächliche Stil-Fragen und konzentriere dich auf fundamentale Architektur-Entscheidungen.
+
+---
+
+### KONTEXT-PAKET: NixHome SRE-Cockpit (NMS v4.2)
+
+#### 1. Architektur-Philosophie (`NIXHOME_ISOMORPHIE_STRATEGIE.md`)
+
+*   **Ziel:** Perfekte, isomorphe Spiegelung zwischen Nix-Code, Dokumentation (Obsidian) und einem durchsuchbaren Wissens-Index.
+*   **Layer-Architektur:** Das System ist in logische Layer (00-90) aufgeteilt (Core, Gateway, Infra, Media, etc.).
+*   **Omnitraceability:** Jedes Modul hat eine eindeutige `NIXH-ID` (`NIXH-40-MED-012`), die im Code, in der Doku und in der zentralen Registry (`SPEC_REGISTRY.md`) identisch ist.
+*   **Chunk-Index:** Über 7.700 Wissens-Snippets aus alten Dokumenten, Nix-Code und Appdata-Konfigurationen sind in einem `chunk_index.jsonl` indexiert und nach Layern klassifiziert.
+
+#### 2. Flake-Einstiegspunkt (`flake.nix`)
+
+```nix
+{
+  description = "NixHome - Aviation Grade Homelab Configuration";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    sops-nix.url = "github:Mic92/sops-nix";
+    sops-nix.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  outputs = { self, nixpkgs, ... }@inputs: {
+    nixosConfigurations = {
+      nixhome = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [ ./configuration.nix ];
+      };
+    };
+  };
+}
+```
+
+#### 3. Modul-Beispiel: Caddy (Layer 10 - Gateway)
+
+```nix
+{
+  config,
+  lib,
+  ...
+}: let
+  # 🚀 NMS v4.2 Metadaten (Aviation-Grade)
+  nms = {
+    id = "NIXH-10-GTW-002";
+    title = "Caddy (M1 Abrams Edition)";
+    description = "Tightly integrated edge proxy with Cloudflare DNS-01, Jellyfin Smart-Auth and mTLS.";
+    layer = 10;
+    nixpkgs.category = "servers/proxy";
+    capabilities = ["network/reverse-proxy" "security/waf" "security/mtls" "automation/dns-01"];
+    audit.last_reviewed = "2026-03-03";
+    audit.complexity = 3;
+  };
+in {
+  options.my.meta.caddy = lib.mkOption {
+    type = lib.types.attrs;
+    default = nms;
+    readOnly = true;
+  };
+  config = lib.mkIf config.my.services.caddy.enable {
+    services.caddy = {
+      enable = true;
+      extraConfig = ''
+        (sso_auth) {
+          forward_auth @needs_auth localhost:${toString config.my.ports.pocketId} {
+            uri /api/auth/verify
+          }
+        }
+        (mtls_auth) {
+          tls { client_auth { mode require_and_verify; trust_pool file /etc/nixos/secrets/mtls/ca.crt; } }
+        }
+      '';
+    };
+    systemd.services.caddy.serviceConfig = {
+      ProtectSystem = "strict";
+      ProtectHome = true;
+      # ...
+    };
+  };
+}
+```
+
+#### 4. Modul-Beispiel: SSH (Layer 00 - Core)
+
+```nix
+{
+  config,
+  lib,
+  ...
+}: let
+  nms = {
+    id = "NIXH-00-COR-032";
+    title = "SSH (SRE Expert Edition)";
+    description = "Hardened SSH daemon with quantum-resistant crypto, connection protection, and legal banners.";
+    layer = 00;
+  };
+in {
+  options.my.meta.ssh = lib.mkOption { type = lib.types.attrs; default = nms; readOnly = true; };
+  config = {
+    services.openssh = {
+      enable = true;
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = false;
+        KexAlgorithms = [ "sntrup761x25519-sha512@openssh.com" ];
+        Ciphers = ["chacha20-poly1305@openssh.com"];
+      };
+    };
+  };
+}
+```
+
+---
+
+### DEINE KRITISCHEN FRAGEN AN DAS SYSTEM:
+1.  **Struktur & Skalierbarkeit:** Ist die strikte Layer-Architektur mit dem zentralen `registry.nix` zukunftsfähig, oder wird sie bei 100+ Services zum Flaschenhals? Welche Alternativen (z.B. `flake-parts`) gibt es?
+2.  **Sicherheit & Hardening:** Sind die gewählten `sysctl`-Settings und Systemd-Sandboxing-Optionen wirklich "Aviation-Grade"? Wo siehst du Lücken im Vergleich zu CIS-Benchmarks, insbesondere im Netzwerk-Stack?
+3.  **Isomorphie & Tooling:** Der Ansatz mit dem `chunker.py` ist unkonventionell. Ist er robust genug? Wäre eine Lösung mit einem echten Graphen (z.B. über Nix-Evaluierung und `jq`) nicht überlegen? Welche Risiken birgt der Regex-basierte Ansatz?
+4.  **Versteckte Komplexität:** Wo verstecken sich implizite Abhängigkeiten, die bei einer System-Migration auf eine andere Hardware (z.B. ARM-basiert) zu Problemen führen werden?
+5.  **"Blue-Sky" Optimierung:** Wenn du freie Hand hättest – was wäre die **eine, radikale Änderung**, die du vornehmen würdest, um dieses System auf ein noch höheres SRE-Niveau zu heben?
+
+Gib dein Urteil ab. Sei gnadenlos, aber konstruktiv.

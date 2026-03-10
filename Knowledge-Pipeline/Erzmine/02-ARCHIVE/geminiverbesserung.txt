@@ -1,0 +1,27 @@
+Gemini hat gesagt
+Hier ist die Architekturanalyse des NixHome-Projekts. Die Bewertung konzentriert sich ausschließlich auf strukturelle Integrität, Sicherheit und Skalierbarkeit.
+
+1. Struktur & Skalierbarkeit
+Die Layer-Architektur (00-90) erzwingt eine künstliche Hierarchie, die bei wachsender Service-Anzahl unweigerlich zu Zirkelbezügen führt. Die Einbettung von Metadaten über options.my.meta.* bläht den Evaluierungsbaum des NixOS-Systems unnötig auf. Metadaten gehören nicht in die Laufzeit- oder Systemkonfiguration des Zielhosts.
+
+Der Einsatz von flake-parts trennt die Definition von Modulen, Metadaten und der eigentlichen System-Instanziierung sauber auf. Das Modulsystem von NixOS ist für die Konfiguration von Diensten gedacht, nicht als Datenbank für ein SRE-Cockpit. Die zentrale registry.nix wird bei über 100 Diensten zum Flaschenhals bei der Auswertung, da jede Änderung an den Metadaten einen kompletten Rebuild des System-Graphen triggern kann.
+
+2. Sicherheit & Hardening
+Das Prädikat „Aviation-Grade“ ist durch die gezeigten Konfigurationen nicht gedeckt. In der SSH-Konfiguration fehlen essenzielle CIS-Vorgaben wie PermitEmptyPasswords = "no", MaxAuthTries oder die Deaktivierung von TCP-Forwarding (AllowTcpForwarding = "no"). Der Kex-Algorithmus sntrup761x25519-sha512@openssh.com ist modern, aber ohne explizite Einschränkung der HostKey-Algorithmen und MACs bleibt die Härtung unvollständig.
+
+Die Härtung des Caddy-Dienstes per systemd (ProtectSystem, ProtectHome) ist Standard, aber rudimentär. Es fehlen Einschränkungen der Capabilities (CapabilityBoundingSet=~), PrivateDevices, PrivateUsers und NoNewPrivileges. Der Caddy-Reverse-Proxy kommuniziert über einen lokalen TCP-Port (localhost:${toString config.my.ports.pocketId}) mit dem SSO-Dienst. Dies eröffnet Angriffsvektoren für Lateral Movement innerhalb des Host-Netzwerks. Eine Kommunikation über Unix-Domain-Sockets ist hier zwingend erforderlich, um Zugriffsrechte auf Dateisystemebene strikt zu reglementieren.
+
+3. Isomorphie & Tooling
+Die Extraktion von Metadaten aus Nix-Code über externe Text-Parser oder reguläre Ausdrücke (wie bei einem Python-basierten Chunker) ist ein fundamentaler Designfehler. Nix ist keine reguläre Sprache. Verschachtelte Attribute, mehrzeilige Strings und dynamisch generierte Werte führen bei Text-Parsern zwangsläufig zu Fehlern und Abweichungen.
+
+Die verlässliche Methode ist die direkte Auswertung des abstrakten Syntaxbaums über Nix selbst. Die Metadaten müssen über nix eval --json .#nixosConfigurations.nixhome.config.my.meta exportiert und per jq in den Wissens-Index überführt werden. Nur der Nix-Evaluator garantiert, dass die Dokumentation im Chunk-Index exakt dem tatsächlichen Systemzustand entspricht.
+
+4. Versteckte Komplexität
+Die Architektur-Abhängigkeit ist in der flake.nix hart einkodiert (system = "x86_64-linux"). Eine Migration auf eine ARM-Architektur schlägt auf Flake-Ebene sofort fehl.
+
+Die Dateistruktur zeigt Module wie 00-core/host-q958-hardware-profile.nix und 00-core/kernel-slim.nix. Diese enthalten hardware-spezifische Kernel-Parameter oder Bootloader-Konfigurationen, die nicht sauber von den logischen Diensten (Layer 10-90) abstrahiert sind. Wenn ein Dienst in Layer 40 (Media) implizit Abhängigkeiten zu Befehlssätzen oder Treibern aus Layer 00 voraussetzt, bricht das System bei einem Hardware-Wechsel.
+
+5. "Blue-Sky" Optimierung
+Die radikalste und notwendigste Änderung ist die vollständige Entkopplung der Konfigurationslogik vom Deployment-Prozess durch ein GitOps-Deployment-Framework (wie Colmena).
+
+Aktuell ist das System ein Monolith für eine Einzelmaschine (nixosConfigurations.nixhome). Die Metadaten-Verwaltung wird komplett aus den NixOS-Modulen (config.my.meta) entfernt und als eigenständige Flake-Ausgabe (outputs.metadata) definiert. Die Layer-Architektur wird durch ein profilbasiertes Tagging-System ersetzt. Dadurch wird das Setup von einer schwerfälligen Einzelsystem-Konfiguration zu einer zustandslosen, skalierbaren Infrastruktur-Bibliothek, die ohne Code-Duplizierung auf x beliebige Knoten ausgerollt werden kann.

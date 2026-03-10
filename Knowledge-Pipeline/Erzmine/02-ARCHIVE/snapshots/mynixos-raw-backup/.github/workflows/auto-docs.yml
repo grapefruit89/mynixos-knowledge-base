@@ -1,0 +1,40 @@
+name: "System Integrity & Documentation"
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**.nix'
+      - 'scripts/**'
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Generate Mermaid Diagram
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python3 scripts/generate-mermaid.py > ARCHITECTURE.md || echo "Mermaid generation failed"
+
+      - name: Generate Health Report
+        run: |
+          bash scripts/generate-health-report.sh
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "SRE-Bot"
+          git config --global user.email "sre-bot@m7c5.de"
+          git add ARCHITECTURE.md HEALTH_REPORT.md
+          git commit -m "docs: auto-update system integrity reports [skip ci]" || echo "No changes to commit"
+          git push
+

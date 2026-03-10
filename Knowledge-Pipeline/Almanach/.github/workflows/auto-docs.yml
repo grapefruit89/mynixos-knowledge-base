@@ -1,0 +1,35 @@
+name: 📝 Auto-Documentation Engine
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 🛠️ Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python_version: '3.x'
+
+      - name: 📊 Generate TOC
+        run: |
+          python3 scripts/generate_toc.py
+
+      - name: 🧜 Render Mermaid Diagrams
+        uses: neenkow/mermaid-cli-action@v1
+        with:
+          source: "**/*.md"
+          output: "docs/assets/diagrams"
+
+      - name: 🚀 Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: auto-update TOC and render mermaid diagrams"

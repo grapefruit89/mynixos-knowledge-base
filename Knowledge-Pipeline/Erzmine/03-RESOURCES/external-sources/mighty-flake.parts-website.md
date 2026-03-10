@@ -1,0 +1,14 @@
+---
+title: flake.parts-website (mightyiam Nugget)
+category: architecture/mightyiam-discovery
+capabilities: [extracted-readme, traceability-secured]
+sources: [https://github.com/mightyiam/flake.parts-website]
+---
+
+
+# Source of [flake.parts](https://flake.parts)
+
+This is in a separate repo to prevent commit churn in the [flake-parts repo](https://github.com/hercules-ci/flake-parts),
+as the dependencies are updated frequently.
+
+Go to [flake.parts](https://flake.parts).

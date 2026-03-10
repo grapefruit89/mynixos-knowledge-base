@@ -1,0 +1,623 @@
+# LLM-METADATA-START
+# PLATINUM_ID: 0.00
+# FILE_NAME: GEMINI.md
+# PURPOSE: MASTER PROJECT CONTEXT & SOURCE OF TRUTH (v2.1 - Hardened)
+# EXECUTION: Reference only (READ-ONLY for AI agents)
+# DEPENDENCIES: dumper.py, 0.00_platinum_core.sh
+# CONTEXT_TRIGGERS: Project root, architecture, standards, workflow, unraid
+# LAST_MODIFIED: 2026-01-29T14:30:00Z
+# RISK_LEVEL: CRITICAL (Modifying this file can break entire system understanding)
+# LLM-METADATA-END
+
+# Platinum Admin (TOWER System) - AI Agent Constitution
+
+## 0. DOCUMENT SCOPE & AGENT BOUNDARIES
+
+### 0.1 Purpose
+This document defines the **operational reality** for AI agents working within the Platinum Admin ecosystem. It serves as:
+- **Single Source of Truth** for system architecture
+- **Safety Contract** preventing destructive operations
+- **Context Primer** for all sessions (read this FIRST)
+
+### 0.2 Execution Context
+**CURRENT ENVIRONMENT:** Development/Staging Workspace  
+**WORKSPACE ROOT:** `/mnt/docker_and_vm/platinum_admin_backup_extract`  
+**PRODUCTION ROOT:** `/mnt/user/platinum_admin` *(INACCESSIBLE to agent - read-only via user-provided dumps)*
+
+⚠️ **CRITICAL CONSTRAINT:** This agent operates in a **SANDBOX**. All operations are confined to the workspace path above. ANY attempt to access paths outside this boundary will FAIL (permission denied).
+
+### 0.3 Import Protocol (Getting External Data)
+Since this agent CANNOT access live system paths, the USER must:
+1. Copy files from production/backup locations into workspace
+2. Inform agent of new files via explicit message
+3. Agent validates file presence before analysis
+
+**Example USER workflow:**
+```bash
+# USER executes (agent CANNOT):
+cp /mnt/user/backups/latest.tar.gz /mnt/docker_and_vm/platinum_admin_backup_extract/
+# Then tells agent: "I've copied latest.tar.gz to workspace"
+```
+
+---
+
+## 1. Project Overview
+
+### 1.1 Identity
+**Platinum Admin** (internal codename: **TOWER**) is a Bash-native administration suite for Unraid 6.x (Slackware-based). It orchestrates:
+- System health monitoring (disk SMART, Docker container state)
+- Automated backups with verification
+- Service management (Traefik reverse proxy, Jellyfin media server)
+- Forensic logging and emergency recovery
+
+### 1.2 Core Philosophy
+
+#### Offline Sovereignty
+- **Zero Cloud Dependencies:** All logic executes locally; no external API calls
+- **Air-Gapped Capability:** System must function without internet connectivity
+- **Data Custody:** User retains physical control of all backups and logs
+
+#### Aviation Safety Model
+Borrowed from aerospace engineering:
+- **Pre-Flight Checks:** Scripts validate environment before execution (disk space, dependencies, permissions)
+- **Black Box Recording:** All operations logged with timestamp, PID, and exit code
+- **Verified Writes:** Every file creation/modification MUST be confirmed (size check + optional checksum)
+- **Graceful Degradation:** Failures in non-critical subsystems don't halt core operations
+
+#### Isomorphic Purity
+- **Peter=Peter Principle:** Filename MUST match internal `PLATINUM_ID`
+- **Unified Taxonomy:** `X.YY_descriptive_name.ext` format across ALL project files
+- **Self-Documenting Code:** LLM-metadata headers enable autonomous understanding
+
+#### Strategic Decoupling
+- **USB Boot = Vanilla:** Unraid's boot device remains stock (no modifications to core OS)
+- **Array = Logic Home:** All scripts and configs live on the main storage array (`/mnt/user/*`)
+- **Persistence Separation:** Transient data (logs) vs. immutable data (scripts) use different storage strategies
+
+---
+
+## 2. System Architecture & Constraints
+
+### 2.1 Unraid Storage Model (CRITICAL UNDERSTANDING)
+
+#### Physical Layout
+```
+/boot/              # USB flash drive (FAT32, ~32GB)
+  └─ config/        # Persistent configs (survives reboot)
+      └─ go         # Startup script (executed ONCE at array mount)
+
+/mnt/user/          # Unified namespace (FUSE layer over multiple disks)
+  └─ platinum_admin/      # Project root (actual location varies - see 2.1.2)
+
+/mnt/cache/         # SSD cache tier (optional, Mover job migrates to Array nightly)
+/mnt/disk1/         # Individual array disks (accessed directly for diagnostics)
+/tmp/               # RAM disk (cleared on reboot)
+/var/log/           # Unraid system logs (NOT persistent across reboots)
+```
+
+#### Persistence Rules
+| Path Pattern | Survives Reboot? | Notes |
+|--------------|------------------|-------|
+| `/boot/config/**` | ✅ YES | Small files only (<1MB recommended) |
+| `/mnt/user/**` | ✅ YES | Lives on Array or Cache (subject to Mover) |
+| `/mnt/cache/**` | ⚠️ CONDITIONAL | Moves to Array at 3:00 AM (default) |
+| `/tmp/**` | ❌ NO | RAM-based tmpfs |
+| `/var/log/**` | ❌ NO | Recreated from templates at boot |
+| `/root/**` | ❌ NO | Entire `/root` is in RAM |
+
+⚠️ **IMPLICATION FOR SCRIPTS:**
+- Logs written to `/tmp` are LOST on reboot → Use `/mnt/user/platinum_admin/logs/`
+- Cron jobs in `/etc/cron.d/` don't persist → Recreate via `/boot/config/go`
+- Any file outside `/boot` and `/mnt/user` is VOLATILE
+
+### 2.2 User Scripts Plugin Integration
+Unraid uses the **User Scripts** plugin for scheduled tasks. Our strategy:
+- **Trigger Scripts:** Place minimal launchers in User Scripts UI
+- **Core Logic:** Keep in `/mnt/user/platinum_admin/production/`
+- **Example Launcher:**
+  ```bash
+  #!/bin/bash
+  /mnt/user/platinum_admin/production/1_daily/1.01_morning_briefing.sh
+  ```
+
+### 2.3 Docker Networking Standards
+
+#### Network Modes (Traefik Integration)
+- **Bridge Mode (Default):** Container gets internal IP (`172.17.x.x`)
+  - Use for: Most services (Jellyfin, databases)
+  - Traefik routes via: Container name (`jellyfin.local.domain`)
+- **Host Mode:** Container uses server IP directly
+  - Use for: Network-sensitive tools (NetData, Speedtest)
+  - ⚠️ Port conflicts possible (can't bind same port twice)
+- **Custom Bridge (`traefik_proxy`):** Dedicated network for Traefik-routed services
+  - Created via: `docker network create traefik_proxy`
+  - Isolation benefit: Separates web-exposed services from backend DBs
+
+#### Volume Mount Conventions
+- **Config Data:** Named volumes (`jellyfin_config`)
+  - Stored in: `/var/lib/docker/volumes/`
+  - Backup strategy: Docker export/import
+- **Media Libraries:** Bind mounts (`/mnt/user/media:/data`)
+  - Direct array access (no Docker overhead)
+  - Permissions: `PUID=99, PGID=100` (Unraid nobody:users)
+
+### 2.4 Array vs Cache Disk Strategy
+
+#### File Placement Decision Matrix
+| Data Type | Location | Reasoning |
+|-----------|----------|-----------|
+| Scripts (`*.sh`) | Array (`/mnt/user/`) | Immutable, low I/O |
+| Logs (`*.log`) | Cache → Array | Frequent writes benefit from SSD, migrate nightly |
+| Backups (`*.tar.gz`) | Array (direct) | Large, sequential writes (bypass cache) |
+| Docker Volumes | Cache (if available) | Random I/O benefits from SSD |
+
+#### Mover Script Awareness
+- **Default Schedule:** 3:00 AM daily (moves Cache → Array)
+- **Script Implications:** Don't write to `/mnt/cache/` at 3:00 AM (file locks!)
+- **Override:** Use `/mnt/user/` paths (Unraid auto-selects Cache if available)
+
+#### Parity Operations
+- **Parity Check:** Monthly (full disk read)
+- **Parity Rebuild:** After disk failure (heavy writes)
+- **Script Courtesy:** Detect via `/proc/mdcmd` and defer intensive I/O:
+  ```bash
+  if grep -q "PARITY_CHECK" /proc/mdcmd; then
+    log_warn "Parity operation active - postponing heavy I/O"
+    exit 0
+  fi
+  ```
+
+---
+
+## 3. Coding Standards & Safety Protocols
+
+### 3.1 Isomorphic Naming (The Iron Law)
+
+#### ID Allocation Schema
+```
+0.00-0.99  → Core infrastructure (bootstrapping, shared libraries)
+1.00-1.99  → Daily operations (briefings, cleanup, aliases)
+2.00-2.99  → Maintenance (scheduled health checks, optimization)
+3.00-3.99  → Monitoring (real-time dashboards, alerting)
+4.00-4.99  → Development (dumpers, generators, documentation)
+9.00-9.99  → Emergency (forensics, recovery, rollback)
+```
+
+#### Filename Structure
+```
+{PLATINUM_ID}_{functional_description}.{extension}
+
+Examples:
+✅ 1.03_docker_health_check.sh
+✅ 2.15_jellyfin_library_optimizer.py
+✅ 9.01_system_blackbox_recorder.sh
+❌ backup_script.sh (no ID)
+❌ 1.3_test.sh (ID must be X.YY format)
+```
+
+#### Extension Policy
+- `.sh` → Bash scripts (executable)
+- `.py` → Python scripts (executable)
+- `.md` → Markdown documentation
+- `.conf` → Configuration files (use ID for versioning: `2.08_nginx.conf`)
+- `.log` → Output files (NEVER `.txt` for logs)
+
+### 3.2 LLM-Metadata Headers (Mandatory)
+
+Every script/document MUST begin with:
+```bash
+# LLM-METADATA-START
+# PLATINUM_ID: X.YY
+# FILE_NAME: X.YY_exact_filename.ext
+# PURPOSE: Single-line description of what this does
+# EXECUTION: How to run (e.g., "bash 1.01_morning_briefing.sh" or "Reference only")
+# DEPENDENCIES: Required tools (e.g., "jq, curl, 0.00_platinum_core.sh")
+# CONTEXT_TRIGGERS: Keywords for search (e.g., "backup, docker, traefik")
+# LAST_MODIFIED: ISO 8601 timestamp (YYYY-MM-DDTHH:MM:SSZ)
+# RISK_LEVEL: LOW | MEDIUM | HIGH | CRITICAL
+# LLM-METADATA-END
+```
+
+#### Risk Level Definitions
+- **LOW:** Read-only operations, reporting
+- **MEDIUM:** Writes to logs, creates temp files
+- **HIGH:** Modifies configs, restarts services
+- **CRITICAL:** Data deletion, system-wide changes
+
+### 3.3 Bash Script Structure (The Template)
+
+```bash
+#!/bin/bash
+# LLM-METADATA-START ... (headers) ... LLM-METADATA-END
+
+# ============================================================
+# SAFETY CONFIGURATION (Non-Negotiable)
+# ============================================================
+set -euo pipefail  # Exit on error, undefined vars, pipe failures
+IFS=$'\n\t'        # Sane Internal Field Separator
+
+# ============================================================
+# TRAP HANDLERS (Error Recovery)
+# ============================================================
+cleanup() {
+    local exit_code=$?
+    if [ $exit_code -ne 0 ]; then
+        log_err "Script failed with exit code $exit_code at line $BASH_LINENO"
+    fi
+    # Add cleanup logic (remove temp files, unlock resources)
+}
+trap cleanup EXIT ERR
+
+# ============================================================
+# DEPENDENCY INJECTION
+# ============================================================
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CORE_LIB="/mnt/user/platinum_admin/production/0_core/0.00_platinum_core.sh"
+
+if [ ! -f "$CORE_LIB" ]; then
+    echo "[FATAL] Core library not found: $CORE_LIB" >&2
+    exit 1
+fi
+source "$CORE_LIB"
+
+# ============================================================
+# MAIN LOGIC
+# ============================================================
+main() {
+    log_info "Starting ${0##*/}"
+    
+    # Pre-flight checks
+    check_disk_space "/mnt/user" 1G || exit 1
+    check_binary "jq" || exit 1
+    
+    # ... actual work ...
+    
+    log_info "Completed successfully"
+}
+
+main "$@"
+```
+
+### 3.4 Absolute Path Enforcement
+
+#### Rules
+1. **NO relative paths** (`../`, `./`, `~/`) in production scripts
+2. **ALWAYS use variables** from `0.00_platinum_core.sh`:
+   ```bash
+   # ✅ CORRECT
+   source "${PLATINUM_ROOT}/production/0_core/0.00_platinum_core.sh"
+   cat "${PLATINUM_VAR}/log/latest.log"
+   
+   # ❌ WRONG
+   source ../0_core/0.00_platinum_core.sh
+   cat /mnt/user/platinum_admin/log/latest.log  # Hardcoded!
+   ```
+3. **Variable validation** via `set -u` (undefined vars cause exit)
+4. **Core variables** (defined in `0.00_platinum_core.sh`):
+   ```bash
+   PLATINUM_ROOT=/mnt/user/platinum_admin
+   PLATINUM_VAR=/mnt/user/platinum_admin  # For configs/logs
+   PLATINUM_TMP=/tmp/platinum_$$          # Temp files (PID-unique)
+   ```
+
+### 3.5 Write Verification Protocol
+
+#### Level 1: Size Check (Minimum Requirement)
+```bash
+TARGET="/mnt/user/platinum_admin/logs/output.log"
+echo "data" > "$TARGET"
+
+if [ -s "$TARGET" ]; then
+    log_info "Write successful: $TARGET ($(stat -c%s "$TARGET") bytes)"
+else
+    log_err "Write failed: $TARGET is empty or missing"
+    exit 1
+fi
+```
+
+#### Level 2: Content Validation (Recommended for Configs)
+```bash
+EXPECTED_PATTERN="server_name.*example.com"
+if grep -q "$EXPECTED_PATTERN" "$TARGET"; then
+    log_info "Config validation passed"
+else
+    log_err "Config missing required pattern: $EXPECTED_PATTERN"
+    exit 1
+fi
+```
+
+#### Level 3: Checksum Verification (Critical Files)
+```bash
+EXPECTED_SHA256="a3b5c8d9..."  # Pre-computed hash
+ACTUAL_SHA256=$(sha256sum "$TARGET" | awk '{print $1}')
+
+if [ "$ACTUAL_SHA256" = "$EXPECTED_SHA256" ]; then
+    log_info "Checksum verified"
+else
+    log_err "Checksum mismatch! File may be corrupted"
+    exit 1
+fi
+```
+
+### 3.6 Logging Standards
+
+#### Output Destination
+```
+${PLATINUM_VAR}/log/
+  ├─ system/           # Automated scripts (cron jobs)
+  │   └─ 2026-01-29_143045_1.01_morning_briefing_PID12345.log
+  ├─ reports/          # Manual investigations
+  │   └─ 2026-01-29_150000_jellyfin_analysis.log
+  └─ emergency/        # Forensic captures
+      └─ 2026-01-28_020000_9.01_blackbox_crash.log
+```
+
+#### Filename Convention
+```
+{ISO_DATE}_{TIME}_{SCRIPT_ID}_{DESCRIPTION}_PID{PROCESS_ID}.log
+
+Components:
+- ISO_DATE:     YYYY-MM-DD (sortable)
+- TIME:         HHMMSS (includes seconds to prevent collisions)
+- SCRIPT_ID:    X.YY from metadata
+- DESCRIPTION:  Optional context (e.g., "full_backup", "error_state")
+- PID:          Process ID for parallel execution safety
+```
+
+#### Log Function Usage
+```bash
+# From 0.00_platinum_core.sh
+log_info "Informational message"     # [INFO] prefix, stdout
+log_warn "Warning condition"         # [WARN] prefix, stdout, yellow color
+log_err "Error occurred"             # [ERROR] prefix, stderr, red color
+log_debug "Verbose diagnostics"      # [DEBUG] prefix, only if DEBUG=1
+
+# ❌ NEVER use raw echo/printf for operational output
+echo "Starting backup"  # BAD - bypasses logging infrastructure
+```
+
+### 3.7 V2 Framework Protection (Sacred Ground)
+
+#### Allowed Operations
+```bash
+# ✅ READING (Always Safe)
+cat platinum_admin/v2_framework/orchestrator.sh
+grep "function" platinum_admin/v2_framework/**/*.sh
+
+# ✅ COPYING (For Backups)
+cp -r platinum_admin/v2_framework platinum_admin/v2_framework.backup_$(date +%Y%m%d)
+
+# ✅ NON-DESTRUCTIVE RENAMES (Archiving)
+mv platinum_admin/v2_framework platinum_admin/old_v2_framework_$(date +%Y%m%d)
+```
+
+#### FORBIDDEN Operations
+```bash
+# ❌ DELETION (Use rename instead)
+rm -rf platinum_admin/v2_framework
+
+# ❌ TRUNCATION
+> platinum_admin/v2_framework/file.sh
+truncate -s 0 platinum_admin/v2_framework/file.sh
+
+# ❌ PERMISSION LOCKS (Prevents access)
+chmod 000 platinum_admin/v2_framework
+
+# ❌ MOVING OUTSIDE PROJECT (Data loss risk)
+mv platinum_admin/v2_framework /tmp/
+```
+
+#### Enforcement Strategy
+If deletion is genuinely needed (confirmed by user):
+1. **Prefix Method:** `mv v2_framework deprecated_v2_framework`
+2. **Timestamp Method:** `mv v2_framework v2_framework.archived_20260129`
+3. **Backup First:** Always create `*.tar.gz` archive before ANY modification
+
+---
+
+## 4. The Verified 5-Step Security Workflow (V5-SW)
+
+This protocol is **MANDATORY** for all system modifications (config edits, script updates, service restarts).
+
+### Step 1: ANALYZE (Ist-Zustand Assessment)
+**Goal:** Understand current state BEFORE planning changes
+
+```bash
+# Read entire target file
+cat /mnt/user/appdata/traefik/traefik.yml
+
+# Check file metadata
+stat /mnt/user/appdata/traefik/traefik.yml
+
+# Verify permissions/ownership
+ls -lah /mnt/user/appdata/traefik/traefik.yml
+
+# Document findings
+echo "Current entrypoints: http (80), https (443)"
+echo "Certificate resolver: letsencrypt via HTTP challenge"
+```
+
+**Red Flags:**
+- File doesn't exist → Creation required (different workflow)
+- File owned by root → Permissions issue (can agent write?)
+- File is symlink → Analyze target, not link
+
+### Step 2: BACKUP (Safety Net Creation)
+**Goal:** Enable rollback if modification fails
+
+```bash
+# Timestamp format: YYYYMMDD_HHMMSS
+BACKUP_TS=$(date +%Y%m%d_%H%M%S)
+BACKUP_PATH="${TARGET_FILE}.backup_${BACKUP_TS}"
+
+# Create backup with verification
+cp "$TARGET_FILE" "$BACKUP_PATH"
+if [ -s "$BACKUP_PATH" ]; then
+    log_info "Backup created: $BACKUP_PATH"
+else
+    log_err "Backup failed - ABORTING operation"
+    exit 1
+fi
+
+# Optional: Calculate checksum for integrity proof
+sha256sum "$BACKUP_PATH" > "${BACKUP_PATH}.sha256"
+```
+
+**Backup Storage:**
+- Same directory as original (easy to find)
+- Retention: Keep 3 most recent backups, purge older (prevents disk bloat)
+
+### Step 3: PLAN (Surgical Precision)
+**Goal:** Articulate exact changes with line-level specificity
+
+```bash
+# Example plan documentation
+cat << EOF
+MODIFICATION PLAN for traefik.yml:
+1. Locate line: "entryPoints:" (line 12)
+2. Add new entry after line 15:
+   websecure:
+     address: ":443"
+     http:
+       tls:
+         certResolver: letsencrypt
+3. Verify indentation matches existing YAML structure (2 spaces)
+4. No deletion required
+EOF
+```
+
+**Anti-Patterns (DO NOT):**
+- ❌ "I'll update the config" (too vague)
+- ❌ "Add HTTPS support" (unclear WHERE/HOW)
+- ✅ "Insert lines 16-20 with exact YAML shown above"
+
+### Step 4: EXECUTE (The Operation)
+**Goal:** Apply changes with atomic write verification
+
+#### Method A: Inline Editor (Small Changes)
+```bash
+# Using sed for single-line edits
+sed -i '15a\  websecure:\n    address: ":443"' traefik.yml
+
+# Verify write (file should be larger now)
+NEW_SIZE=$(stat -c%s traefik.yml)
+OLD_SIZE=$(stat -c%s traefik.yml.backup_*)
+if [ "$NEW_SIZE" -gt "$OLD_SIZE" ]; then
+    log_info "File size increased as expected"
+fi
+```
+
+#### Method B: Heredoc Rewrite (Structural Changes)
+```bash
+# For major rewrites, use cat with heredoc
+cat << 'EOF' > traefik.yml
+# Traefik Static Configuration
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+    http:
+      tls:
+        certResolver: letsencrypt
+# ... rest of config ...
+EOF
+
+# CRITICAL: Check file is not empty
+[ -s traefik.yml ] || { log_err "Write produced empty file!"; exit 1; }
+```
+
+### Step 5: VERIFY (Proof of Success)
+**Goal:** Confirm change had intended effect AND didn't break system
+
+#### Verification Level 1: Syntax Check
+```bash
+# YAML syntax validation
+python3 -c "import yaml; yaml.safe_load(open('traefik.yml'))" || {
+    log_err "Invalid YAML syntax - rolling back"
+    cp traefik.yml.backup_* traefik.yml
+    exit 1
+}
+```
+
+#### Verification Level 2: Service Test
+```bash
+# Docker container config test
+docker-compose config --quiet || {
+    log_err "Docker Compose validation failed"
+    exit 1
+}
+
+# Dry-run restart (check for errors without committing)
+docker-compose up -d --no-start traefik
+docker logs traefik 2>&1 | grep -i error && {
+    log_err "Traefik reported errors - review logs"
+}
+```
+
+#### Verification Level 3: Functional Test
+```bash
+# Test actual functionality
+curl -k https://localhost:443 -o /dev/null -w "%{http_code}" | grep -q "200\|301\|302" || {
+    log_err "HTTPS endpoint not responding correctly"
+}
+```
+
+---
+
+## 5. Operational Workflows
+
+### 5.1 Session Initialization (FIRST STEPS)
+
+When starting a new chat session, the agent MUST:
+
+1. **Read this document** (`GEMINI.md`) to load context
+2. **Check Flight Recorder** for previous session state:
+   ```bash
+   cat platinum_admin/logs/FLIGHT_RECORDER.md
+   ```
+3. **Generate fresh dump** (if user provides new files):
+   ```bash
+   cd platinum_admin
+   python3 4.06_omni_dumper.py --output ../latest_dump.txt
+   ```
+4. **Validate workspace boundary**:
+   ```bash
+   pwd  # Should be /mnt/docker_and_vm/platinum_admin_backup_extract or subdirectory
+   ```
+
+### 5.2 File Analysis Request Pattern
+
+```
+USER: "Analyze the Traefik config"
+
+AGENT RESPONSE:
+1. "I need to locate the file first. Searching workspace..."
+   $ find . -name "*traefik*" -type f
+2. "Found: ./platinum_admin/production/configs/2.08_traefik.yml"
+3. "Reading file to analyze current state..."
+   $ cat platinum_admin/production/configs/2.08_traefik.yml
+4. [Provides analysis with specific line references]
+```
+
+### 5.3 Emergency Recovery Protocol
+
+If user reports system failure:
+
+1. **DO NOT ASSUME** - Ask for diagnostic data:
+   ```
+   "Please copy these logs to workspace:
+   - /var/log/syslog (last 100 lines)
+   - Docker container logs: docker logs <container_name>
+   - Traefik access log"
+   ```
+
+2. **Analyze in isolation** (workspace only)
+
+3. **Provide step-by-step recovery** using V5-SW workflow
+
+4. **Document incident** in FLIGHT_RECORDER.md:
+   ```markdown
+   ## 2026-01-29 14:45 - Traefik HTTPS Failure
+   - Symptom: 502 Bad Gateway on all services
+   - Root Cause:

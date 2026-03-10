@@ -1,0 +1,27 @@
+{
+  auto_httpsa disable_redirects
+  ocsp_stapling off
+  servers {
+    trusted_proxies static 100.64.0.0/10 192.168.0.0/16 172.16.0.0/12 10.0.0.0/8
+  }
+}
+
+(oidc_auth) {
+    @not_admin {
+        not remote_ip 100.64.0.0/10 192.168.2.0/24 127.0.0.1
+    }
+    forward_auth @not_admin localhost:8080 {
+        uri /api/verify?rd=https://auth.m7c5.de
+        copy_headers Remote-User Remote-Groups
+    }
+}
+
+jellyfin.tower.local {
+  import oidc_auth
+  reverse_proxy localhost:8096
+}
+
+sabnzbd.tower.local {
+  import oidc_auth
+  reverse_proxy localhost:9090
+}

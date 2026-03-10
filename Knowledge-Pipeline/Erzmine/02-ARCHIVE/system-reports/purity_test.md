@@ -1,0 +1,1 @@
+Reinheitstest: {Abstraktion} & $Souveränität

@@ -1,0 +1,131 @@
+https://nix.dev/manual/nix/2.24/installation/env-variables
+https://github.com/Misterio77/nix-starter-configs
+8.5. Experimental Commands
+8.5.1. nix
+8.5.2. nix build
+8.5.3. nix bundle
+8.5.4. nix config
+8.5.5. nix config check
+8.5.6. nix config show
+8.5.7. nix copy
+8.5.8. nix daemon
+8.5.9. nix derivation
+8.5.10. nix derivation add
+8.5.11. nix derivation show
+8.5.12. nix develop
+8.5.13. nix edit
+8.5.14. nix env
+8.5.15. nix env shell
+8.5.16. nix eval
+8.5.17. nix flake
+8.5.18. nix flake archive
+8.5.19. nix flake check
+8.5.20. nix flake clone
+8.5.21. nix flake info
+8.5.22. nix flake init
+8.5.23. nix flake lock
+8.5.24. nix flake metadata
+8.5.25. nix flake new
+8.5.26. nix flake prefetch
+8.5.27. nix flake show
+8.5.28. nix flake update
+8.5.29. nix fmt
+8.5.30. nix hash
+8.5.31. nix hash convert
+8.5.32. nix hash file
+8.5.33. nix hash path
+8.5.34. nix hash to-base16
+8.5.35. nix hash to-base32
+8.5.36. nix hash to-base64
+8.5.37. nix hash to-sri
+8.5.38. nix help
+8.5.39. nix help-stores
+8.5.40. nix key
+8.5.41. nix key convert-secret-to-public
+8.5.42. nix key generate-secret
+8.5.43. nix log
+8.5.44. nix nar
+8.5.45. nix nar cat
+8.5.46. nix nar dump-path
+8.5.47. nix nar ls
+8.5.48. nix nar pack
+8.5.49. nix path-info
+8.5.50. nix print-dev-env
+8.5.51. nix profile
+8.5.52. nix profile diff-closures
+8.5.53. nix profile history
+8.5.54. nix profile install
+8.5.55. nix profile list
+8.5.56. nix profile remove
+8.5.57. nix profile rollback
+8.5.58. nix profile upgrade
+8.5.59. nix profile wipe-history
+8.5.60. nix realisation
+8.5.61. nix realisation info
+8.5.62. nix registry
+8.5.63. nix registry add
+8.5.64. nix registry list
+8.5.65. nix registry pin
+8.5.66. nix registry remove
+8.5.67. nix repl
+8.5.68. nix run
+8.5.69. nix search
+8.5.70. nix store
+8.5.71. nix store add
+8.5.72. nix store add-file
+8.5.73. nix store add-path
+8.5.74. nix store cat
+8.5.75. nix store copy-log
+8.5.76. nix store copy-sigs
+8.5.77. nix store delete
+8.5.78. nix store diff-closures
+8.5.79. nix store dump-path
+8.5.80. nix store gc
+8.5.81. nix store info
+8.5.82. nix store ls
+8.5.83. nix store make-content-addressed
+8.5.84. nix store optimise
+8.5.85. nix store path-from-hash-part
+8.5.86. nix store ping
+8.5.87. nix store prefetch-file
+8.5.88. nix store repair
+8.5.89. nix store sign
+8.5.90. nix store verify
+8.5.91. nix upgrade-nix
+8.5.92. nix why-depends
+--------
+
+Sort: Best match
+Showing results 1-31 of 31 options.
+Data from nixpkgs 1267bb49.
+services.radarr.package
+services.radarr.group
+services.prometheus.exporters.exportarr-radarr.url
+services.radarr.user
+services.radarr.openFirewall
+services.prometheus.exporters.exportarr-radarr.enable
+services.radarr.enable
+services.radarr.dataDir
+services.prometheus.exporters.exportarr-radarr.extraFlags
+services.prometheus.exporters.exportarr-radarr.group
+services.prometheus.exporters.exportarr-sonarr.url
+services.prometheus.exporters.exportarr-readarr.url
+services.prometheus.exporters.exportarr-prowlarr.url
+services.prometheus.exporters.exportarr-lidarr.url
+services.prometheus.exporters.exportarr-bazarr.url
+services.prometheus.exporters.exportarr-radarr.user
+services.bazarr.enable
+services.radarr.environmentFiles
+services.radarr.settings.update.mechanism
+services.radarr.settings.update.automatically
+services.radarr.settings.server.port
+services.radarr.settings.log.analyticsEnabled
+services.radarr.settings
+services.prometheus.exporters.exportarr-radarr.port
+services.prometheus.exporters.exportarr-radarr.package
+services.prometheus.exporters.exportarr-radarr.openFirewall
+services.prometheus.exporters.exportarr-radarr.listenAddress
+services.prometheus.exporters.exportarr-radarr.firewallRules
+services.prometheus.exporters.exportarr-radarr.firewallFilter
+services.prometheus.exporters.exportarr-radarr.environment
+services.prometheus.exporters.exportarr-radarr.apiKeyFile

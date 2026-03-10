@@ -1,0 +1,45 @@
+# ❄️ DIN 5008 Project Freeze Protocol
+
+Use this checklist to verify the stability of the application before "freezing" a version.
+
+## 1. Core Integrity (The "Skeleton")
+
+- [ ] **Offline Launch**: Disconnect from the internet. Open `index.html`. Does the application load without errors?
+- [ ] **Console check**: Press F12. Are there any red errors in the console? (Ignore harmless warnings).
+- [ ] **No 404s**: Ensure no missing CSS or JS files are reported in the Network tab.
+
+## 2. Visual Layout (DIN 5008 Spec)
+
+- [ ] **Sidebar Width**: Is the sidebar fixed at exactly 300px?
+- [ ] **Viewport**: Is the A4 sheet centered in the gray area?
+- [ ] **Mobile Blocker**: Reduce window width to <1000px. Does the "Desktop Only" overlay appear?
+- [ ] **Fold Marks**: Are the fold marks visible on the left edge of the paper?
+
+## 3. Print Engine (Critical)
+
+- [ ] **Print Preview**: Press `Ctrl+P` or click the Print button.
+- [ ] **No Sidebar**: The dark sidebar MUST NOT appear on the print preview.
+- [ ] **No Placeholders**: Empty fields (like specific address lines) should not show gray placeholder text.
+- [ ] **Margins**: The content should sit correctly on the page (no double margins from browser headers).
+
+## 4. Input Logic & Data
+
+- [ ] **Sender Block**: contenteditable fields (Name, Street) accept text.
+- [ ] **Back Address (Zone 1)**: Updates automatically when you type in the Sender Block.
+- [ ] **Date Field**: Defaults to today's date? Can it be changed?
+- [ ] **Local Storage**: Refresh the page. Is your typed text still there?
+
+## 5. UI Interactions
+
+- [ ] **Settings Modal**: Opens when clicking "Einstellungen"?
+- [ ] **Layout Switch**: Toggling "Form A" / "Form B" shifts the address window position?
+- [ ] **Profile Manager**: Clicking "Absender-Profil" opens the dialog?
+- [ ] **Profile Save**: Saving profile data populates the sender block?
+
+## 6. Code "Smell" Test
+
+- [ ] **No Orphans**: Are there any `.ts` or `.json` files left in the root that shouldn't be there?
+- [ ] **Spec-IDs**: Do random checks in `index.html`. Do elements have `data-spec` attributes?
+
+---
+*Signed off by:* _________________ *Date:* __________

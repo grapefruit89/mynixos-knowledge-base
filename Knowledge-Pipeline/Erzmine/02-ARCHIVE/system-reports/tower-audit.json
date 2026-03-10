@@ -1,0 +1,102 @@
+[
+  {
+    "source": "3x925rhb3gjikmqkyqigjcdfqm1hsn6a",
+    "module": "flake.nix",
+    "key": "",
+    "imports": [
+      {
+        "source": "8kbm5cya72xgd3cb7n8qyc6jqjbavqi7",
+        "module": "systems/tower/default.nix",
+        "key": ""
+      },
+      {
+        "source": "8kbm5cya72xgd3cb7n8qyc6jqjbavqi7",
+        "module": "flake.nix#nixosModules.caddy",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "source": "8kbm5cya72xgd3cb7n8qyc6jqjbavqi7",
+    "module": "systems/tower/default.nix",
+    "key": "",
+    "imports": [
+      {
+        "source": "8kbm5cya72xgd3cb7n8qyc6jqjbavqi7",
+        "module": "modules/services/arion.nix",
+        "key": ""
+      },
+      {
+        "source": "8kbm5cya72xgd3cb7n8qyc6jqjbavqi7",
+        "module": "modules/security/sops.nix",
+        "key": ""
+      },
+      {
+        "source": "g1q9w2gy0san5s3zrdxwxvknnshndhrc",
+        "module": "modules/sops",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "source": "8kbm5cya72xgd3cb7n8qyc6jqjbavqi7",
+    "module": "modules/services/arion.nix",
+    "key": "",
+    "imports": []
+  },
+  {
+    "source": "8kbm5cya72xgd3cb7n8qyc6jqjbavqi7",
+    "module": "modules/security/sops.nix",
+    "key": "",
+    "imports": []
+  },
+  {
+    "source": "g1q9w2gy0san5s3zrdxwxvknnshndhrc",
+    "module": "modules/sops",
+    "key": "",
+    "imports": [
+      {
+        "source": "g1q9w2gy0san5s3zrdxwxvknnshndhrc",
+        "module": "modules/sops/templates",
+        "key": ""
+      },
+      {
+        "source": "g1q9w2gy0san5s3zrdxwxvknnshndhrc",
+        "module": "modules/sops/secrets-for-users",
+        "key": ""
+      }
+    ]
+  },
+  {
+    "source": "g1q9w2gy0san5s3zrdxwxvknnshndhrc",
+    "module": "modules/sops/templates",
+    "key": "",
+    "imports": []
+  },
+  {
+    "source": "g1q9w2gy0san5s3zrdxwxvknnshndhrc",
+    "module": "modules/sops/secrets-for-users",
+    "key": "",
+    "imports": []
+  },
+  {
+    "source": "8kbm5cya72xgd3cb7n8qyc6jqjbavqi7",
+    "module": "flake.nix#nixosModules.caddy",
+    "key": "",
+    "imports": [
+      {
+        "source": "8kbm5cya72xgd3cb7n8qyc6jqjbavqi7",
+        "module": "modules/services/caddy.nix",
+        "key": "",
+        "option": "flake.nixosModules.caddy"
+      }
+    ]
+  },
+  {
+    "source": "8kbm5cya72xgd3cb7n8qyc6jqjbavqi7",
+    "module": "modules/services/caddy.nix",
+    "key": "",
+    "option": "flake.nixosModules.caddy",
+    "imports": []
+  }
+]

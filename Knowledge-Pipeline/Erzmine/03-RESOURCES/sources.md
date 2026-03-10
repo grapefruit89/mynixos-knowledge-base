@@ -1,0 +1,223 @@
+# 📚 Zentrale Quellen-Datenbank (Mining-Pipeline)
+
+## hercules-ci
+- [arion](https://github.com/hercules-ci/arion) - Docker Compose with Nix
+- [effects](https://github.com/hercules-ci/effects) - Declarative side-effects
+- [hercules-ci-agent](https://github.com/hercules-ci/hercules-ci-agent) - Infrastructure engine
+- [flake-parts](https://github.com/hercules-ci/flake-parts) - Modular flake framework
+
+## nix-community
+- [disko](https://github.com/nix-community/disko) - Declarative disk partitioning
+- [impermanence](https://github.com/nix-community/impermanence) - Ephemeral root strategy
+- [home-manager](https://github.com/nix-community/home-manager) - User environment management
+- [nixos-hardware](https://github.com/nix-community/nixos-hardware) - Optimized hardware profiles
+- [nix-index](https://github.com/nix-community/nix-index) - File search for nixpkgs
+
+## Individual
+- [sops-nix](https://github.com/Mic92/sops-nix) - Atomic secrets management
+## mightyiam (Shahar "Dawn" Or)
+- [dendritic](https://github.com/mightyiam/dendritic) - The original Dendritic pattern
+- [infra](https://github.com/mightyiam/infra) - Reference IT infrastructure
+- [files](https://github.com/mightyiam/files) - File generation for flake-parts
+- [input-branches](https://github.com/mightyiam/input-branches) - Flake input manipulation
+- [best-of-nix](https://github.com/mightyiam/best-of-nix) - Ranked resources
+- [nix-unit](https://github.com/mightyiam/nix-unit) - Unit testing for Nix
+- [zero-to-nix](https://github.com/mightyiam/zero-to-nix) - Determinate Systems guide
+- [dendritic-blueprint](lokale Synthese) - Der mynixos Architektur-Standard
+- [modules/services/arion.nix](lokale Implementierung) - Arion-Modul für mynixos
+- [modules/security/sops.nix](lokale Implementierung) - Sops-Modul für mynixos
+- [systems/tower/default.nix](lokale Implementierung) - Tower Host für mynixos
+- [snabbdom-shields-badge](https://github.com/mightyiam/snabbdom-shields-badge) - Dashboard badges
+- [refjump.nvim](https://github.com/mightyiam/refjump.nvim) - Dev env navigation
+- [00_GOLDEN_HANDBOOK_Dendritic_NixOS](lokale Synthese) - Der Master-Index des Handbuchs
+- [GUIDE-Seven-Quality-Gates](lokale Synthese) - Der Qualitäts-Standard für mynixos
+- [GUIDE-Dendritic-Modularization](lokale Synthese) - Die Struktur-Bibel für mynixos
+- [GUIDE-SRE-Hardening-Secrets](lokale Synthese) - Der Sicherheits-Standard für mynixos
+- [GUIDE-Hygiene-Persistence](lokale Synthese) - Der Hygiene-Standard für mynixos
+- [GUIDE-Container-Symbiose-Arion](lokale Synthese) - Der Arion-Standard für mynixos
+- [abrush](https://github.com/mightyiam/abrush) - Extracted README
+- [add-npm-script](https://github.com/mightyiam/add-npm-script) - Extracted README
+- [ahkab](https://github.com/mightyiam/ahkab) - Extracted README
+- [array-to-hash](https://github.com/mightyiam/array-to-hash) - Extracted README
+- [auto-package](https://github.com/mightyiam/auto-package) - Extracted README
+- [ava](https://github.com/mightyiam/ava) - Extracted README
+- [ava-test-promise-fail-why](https://github.com/mightyiam/ava-test-promise-fail-why) - Extracted README
+- [awesome-nix](https://github.com/mightyiam/awesome-nix) - Extracted README
+- [awesome-rust-streaming](https://github.com/mightyiam/awesome-rust-streaming) - Extracted README
+- [bokand.github.io](https://github.com/mightyiam/bokand.github.io) - Extracted README
+- [broccoli-sample-app](https://github.com/mightyiam/broccoli-sample-app) - Extracted README
+- [budo-serving-old](https://github.com/mightyiam/budo-serving-old) - Extracted README
+- [by-name](https://github.com/mightyiam/by-name) - Extracted README
+- [caller-id](https://github.com/mightyiam/caller-id) - Extracted README
+- [cards-player-samples](https://github.com/mightyiam/cards-player-samples) - Extracted README
+- [catppuccin-nix](https://github.com/mightyiam/catppuccin-nix) - Extracted README
+- [catppuccin-qutebrowser](https://github.com/mightyiam/catppuccin-qutebrowser) - Extracted README
+- [chai](https://github.com/mightyiam/chai) - Extracted README
+- [changeset](https://github.com/mightyiam/changeset) - Extracted README
+- [chromiumoxide](https://github.com/mightyiam/chromiumoxide) - Extracted README
+- [closure-library](https://github.com/mightyiam/closure-library) - Extracted README
+- [codecov-node](https://github.com/mightyiam/codecov-node) - Extracted README
+- [compat-table](https://github.com/mightyiam/compat-table) - Extracted README
+- [css-typed-om](https://github.com/mightyiam/css-typed-om) - Extracted README
+- [curated-linter](https://github.com/mightyiam/curated-linter) - Extracted README
+- [cyclejs](https://github.com/mightyiam/cyclejs) - Extracted README
+- [DefinitelyTyped](https://github.com/mightyiam/DefinitelyTyped) - Extracted README
+- [detect-installed](https://github.com/mightyiam/detect-installed) - Extracted README
+- [devshell](https://github.com/mightyiam/devshell) - Extracted README
+- [diff](https://github.com/mightyiam/diff) - Extracted README
+- [diff-so-fancy](https://github.com/mightyiam/diff-so-fancy) - Extracted README
+- [django-cms](https://github.com/mightyiam/django-cms) - Extracted README
+- [dom-event](https://github.com/mightyiam/dom-event) - Extracted README
+- [dom-events](https://github.com/mightyiam/dom-events) - Extracted README
+- [edit-code-as-code](https://github.com/mightyiam/edit-code-as-code) - Extracted README
+- [eleventy-img](https://github.com/mightyiam/eleventy-img) - Extracted README
+- [enhanced-resolve](https://github.com/mightyiam/enhanced-resolve) - Extracted README
+- [equals-regalia](https://github.com/mightyiam/equals-regalia) - Extracted README
+- [eslint-config-love](https://github.com/mightyiam/eslint-config-love) - Extracted README
+- [eslint-config-standard](https://github.com/mightyiam/eslint-config-standard) - Extracted README
+- [eslint-failing-rules](https://github.com/mightyiam/eslint-failing-rules) - Extracted README
+- [eslint-failing-rules-off-config](https://github.com/mightyiam/eslint-failing-rules-off-config) - Extracted README
+- [eslint-multiple-parsers](https://github.com/mightyiam/eslint-multiple-parsers) - Extracted README
+- [eslint-off-rules](https://github.com/mightyiam/eslint-off-rules) - Extracted README
+- [eslint-plugin-ava](https://github.com/mightyiam/eslint-plugin-ava) - Extracted README
+- [eslint-plugin-import](https://github.com/mightyiam/eslint-plugin-import) - Extracted README
+- [eslint-plugin-typescript](https://github.com/mightyiam/eslint-plugin-typescript) - Extracted README
+- [exercism-rust](https://github.com/mightyiam/exercism-rust) - Extracted README
+- [fantasy-observable](https://github.com/mightyiam/fantasy-observable) - Extracted README
+- [Figment](https://github.com/mightyiam/Figment) - Extracted README
+- [flake-file](https://github.com/mightyiam/flake-file) - Extracted README
+- [flake-input-patcher](https://github.com/mightyiam/flake-input-patcher) - Extracted README
+- [flake-parts](https://github.com/mightyiam/flake-parts) - Extracted README
+- [flake.parts-website](https://github.com/mightyiam/flake.parts-website) - Extracted README
+- [flakestry.dev](https://github.com/mightyiam/flakestry.dev) - Extracted README
+- [flake-utils](https://github.com/mightyiam/flake-utils) - Extracted README
+- [foundation](https://github.com/mightyiam/foundation) - Extracted README
+- [foundation-1](https://github.com/mightyiam/foundation-1) - Extracted README
+- [fromentries](https://github.com/mightyiam/fromentries) - Extracted README
+- [futures-rs](https://github.com/mightyiam/futures-rs) - Extracted README
+- [Geolib](https://github.com/mightyiam/Geolib) - Extracted README
+- [get-own-enumerable-property-symbols](https://github.com/mightyiam/get-own-enumerable-property-symbols) - Extracted README
+- [get-saucelabs-browsers](https://github.com/mightyiam/get-saucelabs-browsers) - Extracted README
+- [get-window](https://github.com/mightyiam/get-window) - Extracted README
+- [github-fork-ribbon-css](https://github.com/mightyiam/github-fork-ribbon-css) - Extracted README
+- [git-instafix](https://github.com/mightyiam/git-instafix) - Extracted README
+- [google-drive-recursive-ownership](https://github.com/mightyiam/google-drive-recursive-ownership) - Extracted README
+- [got](https://github.com/mightyiam/got) - Extracted README
+- [greenkeeper-lockfile](https://github.com/mightyiam/greenkeeper-lockfile) - Extracted README
+- [grunt-eslint](https://github.com/mightyiam/grunt-eslint) - Extracted README
+- [grunt-jsdoc](https://github.com/mightyiam/grunt-jsdoc) - Extracted README
+- [GSoC](https://github.com/mightyiam/GSoC) - Extracted README
+- [gulp-eslint](https://github.com/mightyiam/gulp-eslint) - Extracted README
+- [handle-path](https://github.com/mightyiam/handle-path) - Extracted README
+- [helper-copyright](https://github.com/mightyiam/helper-copyright) - Extracted README
+- [highctidh](https://github.com/mightyiam/highctidh) - Extracted README
+- [home-manager](https://github.com/mightyiam/home-manager) - Extracted README
+- [hub](https://github.com/mightyiam/hub) - Extracted README
+- [i3status-rust](https://github.com/mightyiam/i3status-rust) - Extracted README
+- [import-tree](https://github.com/mightyiam/import-tree) - Extracted README
+- [in-publish](https://github.com/mightyiam/in-publish) - Extracted README
+- [is-dom](https://github.com/mightyiam/is-dom) - Extracted README
+- [is-regalia](https://github.com/mightyiam/is-regalia) - Extracted README
+- [itertools](https://github.com/mightyiam/itertools) - Extracted README
+- [jessfraz-global-nix](https://github.com/mightyiam/jessfraz-global-nix) - Extracted README
+- [js-beautify](https://github.com/mightyiam/js-beautify) - Extracted README
+- [karma-brief-reporter](https://github.com/mightyiam/karma-brief-reporter) - Extracted README
+- [keysim.js](https://github.com/mightyiam/keysim.js) - Extracted README
+- [license-generator](https://github.com/mightyiam/license-generator) - Extracted README
+- [lint-files](https://github.com/mightyiam/lint-files) - Extracted README
+- [lint-text](https://github.com/mightyiam/lint-text) - Extracted README
+- [magic-nix-cache](https://github.com/mightyiam/magic-nix-cache) - Extracted README
+- [massah](https://github.com/mightyiam/massah) - Extracted README
+- [abrush](https://github.com/mightyiam/abrush) - Extracted README
+- [add-npm-script](https://github.com/mightyiam/add-npm-script) - Extracted README
+- [ahkab](https://github.com/mightyiam/ahkab) - Extracted README
+- [array-to-hash](https://github.com/mightyiam/array-to-hash) - Extracted README
+- [auto-package](https://github.com/mightyiam/auto-package) - Extracted README
+- [ava](https://github.com/mightyiam/ava) - Extracted README
+- [ava-test-promise-fail-why](https://github.com/mightyiam/ava-test-promise-fail-why) - Extracted README
+- [awesome-nix](https://github.com/mightyiam/awesome-nix) - Extracted README
+- [awesome-rust-streaming](https://github.com/mightyiam/awesome-rust-streaming) - Extracted README
+- [bokand.github.io](https://github.com/mightyiam/bokand.github.io) - Extracted README
+- [broccoli-sample-app](https://github.com/mightyiam/broccoli-sample-app) - Extracted README
+- [budo-serving-old](https://github.com/mightyiam/budo-serving-old) - Extracted README
+- [by-name](https://github.com/mightyiam/by-name) - Extracted README
+- [caller-id](https://github.com/mightyiam/caller-id) - Extracted README
+- [cards-player-samples](https://github.com/mightyiam/cards-player-samples) - Extracted README
+- [catppuccin-nix](https://github.com/mightyiam/catppuccin-nix) - Extracted README
+- [catppuccin-qutebrowser](https://github.com/mightyiam/catppuccin-qutebrowser) - Extracted README
+- [chai](https://github.com/mightyiam/chai) - Extracted README
+- [changeset](https://github.com/mightyiam/changeset) - Extracted README
+- [chromiumoxide](https://github.com/mightyiam/chromiumoxide) - Extracted README
+- [closure-library](https://github.com/mightyiam/closure-library) - Extracted README
+- [codecov-node](https://github.com/mightyiam/codecov-node) - Extracted README
+- [compat-table](https://github.com/mightyiam/compat-table) - Extracted README
+- [css-typed-om](https://github.com/mightyiam/css-typed-om) - Extracted README
+- [curated-linter](https://github.com/mightyiam/curated-linter) - Extracted README
+- [cyclejs](https://github.com/mightyiam/cyclejs) - Extracted README
+- [DefinitelyTyped](https://github.com/mightyiam/DefinitelyTyped) - Extracted README
+- [detect-installed](https://github.com/mightyiam/detect-installed) - Extracted README
+- [devshell](https://github.com/mightyiam/devshell) - Extracted README
+- [diff](https://github.com/mightyiam/diff) - Extracted README
+- [diff-so-fancy](https://github.com/mightyiam/diff-so-fancy) - Extracted README
+- [django-cms](https://github.com/mightyiam/django-cms) - Extracted README
+- [dom-event](https://github.com/mightyiam/dom-event) - Extracted README
+- [dom-events](https://github.com/mightyiam/dom-events) - Extracted README
+- [edit-code-as-code](https://github.com/mightyiam/edit-code-as-code) - Extracted README
+- [eleventy-img](https://github.com/mightyiam/eleventy-img) - Extracted README
+- [enhanced-resolve](https://github.com/mightyiam/enhanced-resolve) - Extracted README
+- [equals-regalia](https://github.com/mightyiam/equals-regalia) - Extracted README
+- [eslint-config-love](https://github.com/mightyiam/eslint-config-love) - Extracted README
+- [eslint-config-standard](https://github.com/mightyiam/eslint-config-standard) - Extracted README
+- [eslint-failing-rules](https://github.com/mightyiam/eslint-failing-rules) - Extracted README
+- [eslint-failing-rules-off-config](https://github.com/mightyiam/eslint-failing-rules-off-config) - Extracted README
+- [eslint-multiple-parsers](https://github.com/mightyiam/eslint-multiple-parsers) - Extracted README
+- [eslint-off-rules](https://github.com/mightyiam/eslint-off-rules) - Extracted README
+- [eslint-plugin-ava](https://github.com/mightyiam/eslint-plugin-ava) - Extracted README
+- [eslint-plugin-import](https://github.com/mightyiam/eslint-plugin-import) - Extracted README
+- [eslint-plugin-typescript](https://github.com/mightyiam/eslint-plugin-typescript) - Extracted README
+- [exercism-rust](https://github.com/mightyiam/exercism-rust) - Extracted README
+- [fantasy-observable](https://github.com/mightyiam/fantasy-observable) - Extracted README
+- [Figment](https://github.com/mightyiam/Figment) - Extracted README
+- [flake-file](https://github.com/mightyiam/flake-file) - Extracted README
+- [flake-input-patcher](https://github.com/mightyiam/flake-input-patcher) - Extracted README
+- [flake-parts](https://github.com/mightyiam/flake-parts) - Extracted README
+- [flake-utils](https://github.com/mightyiam/flake-utils) - Extracted README
+- [flake.parts-website](https://github.com/mightyiam/flake.parts-website) - Extracted README
+- [flakestry.dev](https://github.com/mightyiam/flakestry.dev) - Extracted README
+- [foundation](https://github.com/mightyiam/foundation) - Extracted README
+- [foundation-1](https://github.com/mightyiam/foundation-1) - Extracted README
+- [fromentries](https://github.com/mightyiam/fromentries) - Extracted README
+- [futures-rs](https://github.com/mightyiam/futures-rs) - Extracted README
+- [Geolib](https://github.com/mightyiam/Geolib) - Extracted README
+- [get-own-enumerable-property-symbols](https://github.com/mightyiam/get-own-enumerable-property-symbols) - Extracted README
+- [get-saucelabs-browsers](https://github.com/mightyiam/get-saucelabs-browsers) - Extracted README
+- [get-window](https://github.com/mightyiam/get-window) - Extracted README
+- [git-instafix](https://github.com/mightyiam/git-instafix) - Extracted README
+- [github-fork-ribbon-css](https://github.com/mightyiam/github-fork-ribbon-css) - Extracted README
+- [google-drive-recursive-ownership](https://github.com/mightyiam/google-drive-recursive-ownership) - Extracted README
+- [got](https://github.com/mightyiam/got) - Extracted README
+- [greenkeeper-lockfile](https://github.com/mightyiam/greenkeeper-lockfile) - Extracted README
+- [grunt-eslint](https://github.com/mightyiam/grunt-eslint) - Extracted README
+- [grunt-jsdoc](https://github.com/mightyiam/grunt-jsdoc) - Extracted README
+- [GSoC](https://github.com/mightyiam/GSoC) - Extracted README
+- [gulp-eslint](https://github.com/mightyiam/gulp-eslint) - Extracted README
+- [handle-path](https://github.com/mightyiam/handle-path) - Extracted README
+- [helper-copyright](https://github.com/mightyiam/helper-copyright) - Extracted README
+- [highctidh](https://github.com/mightyiam/highctidh) - Extracted README
+- [home-manager](https://github.com/mightyiam/home-manager) - Extracted README
+- [hub](https://github.com/mightyiam/hub) - Extracted README
+- [i3status-rust](https://github.com/mightyiam/i3status-rust) - Extracted README
+- [import-tree](https://github.com/mightyiam/import-tree) - Extracted README
+- [in-publish](https://github.com/mightyiam/in-publish) - Extracted README
+- [is-dom](https://github.com/mightyiam/is-dom) - Extracted README
+- [is-regalia](https://github.com/mightyiam/is-regalia) - Extracted README
+- [itertools](https://github.com/mightyiam/itertools) - Extracted README
+- [jessfraz-global-nix](https://github.com/mightyiam/jessfraz-global-nix) - Extracted README
+- [js-beautify](https://github.com/mightyiam/js-beautify) - Extracted README
+- [karma-brief-reporter](https://github.com/mightyiam/karma-brief-reporter) - Extracted README
+- [keysim.js](https://github.com/mightyiam/keysim.js) - Extracted README
+- [license-generator](https://github.com/mightyiam/license-generator) - Extracted README
+- [lint-files](https://github.com/mightyiam/lint-files) - Extracted README
+- [lint-text](https://github.com/mightyiam/lint-text) - Extracted README
+- [magic-nix-cache](https://github.com/mightyiam/magic-nix-cache) - Extracted README
+- [massah](https://github.com/mightyiam/massah) - Extracted README

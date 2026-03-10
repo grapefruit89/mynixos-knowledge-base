@@ -1,0 +1,43 @@
+# [META] ID: NIXH-CORE-016 | ADR: TBD | Version: 1.0 | Stage: 1
+{ ... }:
+{
+  imports = [
+    ./auto-locale.nix
+    ./globals.nix
+    ./backup.nix
+    ./boot-safeguard.nix
+    ./config-merger.nix
+    ./configs.nix
+    ./defaults.nix
+    ./fail2ban.nix
+    ./firewall.nix
+    # ./hardware-configuration.nix # CONFLICT with host-q958
+    ./home-manager.nix
+    ./host.nix
+    ./host-q958-hardware-configuration.nix
+    ./host-q958-hardware-profile.nix
+    ./kernel-slim.nix
+    ./lib-helpers-meta.nix
+    ./locale.nix
+    ./logging.nix
+    ./motd.nix
+    ./network.nix
+    ./nix-tuning.nix
+    ./persistence.nix
+    ./ports.nix
+    ./principles.nix
+    ./registry.nix
+    ./secrets.nix
+    ./shell-premium.nix
+    ./ssh.nix
+    ./ssh-rescue.nix
+    ./storage.nix
+    ./symbiosis.nix
+    ./system.nix
+    ./system-stability.nix
+    ./tty-info.nix
+    ./user-preferences.nix
+    ./users.nix
+    ./zram-swap.nix
+  ];
+}

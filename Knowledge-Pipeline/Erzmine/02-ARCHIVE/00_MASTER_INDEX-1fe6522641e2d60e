@@ -1,0 +1,79 @@
+Status der Wissensbasis: 75 Dateien veredelt.
+
+| Datei | Rolle | Kurzbeschreibung |
+| :--- | :--- | :--- |
+| Radarr Trash Guides.txt | Media Server Admin | Detailed guide from Trash Guides for configuring Radarr, including quality settings, custom formats, and naming conventions for optimal media management. |
+| Sonarr Trashguides.txt | Media Server Admin | Detailed guide from Trash Guides for configuring Sonarr, including quality settings, custom formats, and naming conventions for optimal media management. |
+| 01_Inhaltsverzeichnis_7181.md | N/A | N/A |
+| CIS-Debian10-Ansible-main_CIS-Debian10-Ansible-main_CTX_EXPORT_000000.txt | N/A | N/A |
+| Claude-Principal software architect blueprint for web application (1).md | N/A | N/A |
+| Claude-Principal software architect blueprint for web application (2).md | N/A | N/A |
+| Claude-Principal software architect blueprint for web application (3).md | N/A | N/A |
+| Gmail_Analysis_REPORT_1766572084377.md | N/A | N/A |
+| Gmail_Analysis_REPORT_1766572590419.md | N/A | N/A |
+| ja server sauerei.txt | N/A | N/A |
+| llm-text-2026-01-10T15-32-48-966Z.md | N/A | N/A |
+| perplexity_2025-12-14-hey-debian-13-ansible-und-navidrome-und-linkding-machen-probleme-was-tun.md | N/A | N/A |
+| 2026-01-18_v01_Golden_Prompts_Collection.md | N/A | N/A |
+| Claude-Prompt-Bewertung und Verbesserungsvorschläge (2).md | N/A | N/A |
+| Claude-Traefik-Middleware-Chain für Unraid aufbauen (1).md | N/A | N/A |
+| Claude-Traefik-Middleware-Chain für Unraid aufbauen.md | N/A | N/A |
+| golden_prompts_final.md | N/A | N/A |
+| SystemPrompt_Reference_Iron_Golden_Prompts_v2_5.md | N/A | N/A |
+| 02_Gmail_Defense_Prompt_Library.md | N/A | N/A |
+| Claude-Prompt-Bewertung und Verbesserungsvorschläge (1).md | N/A | N/A |
+| Claude-Prompt-Bewertung und Verbesserungsvorschläge.md | N/A | N/A |
+| history.md | N/A | N/A |
+| CIS-Debian10-Ansible-main_README.md | N/A | N/A |
+| 08_data_types.md | N/A | N/A |
+| history.md | N/A | N/A |
+| old_history.md | N/A | N/A |
+| ux_target.md | N/A | N/A |
+| history.md | N/A | N/A |
+| old_history.md | N/A | N/A |
+| history.md | N/A | N/A |
+| old_history.md | N/A | N/A |
+| history.md | N/A | N/A |
+| old_history.md | N/A | N/A |
+| history.md | N/A | N/A |
+| old_history.md | N/A | N/A |
+| history.md | N/A | N/A |
+| old_history.md | N/A | N/A |
+| .brain_CTX_EXPORT_000000.txt | N/A | N/A |
+| ux_target.md | N/A | N/A |
+| history.md | N/A | N/A |
+| old_history.md | N/A | N/A |
+| ux_target.md | N/A | N/A |
+| history.md | N/A | N/A |
+| old_history.md | N/A | N/A |
+| Der universelle Komponenten-Analysator 🔬 (v21.4 - Verbessert).txt | N/A | N/A |
+| Element Analyzer.txt | N/A | N/A |
+| von gemini.txt | N/A | N/A |
+| 2026-01-13_09-41__text-fragment-sammler_FULL.txt | N/A | N/A |
+| Claude-Gmail Spamfilter mit weighted scoring.md | N/A | N/A |
+| Claude-KI Text Sammler App refactoring (1).md | N/A | N/A |
+| Claude-KI Text Sammler App refactoring.md | N/A | N/A |
+| Claude-LLM-Textsammler mit Verlauf und Export (1).md | N/A | N/A |
+| Claude-Prompt Engineering für Google Gemini optimieren (1).md | N/A | N/A |
+| Claude-Prompt Engineering für Google Gemini optimieren.md | N/A | N/A |
+| llm-text-2026-01-05T21-48-37-399Z.md | N/A | N/A |
+| schau mal her ich habe mir dieses kleine tool hier.md | N/A | N/A |
+| greasyforkextrakt.txt | N/A | N/A |
+| HARIBO (9 kg) Zusammenstellen auch seltene unbekannte Sorten (Parisana, Dedones, Sterne, Erdbeer-Bären...)  Preis für 9kg - 3,43€kg mit GS.txt | N/A | N/A |
+| kommentar extraktor.txt | N/A | N/A |
+| 01_Inhaltsverzeichnis_8290.md | N/A | N/A |
+| 01_Inhaltsverzeichnis_9697.md | N/A | N/A |
+| 2026-01-18_v01_Goldsmith_Audit_Framework.md | N/A | N/A |
+| ki-text-sammler_aktuell_2025-12-18T20-07-00-056Z.md | N/A | N/A |
+| ohne graph ql.txt | N/A | N/A |
+| prompt optimizer gem.txt | N/A | N/A |
+| promt_refinement.txt | N/A | N/A |
+| SENTINEL_DUMP_1766882493984 (1).txt | Security Analyst | A log of analyzed emails (Spam/Trash) detecting patterns like identity spoofing, gibberish domains, and Microsoft tenant abuse, used for tuning a spam filter. |
+| UGREEN 2K Webcam mit.md | Consumer Researcher | Extracted comments and metadata from a MyDealz thread about the UGREEN 2K Webcam, summarizing user experiences and product specs. |
+| Gemini-SVG-Code-Optimierung für Badge-Generator.md | Frontend Developer | Discussion and code fixes for an SVG-based badge generator, focusing on geometry, text paths, and color picking bugs. |
+| zum installiren auf server.txt | System Administrator | A collection of installation guides and notes for software like Audiobookshelf, FreshRSS, Technitium DNS, and Navidrome on Linux servers. |
+| ich habe mir einen hetzner server geholt und dort.md | System Administrator | Guide for setting up Coolify on a Hetzner server, including security hardening, SSH configuration, and firewall setup. |
+| Claude-Principal software architect blueprint for web application.md | Principal Software Architect | Detailed architectural specification for a badge generator including class hierarchy, traceability matrix, and state management. |
+| Gemini-Gibberish-Score und Shannon-Entropie erklärt.md | Data Scientist / Security Analyst | Explanation and analysis of spam detection algorithms using Gibberish scores and Shannon entropy, including script examples. |
+| Gemini-Spamfilter-Entwicklung mit Google Apps Script.md | Google Apps Script Developer | Documentation of the development process for a Gmail spam filter, including code snippets and logic for scoring spam. |
+| llm-text-2026-01-05T18-39-58-437Z.md | Frontend Developer | Development of an HTML-based tool to collect, format, and export text snippets for LLM prompts, including versioning and file handling. |
