@@ -1,5 +1,5 @@
 # [META] ID: NIXH-HOST-002
-# [META] TITLE: Intelligent Hardware & Storage Configuration
+# [META] TITLE: Supreme Portable Hardware Configuration
 # [META] STAGE: 2 (Nugget)
 # [META] VERSION: 1.1
 # [META] REQ_REFS: [ADR-012, ADR-033, ADR-040]
@@ -7,22 +7,14 @@
 { config, lib, pkgs, ... }:
 
 {
-  # ── TIER 0: ROOT-ON-TMPFS & RAM-OPTIMIZATION ─────────────────────────────
+  # ── TIER 0: ROOT-ON-TMPFS (RAM-MAXIMIZATION) ─────────────────────────────
   fileSystems."/" = {
     device = "none";
     fsType = "tmpfs";
     options = [ "defaults" "size=1G" "mode=755" ];
   };
 
-  # [ADR-012] SSD-Schonung: Aggressives Buffering im RAM
-  boot.kernel.sysctl = {
-    "vm.dirty_background_ratio" = 5;
-    "vm.dirty_ratio" = 10;
-    "vm.dirty_expire_centisecs" = 6000; # Daten 60s im RAM halten vor Write
-    "vm.dirty_writeback_centisecs" = 500;
-  };
-
-  # ── TIER A/B: INTERNAL STORAGE (LABELS) ──────────────────────────────────
+  # ── TIER A: HOT STORAGE (DISK_SYSTEM) ────────────────────────────────────
   fileSystems."/nix" = {
     device = "/dev/disk/by-label/DISK_SYSTEM";
     fsType = "ext4";
@@ -40,20 +32,21 @@
     fsType = "vfat";
   };
 
+  # ── TIER B: WARM STORAGE (DISK_CACHE) ────────────────────────────────────
   fileSystems."/var/cache" = {
     device = "/dev/disk/by-label/DISK_CACHE";
     fsType = "btrfs";
     options = [ "compress=zstd" "noatime" ];
   };
 
-  # ── TIER C: COLD STORAGE (MERGERFS LANDKARTE) ─────────────────────────────
+  # ── TIER C: COLD STORAGE (MERGERFS POOL) ──────────────────────────────────
   fileSystems."/data/storage" = {
     device = "/mnt/disk*";
     fsType = "fuse.mergerfs";
     options = [
       "allow_other"
       "use_ino"
-      "cache.files=partial" # Landkarten-Logik (Metadata in RAM)
+      "cache.files=partial"
       "dropcacheonclose=true"
       "moveonenospc=true"
       "category.create=mfs"
@@ -62,7 +55,7 @@
     ];
   };
 
-  # ── TIER D: USB-TRANSIENT (AUTOMOUNT & SYNC) ──────────────────────────────
+  # ── TIER D: USB-TRANSIENT (ANGSTFREI-ABZIEHBAR) ──────────────────────────
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", \
     RUN+="${pkgs.systemd}/bin/systemd-mount \
@@ -73,24 +66,12 @@
       $devnode /mnt/transient/%E{ID_FS_LABEL_ENC}"
   '';
 
-  # ── BUS-GUARD ────────────────────────────────────────────────────────────
-  system.activationScripts.storageBusGuard = {
-    text = ''
-      check_bus() {
-        local label=$1
-        local dev=$(readlink -f /dev/disk/by-label/$label)
-        if [ -b "$dev" ]; then
-          local bus=$(udevadm info -q path -n "$dev")
-          if [[ "$bus" == *"usb"* ]]; then
-            echo "🚨 CRITICAL ERROR: $label is on USB bus! Violation of v14.0."
-            exit 1
-          fi
-        fi
-      }
-      check_bus DISK_SYSTEM
-      check_bus DISK_CACHE
-    '';
-  };
+  # ── PERSISTENT LOGS (BLACKBOX) ───────────────────────────────────────────
+  # [ADR-033] Ensure logs survive root-on-tmpfs wipe
+  # This mapping is handled by the impermanence module in 00-core/persistence.nix,
+  # but we define the mount logic here for structural integrity.
+  # environment.persistence."/persist".directories = [ "/var/log/journal" ];
 
+  # ── INFRASTRUCTURE ───────────────────────────────────────────────────────
   boot.supportedFilesystems = [ "zfs" "btrfs" "xfs" "fuse" ];
 }

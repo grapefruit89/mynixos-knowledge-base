@@ -11,31 +11,35 @@
   hardware.cpu.intel.updateMicrocode = lib.mkDefault true;
   hardware.enableRedistributableFirmware = lib.mkDefault true;
   boot.initrd.kernelModules = [ "i915" ];
-  boot.kernelParams = [ "i915.enable_guc=3" "i915.enable_fbc=1" "i915.fastboot=1" ];
 
-  # ── KERNEL ───────────────────────────────────────────────────────────────
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
+  # ── KERNEL RAM-BUFFER (SSD-PROTECT) ──────────────────────────────────────
+  # [ADR-012] Massive RAM write cache to reduce SSD wear
+  boot.kernel.sysctl = {
+    "vm.dirty_bytes" = 1073741824; # 1GB Write Buffer
+    "vm.dirty_background_bytes" = 536870912; # 512MB Start Background Flush
+    "vm.dirty_expire_centisecs" = 3000; # 30s RAM Persistence
+  };
 
-  # ── POWER ────────────────────────────────────────────────────────────────
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  # ── TELEMETRY & LOGGING (BLACKBOX) ───────────────────────────────────────
+  services.cockpit = {
+    enable = true;
+    port = 9090;
+  };
 
-  # ── TRACKING TOOLS & SPY SCRIPT ──────────────────────────────────────────
+  services.journald.extraConfig = ''
+    RateLimitIntervalSec=0
+    Storage=persistent
+  '';
+
+  # ── ESSENTIAL TOOLS ──────────────────────────────────────────────────────
   environment.systemPackages = with pkgs; [
     fatrace
     iotop-c
-    mergerfs
-    fuse
-    xfsprogs
-    btrfs-progs
+    pciutils
+    usbutils
+    htop
   ];
 
-  # [ADR-040] SRE-Tool: Festplatten-Spion
-  environment.shellAliases = {
-    # Zeigt live alle Schreibvorgänge auf dem Storage-Pool
-    nixh-disk-spy = "sudo fatrace -f W -p /data/storage";
-    # Zeigt I/O Durchsatz pro Prozess
-    nixh-io-top = "sudo iotop-c -o -P";
-  };
-
+  # ── NIX SETTINGS ─────────────────────────────────────────────────────────
   nix.settings.max-jobs = lib.mkDefault 4;
 }
