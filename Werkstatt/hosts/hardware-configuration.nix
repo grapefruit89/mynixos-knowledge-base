@@ -1,29 +1,77 @@
-# [META] ID: NIXH-SYS-042 | ADR: TBD | Version: 1.0 | Stage: 1
-{ config, lib, pkgs, modulesPath, ... }:
+# [META] ID: NIXH-HOST-002
+# [META] TITLE: Portable disko Layout (ABC-Tiering)
+# [META] STAGE: 2 (Nugget)
+# [META] VERSION: 1.1
+# [META] REQ_REFS: [ADR-012, ADR-040]
+
+{ lib, ... }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
-
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/11db8d8d-2dda-4e98-af90-a4d083cc3796";
-      fsType = "ext4";
+  disko.devices = {
+    # --- TIER A: HOT STORAGE (DISK_SYSTEM) ---
+    disk.system = {
+      type = "disk";
+      device = "/dev/disk/by-label/DISK_SYSTEM";
+      content = {
+        type = "gpt";
+        partitions = {
+          ESP = {
+            size = "1G";
+            type = "EF00";
+            content = {
+              type = "filesystem";
+              format = "vfat";
+              mountpoint = "/boot";
+            };
+          };
+          root = {
+            size = "100%";
+            content = {
+              type = "zfs";
+              pool = "zroot";
+            };
+          };
+        };
+      };
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/7502-1487";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
+    zpool.zroot = {
+      type = "zpool";
+      rootFsOptions = {
+        compression = "lz4";
+        atime = "off";
+      };
+      # [ADR-012] Hot Tier Performance Tuning for Databases
+      datasets = {
+        "root" = {
+          type = "zfs_fs";
+          mountpoint = "/";
+          options.recordsize = "16k";
+        };
+        "persist" = {
+          type = "zfs_fs";
+          mountpoint = "/persist";
+          options.recordsize = "128k";
+        };
+      };
     };
 
-  swapDevices = [ ];
-
-  networking.useDHCP = lib.mkDefault true;
-
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    # --- TIER B: WARM STORAGE (DISK_CACHE) ---
+    disk.cache = {
+      type = "disk";
+      device = "/dev/disk/by-label/DISK_CACHE";
+      content = {
+        type = "gpt";
+        partitions.cache = {
+          size = "100%";
+          content = {
+            type = "filesystem";
+            format = "btrfs";
+            mountOptions = [ "compress=zstd" "noatime" ];
+            mountpoint = "/var/cache";
+          };
+        };
+      };
+    };
+  };
 }
