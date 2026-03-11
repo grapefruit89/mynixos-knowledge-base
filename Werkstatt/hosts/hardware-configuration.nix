@@ -1,5 +1,5 @@
 # [META] ID: NIXH-HOST-002
-# [META] TITLE: Supreme Portable Hardware Configuration
+# [META] TITLE: Intelligent Hardware & Storage Configuration
 # [META] STAGE: 2 (Nugget)
 # [META] VERSION: 1.1
 # [META] REQ_REFS: [ADR-012, ADR-033, ADR-040]
@@ -7,16 +7,22 @@
 { config, lib, pkgs, ... }:
 
 {
-  # ── TIER 0: ROOT-ON-TMPFS (RAM-MAXIMIZATION) ─────────────────────────────
-  # [ADR-033] 1GB RAM-Limit für das flüchtige Root-System
+  # ── TIER 0: ROOT-ON-TMPFS & RAM-OPTIMIZATION ─────────────────────────────
   fileSystems."/" = {
     device = "none";
     fsType = "tmpfs";
     options = [ "defaults" "size=1G" "mode=755" ];
   };
 
-  # ── TIER A: HOT STORAGE (DISK_SYSTEM) ────────────────────────────────────
-  # Bindung ausschließlich via Label. Muss /persist und /nix bereitstellen.
+  # [ADR-012] SSD-Schonung: Aggressives Buffering im RAM
+  boot.kernel.sysctl = {
+    "vm.dirty_background_ratio" = 5;
+    "vm.dirty_ratio" = 10;
+    "vm.dirty_expire_centisecs" = 6000; # Daten 60s im RAM halten vor Write
+    "vm.dirty_writeback_centisecs" = 500;
+  };
+
+  # ── TIER A/B: INTERNAL STORAGE (LABELS) ──────────────────────────────────
   fileSystems."/nix" = {
     device = "/dev/disk/by-label/DISK_SYSTEM";
     fsType = "ext4";
@@ -34,23 +40,20 @@
     fsType = "vfat";
   };
 
-  # ── TIER B: WARM STORAGE (DISK_CACHE) ────────────────────────────────────
   fileSystems."/var/cache" = {
     device = "/dev/disk/by-label/DISK_CACHE";
     fsType = "btrfs";
     options = [ "compress=zstd" "noatime" ];
   };
 
-  # ── TIER C: COLD STORAGE (MERGERFS POOL) ──────────────────────────────────
-  # Bündelt alle internen HDDs (DISK_STORAGE_*) zur 'Landkarten-Logik'
-  # Erfordert: boot.supportedFilesystems = [ "fuse" ];
+  # ── TIER C: COLD STORAGE (MERGERFS LANDKARTE) ─────────────────────────────
   fileSystems."/data/storage" = {
     device = "/mnt/disk*";
     fsType = "fuse.mergerfs";
     options = [
       "allow_other"
       "use_ino"
-      "cache.files=partial"
+      "cache.files=partial" # Landkarten-Logik (Metadata in RAM)
       "dropcacheonclose=true"
       "moveonenospc=true"
       "category.create=mfs"
@@ -59,8 +62,7 @@
     ];
   };
 
-  # ── TIER D: USB-TRANSIENT (ANGSTFREI-ABZIEHBAR) ──────────────────────────
-  # Dynamisches Automount für USB-Geräte nach /mnt/transient/
+  # ── TIER D: USB-TRANSIENT (AUTOMOUNT & SYNC) ──────────────────────────────
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", \
     RUN+="${pkgs.systemd}/bin/systemd-mount \
@@ -71,8 +73,7 @@
       $devnode /mnt/transient/%E{ID_FS_LABEL_ENC}"
   '';
 
-  # ── BUS-GUARD & SAFETY ASSERTIONS ────────────────────────────────────────
-  # Verhindert, dass Tier A/B versehentlich auf dem USB-Bus landen
+  # ── BUS-GUARD ────────────────────────────────────────────────────────────
   system.activationScripts.storageBusGuard = {
     text = ''
       check_bus() {
@@ -81,7 +82,7 @@
         if [ -b "$dev" ]; then
           local bus=$(udevadm info -q path -n "$dev")
           if [[ "$bus" == *"usb"* ]]; then
-            echo "🚨 CRITICAL ERROR: $label is on USB bus! System Integrity Violation (v14.0)."
+            echo "🚨 CRITICAL ERROR: $label is on USB bus! Violation of v14.0."
             exit 1
           fi
         fi
@@ -91,13 +92,5 @@
     '';
   };
 
-  # ── INFRASTRUCTURE ───────────────────────────────────────────────────────
-  environment.systemPackages = with pkgs; [
-    mergerfs
-    fuse
-    xfsprogs
-    btrfs-progs
-  ];
-  
   boot.supportedFilesystems = [ "zfs" "btrfs" "xfs" "fuse" ];
 }

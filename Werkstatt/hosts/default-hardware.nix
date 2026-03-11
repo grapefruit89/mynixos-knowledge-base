@@ -7,29 +7,35 @@
 { config, lib, pkgs, ... }:
 
 {
-  # ── CPU & MICROCODE ──────────────────────────────────────────────────────
+  # ── CPU & GPU ────────────────────────────────────────────────────────────
   hardware.cpu.intel.updateMicrocode = lib.mkDefault true;
   hardware.enableRedistributableFirmware = lib.mkDefault true;
-
-  # ── GPU (Intel i915) ─────────────────────────────────────────────────────
-  # Optimized for Coffee Lake / Whiskey Lake (i3-9100)
   boot.initrd.kernelModules = [ "i915" ];
-  boot.kernelParams = [ 
-    "i915.enable_guc=3" 
-    "i915.enable_fbc=1" 
-    "i915.fastboot=1"
-  ];
+  boot.kernelParams = [ "i915.enable_guc=3" "i915.enable_fbc=1" "i915.fastboot=1" ];
 
-  # ── KERNEL MODULES (Mini-PC Essentials) ──────────────────────────────────
-  boot.initrd.availableKernelModules = [ 
-    "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" 
-  ];
+  # ── KERNEL ───────────────────────────────────────────────────────────────
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
 
-  # ── POWER MANAGEMENT ─────────────────────────────────────────────────────
-  # Optimized for Headless Homelab Server
+  # ── POWER ────────────────────────────────────────────────────────────────
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  
-  # ── NIX SETTINGS ─────────────────────────────────────────────────────────
-  # Assuming 4 Cores for typical Q958/OptiPlex builds
+
+  # ── TRACKING TOOLS & SPY SCRIPT ──────────────────────────────────────────
+  environment.systemPackages = with pkgs; [
+    fatrace
+    iotop-c
+    mergerfs
+    fuse
+    xfsprogs
+    btrfs-progs
+  ];
+
+  # [ADR-040] SRE-Tool: Festplatten-Spion
+  environment.shellAliases = {
+    # Zeigt live alle Schreibvorgänge auf dem Storage-Pool
+    nixh-disk-spy = "sudo fatrace -f W -p /data/storage";
+    # Zeigt I/O Durchsatz pro Prozess
+    nixh-io-top = "sudo iotop-c -o -P";
+  };
+
   nix.settings.max-jobs = lib.mkDefault 4;
 }
