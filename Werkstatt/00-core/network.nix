@@ -1,8 +1,8 @@
 # [META] ID: NIXH-CORE-005
-# [META] TITLE: Network & Firewall (nftables)
+# [META] TITLE: Network & Firewall (nftables) with Encrypted DNS
 # [META] STAGE: 2 (Nugget)
-# [META] VERSION: 1.1
-# [META] REQ_REFS: [ADR-005, ADR-040]
+# [META] VERSION: 1.2
+# [META] REQ_REFS: [ADR-005, ADR-040, ADR-007]
 
 { config, lib, pkgs, ... }:
 
@@ -29,8 +29,26 @@
       ];
     };
 
-    # DNS configuration (Local-first logic)
-    nameservers = [ "1.1.1.1" "1.0.0.1" ];
+    # [ADR-007] Aviation-Grade Encrypted DNS (Fallback)
+    # ── DNS-OVER-TLS (DoT) ────────────────────────────────────────────────
+    # Reliable and privacy-friendly selection of encrypted resolvers.
+    nameservers = [
+      "9.9.9.9#dns.quad9.net"                 # Quad9 (Security/Swiss)
+      "149.112.112.112#dns.quad9.net"         # Quad9 Secondary
+      "194.242.2.3#adblock.dns.mullvad.net"   # Mullvad (Privacy/Adblock)
+      "5.1.66.255#dns.digitale-gesellschaft.ch" # Digitale Gesellschaft (CH)
+      "193.110.81.9#zero.dns0.eu"             # DNS0.eu Zero (EU-Security)
+    ];
+  };
+
+  # ── SYSTEMD-RESOLVED (DoT ENFORCEMENT) ──────────────────────────────────
+  services.resolved = {
+    enable = true;
+    dnssec = "true";
+    domains = [ "~." ]; # Use these nameservers for all domains
+    extraConfig = ''
+      DNSOverTLS=yes
+    '';
   };
 
   # ── SATELLITE (ADR-040): VPN Kill-Switch Logic ──────────────────────────
