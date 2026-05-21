@@ -1,0 +1,225 @@
+## Role and Core Objective
+You are an elite NixOS Knowledge Engineer and Systems Architect. Your task is to mine a knowledge base repository and inject its distilled wisdom into the target NixOS boilerplate repository, maintaining strict isomorphy, ODO, and separation of concerns.
+**Knowledge Base (SOURCE):** `grapefruit89/mynixos-knowledge-base`
+**Target Repository (DEST):** `ichsucheeinebude-commits/nixos`
+---
+## Phase 0: Analyze the Knowledge Base Structure
+First, explore the complete knowledge base. Here is its structure:
+### Root-Level Reference Files
+- `00_MASTER_INDEX.md` – Aviation-Grade Nugget Index: complete map of all knowledge artifacts
+- `00_GOLDEN_HANDBOOK_Dendritic_NixOS.md` – Definitive Master Edition: chapter-by-chapter reference to all guides, ADRs, and master configs
+- `00_STATUS_DASHBOARD.md` – Current architecture status (v8.0 Flat-Dendritic)
+### /adr/ – Architecture Decision Records (19+ files)
+Key ADRs to mine:
+- `ADR-001-Lightweight-Identity-PocketID.md` – Why PocketID over Authentik
+- `ADR-002-Native-Services-over-Docker.md` – Docker ban rationale
+- `ADR-003-Ejected-Services.md` – Service ejection criteria
+- `ADR-004-Media-Engine-VPN-Isolation.md` – Media network isolation
+- `ADR-005-Hybrid-Identity-Model.md` – Identity architecture
+- `ADR-006-Secret-Management-Audit.md` – Why sops-nix over git-crypt
+- `ADR-006-Storage-Cluster-Strategy.md` – Storage architecture
+- `ADR-007-DNS-Naming-Standard.md` – DNS and naming conventions
+- `ADR-008-SSH-ProxyJump-Standard.md` – SSH access hardening
+- `ADR-009-Media-Stack-Consolidation.md` – Media service consolidation
+- `hardware-spec-q958.md` – Physical SSoT for Q958 hardware
+- `den-framework-foundation.md` – Dendritic framework v1.0
+- `storage-tiering-strategy.md` – Storage masterplan v5.3
+- `disaster-recovery-strategy.md` – DR strategy v6.1
+- `distribution-strategy-v5.md` – Distribution vision
+- `security-layer-model.md` – 3-Stage Defense model
+- `dashboard-hierarchy.md` – Dashboard strategy (Glance & Homer)
+- `nixhome-architecture.md` – 00-90 Layer model
+- `jailed-agents-sandboxing.md` – AI sandboxing v6.1
+- `passkey-identity-standard.md` – Passkey-only identity
+- `isomorphie-strategie.md` – Isomorphy SSoT concept
+- `sovereign-identity-v4.md` – Sovereign identity
+### /guides/ – Operational Guides and Master Configs (30+ files)
+Key guides:
+- `GUIDE-Caddy-M1-Abrams.md` – Caddy reverse proxy mastery
+- `GUIDE-ABC-Storage-Tiering.md` – MergerFS + ZFS hybrid storage
+- `GUIDE-Enterprise-Nix-Standards.md` – Enterprise Nix patterns
+- `GUIDE-Intel-QuickSync-NixOS.md` – Hardware transcoding
+- `GUIDE-Windows-to-Nix-SSH.md` – Windows SSH integration
+- `GUIDE-Paperless-Master-Config.md` – Paperless-ngx declarative config
+- `GUIDE-Blank-Snapshot-Persistence.md` – Impermanence/blank snapshot
+- `GUIDE-Aspect-Oriented-Dendritic.md` – Aspect-oriented architecture
+- `GUIDE-Aviation-Grade-Efficiency.md` – Aviation-grade methodology
+- `GUIDE-Container-Symbiose-Arion.md` – Arion container orchestration
+- `GUIDE-Dendritic-Modularization.md` – Module organization
+- `GUIDE-Advanced-Hidden-Gems.md` – Advanced NixOS patterns
+- `GUIDE-Automated-Documentation-Mastery.md` – Documentation automation
+- `GUIDE-Landlock-Isolation.md` – Landlock sandboxing (Chapter 86)
+- `MASTER-CONFIG-PAPERLESS-NGX.md` – Complete Paperless variable reference
+- `MASTER-CONFIG-SEERR.md` – Jellyseerr reference
+- `MASTER-CONFIG-RADARR.md` – Radarr reference
+- `MASTER-CONFIG-FAIL2BAN.md` – Fail2ban reference
+- `MASTER-CONFIG-FAIL2BAN-ENDPOINTS.md` – Fail2ban endpoint list
+- `MASTER-CONFIG-TAILSCALE.md` – Tailscale reference
+- `MASTER-CONFIG-ARR-STACK.md` – ARR stack reference
+- `MASTER-CONFIG-AUDIOBOOKSHELF.md` – Audiobookshelf reference
+- `MASTER-CONFIG-SABNZBD.md` – SABnzbd reference
+- `MASTER-CONFIG-HOMEPAGE.md` – Dashboard config
+- `MASTER-CONFIG-N8N.md` – n8n workflow automation
+- `MASTER-CONFIG-VAULTWARDEN.md` – Vaultwarden reference
+- Subdirectories: `caddy/` (Caddy Encyclopedia, 3 chapters), `determinate/` (Enterprise Governance & SBOM)
+### /services/ – Service Implementation Docs (20+ files)
+- `abc-storage-mover.md` – Storage engine v5.3
+- `caddy-migration-plan.md` – Proxy gateway M1 Abrams
+- `cloudflare-homeserver-setup.md` – Zero Trust ingress
+- `identity-pocketid-v4.2.md` – PocketID setup
+- `mkMyService-helper.md` – Service factory pattern v6.0
+- `media-stack-hardening.md` – VPN & RO-Mounts for media
+- `dashboard-comparison-v4.2.md` – Dashboard evaluation
+- `disk-discovery-hal.md` – Disk discovery
+- `knowledge-management-pipeline-v4.2.md` – Knowledge pipeline
+- `brother-printer.md` – Printer setup
+### /architecture/ – Architecture Documents
+- `arch-evolution-strategy.md` – Architecture evolution
+- `arch-flake-parts.md` – Flake parts architecture
+- `arch-tooling-strategy.md` – Tooling strategy
+### /learnings/ – Findings & Learnings (15+ files)
+- `FINDINGS-REGISTRY.md` – Aviation-grade audit trail
+- `determinate-nix.md` – Determinate Nix installer
+- `det-enterprise-arch.md` – Enterprise architecture
+- `det-flakehub-ver.md` – FlakeHub versioning
+- `det-nix-installer.md` – Nix installer details
+- `herc-ci-effects.md` – Hercules CI effects
+- `herc-socket-activation.md` – Socket activation
+- `nix-comm-disko.md` – Disko partitioning
+- `nix-comm-home-manager.md` – Home Manager
+- `nix-comm-impermanence.md` – Impermanence
+- `nix-comm-sops.md` – SOPS secrets
+- `n8n-security-hardening.md` – n8n security
+- `professional-workflow-audit.md` – Workflow standards
+- `repo-audit-nixarr-nixflix.md` – Repo audit (3 bugs)
+- `sre-audit-v2.3.md` – SRE compliance
+- `homelab-architecture-review.md` – Architecture review
+- `python-system-load-fix.md` – Python fix
+### /scripts/ – Automation Scripts
+- CI scripts, TOC generator, doc-engine bootstrap
+---
+## Phase 1: Domain Mapping
+Map knowledge base content to the 10-domain structure. Here is the mapping:
+| Domain | Knowledge Base Content to Mine |
+|--------|-------------------------------|
+| **00-core** | ADRs: framework foundation, nixhome-architecture (00-90 layering), isomorphy-strategie, hardware-spec-q958. Guides: Enterprise Nix Standards, Aviation-Grade Efficiency. Learnings: determinate-nix, det-enterprise-arch. |
+| **10-network** | ADRs: DNS-Naming-Standard, SSH-ProxyJump-Standard. Guides: Caddy-M1-Abrams, Windows-to-Nix-SSH. Services: caddy-migration-plan, cloudflare-homeserver-setup. Architecture: arch-flake-parts. |
+| **20-security** | ADRs: security-layer-model, secret-management-audit, jailed-agents-sandboxing, passkey-identity-standard, sovereign-identity, hybrid-identity-model. Guides: Fail2ban Master-Config, Fail2ban-Endpoints, Landlock-Isolation. Learnings: nix-comm-sops, n8n-security-hardening. |
+| **30-storage** | ADRs: storage-tiering-strategy, disaster-recovery-strategy. Guides: ABC-Storage-Tiering, Blank-Snapshot-Persistence. Services: abc-storage-mover, disk-discovery-hal. Learnings: nix-comm-disko, nix-comm-impermanence. |
+| **40-monitoring** | ADRs: dashboard-hierarchy. Services: dashboard-comparison. Guides: MASTER-CONFIG-HOMEPAGE. |
+| **50-media** | ADRs: media-engine-VPN-isolation, media-stack-consolidation. Guides: Intel-QuickSync, MASTER-CONFIG-SEERR, MASTER-CONFIG-RADARR, MASTER-CONFIG-ARR-STACK, MASTER-CONFIG-SABNZBD, MASTER-CONFIG-AUDIOBOOKSHELF. Services: media-stack-hardening. |
+| **60-apps** | Guides: Paperless-Master-Config, MASTER-CONFIG-PAPERLESS-NGX, MASTER-CONFIG-VAULTWARDEN, MASTER-CONFIG-N8N. Services: identity-pocketid. |
+| **70-forge** | Architecture: arch-tooling-strategy. Learnings: herc-ci-effects. |
+| **80-gaming** | (no direct matches – create skeletons) |
+| **90-policy** | ADRs: Native-Services-over-Docker, ejected-services, distribution-strategy. Learnings: FINDINGS-REGISTRY, professional-workflow-audit, sre-audit. |
+---
+## Phase 2: Content Extraction and Injection
+For each domain, read the corresponding knowledge base files. Extract:
+1. **ADR material:** Architectural rationale, decision drivers, considered alternatives, consequences. Inject into the target ADR files under `docs/adr/`.
+2. **Guide material:** Operational procedures, verification commands, known failure modes, configuration examples. Inject into `docs/guides/`. IMPORTANT: Strip ALL personal data (hostnames, IPs, domains, emails). Replace with placeholders like `<HOSTNAME>`, `<DOMAIN>`, `<USER>`.
+3. **Nix patterns:** Reusable option definitions, service templates, hardening patterns. Inject into `modules/` as pure option interfaces with empty/null defaults.
+4. **Learnings:** Bug reports, fixes, workflow improvements. Inject as comments or warnings in relevant module files.
+---
+## Phase 3: Specific Instructions Per Domain
+### 00-core
+- Read `adr/den-framework-foundation.md`, `adr/nixhome-architecture.md`, `adr/isomorphie-strategie.md`, `adr/hardware-spec-q958.md`
+- Read `guides/GUIDE-Enterprise-Nix-Standards.md`, `guides/GUIDE-Aviation-Grade-Efficiency.md`
+- Read `learnings/determinate-nix.md`, `learnings/det-enterprise-arch.md`
+- Enhance existing module files with architectural rationale in their ADR counterparts
+- Add enterprise Nix patterns (auto-optimise, trusted-users, sandbox) to `02-nix-tuning.nix`
+- Ensure hardware profile ADR references Q958 spec but module stays generic
+- Extract aviation-grade metadata standards into the NIXMETA header specification
+### 10-network
+- Read `adr/ADR-007-DNS-Naming-Standard.md`, `adr/ADR-008-SSH-ProxyJump-Standard.md`
+- Read `guides/GUIDE-Caddy-M1-Abrams.md` (this is extensive Caddy knowledge)
+- Read `services/caddy-migration-plan.md`, `services/cloudflare-homeserver-setup.md`
+- Create comprehensive Caddy reverse proxy module options
+- Add SSH hardening options (ProxyJump, key-only auth)
+- Add DNS naming standard options
+- Add Cloudflare Zero Trust ingress options
+### 20-security
+- Read `adr/security-layer-model.md`, `adr/ADR-006-Secret-Management-Audit.md`
+- Read `adr/jailed-agents-sandboxing.md`, `adr/passkey-identity-standard.md`
+- Read `adr/ADR-005-Hybrid-Identity-Model.md`, `adr/sovereign-identity-v4.md`
+- Read `guides/MASTER-CONFIG-FAIL2BAN.md`, `guides/MASTER-CONFIG-FAIL2BAN-ENDPOINTS.md`
+- Read `guides/GUIDE-Landlock-Isolation.md`
+- Read `learnings/nix-comm-sops.md`, `learnings/n8n-security-hardening.md`
+- Create security layer module (3-stage defense)
+- Create sops-nix secret management module with proper defaultSopsFile
+- Create fail2ban module with all endpoints from MASTER-CONFIG
+- Create sandboxing module (Landlock, bubblewrap)
+- Create identity module (PocketID, Passkey-only)
+### 30-storage
+- Read `adr/storage-tiering-strategy.md`, `adr/disaster-recovery-strategy.md`
+- Read `guides/GUIDE-ABC-Storage-Tiering.md`, `guides/GUIDE-Blank-Snapshot-Persistence.md`
+- Read `services/abc-storage-mover.md`, `services/disk-discovery-hal.md`
+- Read `learnings/nix-comm-disko.md`, `learnings/nix-comm-impermanence.md`
+- Create storage tiering module (MergerFS + ZFS hybrid)
+- Create backup module (Restic with DR strategy)
+- Create impermanence module (blank snapshot pattern)
+- Add disk discovery options
+### 40-monitoring
+- Read `adr/dashboard-hierarchy.md`
+- Read `services/dashboard-comparison-v4.2.md`
+- Read `guides/MASTER-CONFIG-HOMEPAGE.md`
+- Create monitoring module options (Gatus, Netdata, ntfy)
+- Create dashboard module (Homepage config options)
+### 50-media
+- Read `adr/ADR-004-Media-Engine-VPN-Isolation.md`, `adr/ADR-009-Media-Stack-Consolidation.md`
+- Read `guides/GUIDE-Intel-QuickSync-NixOS.md`
+- Read ALL MASTER-CONFIG files for media services (SEERR, RADARR, ARR-STACK, SABNZBD, AUDIOBOOKSHELF)
+- Read `services/media-stack-hardening.md`
+- Create media engine module with VPN isolation options
+- Create ARR stack module with all service options from MASTER-CONFIG files
+- Create transcoding module (Intel QuickSync options)
+- Create media hardening module (read-only mounts, network isolation)
+### 60-apps
+- Read `guides/GUIDE-Paperless-Master-Config.md`, `MASTER-CONFIG-PAPERLESS-NGX.md`
+- Read `guides/MASTER-CONFIG-VAULTWARDEN.md`, `guides/MASTER-CONFIG-N8N.md`
+- Read `services/identity-pocketid-v4.2.md`
+- Create Paperless-ngx module with complete option set
+- Create Vaultwarden module
+- Create n8n module
+- Create PocketID module (could also go in 10-network)
+### 70-forge
+- Read `architecture/arch-tooling-strategy.md`
+- Read `learnings/herc-ci-effects.md`, `learnings/herc-socket-activation.md`
+- Create Forgejo module
+- Create CI/CD module (Hercules CI options)
+### 80-gaming
+- Create skeleton modules (no direct knowledge base content)
+### 90-policy
+- Read `ADR-002-Native-Services-over-Docker.md`, `ADR-003-Ejected-Services.md`
+- Read `adr/distribution-strategy-v5.md`
+- Read `learnings/FINDINGS-REGISTRY.md`, `learnings/professional-workflow-audit.md`, `learnings/sre-audit-v2.3.md`
+- Create Docker ban assertion module
+- Create architecture rules module
+- Create forbidden technology module
+---
+## Phase 4: Integration Rules
+1. **PERSONAL DATA PURGE:** When extracting content, replace ALL instances of:
+   - `q958` → `<HOSTNAME>` or leave as option default
+   - `m7c5.de` → `<DOMAIN>`
+   - `moritz` → `<USER>`
+   - `moritz@m7c5.de` → `<EMAIL>`
+   - `192.168.x.x` → `<LAN_CIDR>`
+   - Specific port numbers → standard defaults (22 for SSH, 443 for HTTPS, etc.)
+   - `Europe/Berlin` → empty string
+   - `de_DE.UTF-8` → empty string
+2. **NIXMETA HEADER:** Every created file must have the standard header with `path`, `domain`, `id`, `provides`, `requires`, `links`, `status`.
+3. **1:1:1 ISOMORPHY:** For every module created in `modules/`, create matching ADR and Guide files.
+4. **ODO NUMBERING:** Files must use correct domain prefixes (00-09 for 00-core, 10-19 for 10-network, etc.).
+5. **REFERENCE PRESERVATION:** In the ADR and Guide files, include a `source` field pointing back to the original knowledge base file for traceability.
+6. **NO FILE DELETION:** Do not delete any existing files in the target repository. Only create new files and enhance existing ones.
+---
+## Phase 5: Output Summary
+After completing all phases, provide a summary table:
+| Domain | Files Created | ADRs Enhanced | Guides Enhanced | Key Knowledge Extracted |
+|--------|---------------|---------------|-----------------|------------------------|
+| 00-core | ... | ... | ... | ... |
+| 10-network | ... | ... | ... | ... |
+| ... | ... | ... | ... | ... |
+Also list any knowledge base files that were NOT mined (with reason: "not applicable to current boilerplate" or "requires host-specific data").
+```
+---
+Das ist der Prompt. Er deckt systematisch jeden relevanten Ordner und jede Datei der Knowledge Base ab, mappt sie auf deine zehn Domänen und zwingt Claude, alle personalisierten Daten zu strippen. Kopier ihn und lass OpenClaw die Wissensextraktion durchziehen.
